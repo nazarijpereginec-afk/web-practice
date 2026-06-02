@@ -1,1 +1,1 @@
-console.log('Project started');
+const iconOpen = getElementById

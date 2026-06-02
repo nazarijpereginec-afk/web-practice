@@ -1,3 +1,9 @@
+@import url('_variables.css');
+@import url('https://fonts.googleapis.com/css2?family=Rufina:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Rufina:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Rufina:wght@400;700&display=swap');
+
+/* ---------- Reset styles ---------- */
 * {
     margin: 0;
     padding: 0;
@@ -5,7 +11,20 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    width: 100%;
+    height: 100vh;
+    font-family: 'Rufina', sans-serif;
+    color: var(--light-color);
+}
+
+button {
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
 }
 
 img {
@@ -13,6 +32,227 @@ img {
     display: block;
 }
 
-body {
-    background-color: lightblue;
+a {
+    display: block;
+    text-decoration: none;
+    color: #FFFFFF;
 }
+
+address {
+    font-style: normal;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.item-center {
+    justify-content: center;
+    align-items: center;
+}
+
+.vertical-center {
+    align-items: center;
+}
+
+/* ---------- Header ---------- */
+.main-header {
+    width: 100%;
+    background-color: var(--main-bg-color);
+    position: relative;
+}
+
+.navbar {
+    width: 100%;
+    height: 100px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.navigation-full-screen {
+    width: 100vw;
+    height: calc(100vh - 100px);
+    position: absolute;
+    top: 100px;
+    left: 0;
+    background-image: linear-gradient(90deg, rgba(35, 48, 0, 0.8) 0%, rgba(35, 48, 0, 0.8) 100%),
+        url(../images/bg-img-navigation.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.icon-navi-close {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+}
+
+.navigation-full-screen .menu ul li:not(:last-child) {
+    margin-bottom: 28px;
+}
+
+.navigation-full-screen .menu ul li a {
+    font-size: 2.063rem;
+    font-weight: 700;
+}
+
+.navigation-full-screen .menu ul li .blogs-link,
+.navigation-full-screen .menu ul .blogs-marker::marker {
+    color: #9CAA00;
+}
+
+.navigation-full-screen .menu ul li ol li a {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.navigation-full-screen .menu ul li ol li:not(:last-child) {
+    margin-bottom: 6px;
+}
+
+.navigation-full-screen .menu ul li ol li:last-child {
+    list-style-type: none;
+}
+
+.contact-info {
+    padding: 20px 15px;
+    font-size: 0.850rem;
+    font-weight: 400;
+}
+
+.contact-info h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.contact-info hr {
+    border: none;
+    border-bottom: 4px dashed #ffffff;
+    width: 100%;
+    margin-top: 8px;
+    margin-bottom: 38px;
+}
+
+.contact-info ul li {
+    list-style-type: none;
+}
+
+.contact-info ul li:not(:last-child) {
+    margin-bottom: 5px;
+}
+
+.contact-info ul li a {
+    font-family: 'Lato', sans-serif;
+}
+
+.contact-info>a {
+    font-family: sans-serif;
+    margin-top: 38px;
+    font-style: normal;
+    margin-bottom: 38px;
+}
+
+.contact-info .icons {
+    justify-content: flex-start;
+    gap: 18px;
+}
+
+.content-wrap {
+    max-width: 1684px;
+    margin: 0 auto;
+    padding: 35px 20px;
+}
+
+.left-part-navbar {
+    align-items: center;
+    justify-content: space-between;
+    gap: 22.5px;
+    margin: 0 auto;
+}
+
+.right-part-navbar {
+    display: none;
+}
+
+.main-logo {
+    width: 150px;
+    height: 50px;
+}
+
+/* ---------- Media Query ---------- */
+@media screen and (min-width: 992px) {
+    .left-part-navbar {
+        margin: 0;
+        gap: 45px;
+    }
+
+    .right-part-navbar {
+        display: flex;
+        gap: 26px;
+        align-items: center;
+    }
+
+    .btn-reservations {
+        width: 193px;
+        height: 48px;
+        font-family: 'Rufina', sans-serif;
+        border: 2px solid var(--light-color);
+        font-size: 2rem;
+        padding: 0 30px;
+        font-size: 1.125rem;
+    }
+
+    .right-part-navbar address {
+        font-family: 'Inter', sans-serif;
+        font-size: 1.625rem;
+        font-weight: 400;
+        font-style: normal;
+    }
+
+    .main-logo {
+        width: 307px;
+        height: 54px;
+    }
+
+    .navigation-full-screen {
+        justify-content: space-between;
+        flex-direction: row;
+        padding: 0 100px;
+    }
+
+    .navigation-full-screen .menu ul li a {
+        font-size: 4.125rem;
+    }
+
+    .navigation-full-screen .menu ul li ol li a {
+        font-size: 1.5rem;
+    }
+
+    .contact-info h2 {
+        font-size: 2rem;
+    }
+
+    .icon-navi-close {
+        width: auto;
+        height: auto;
+    }
+}
+
+@media screen and (min-width: 1684px) {
+        .navigation-full-screen {
+            padding: 0 186px 0 300px;
+        }
+    }
