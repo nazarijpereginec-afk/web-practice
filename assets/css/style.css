@@ -662,11 +662,11 @@ address {
         max-width: 1680px;
         gap: 80px;
         margin-top: 80px;
+        margin: 0 auto;
     }
 
     .header-title .title-photo {
         padding-top: 7%;
-        padding-right: 70px;
     }
 
     .header-title .title-text h1 {
