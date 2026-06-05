@@ -377,7 +377,7 @@ address {
     }
 
     .main-steak {
-        min-width: 650px;
+        max-width: 650px;
         height: auto;
         display: block;
     }
@@ -506,7 +506,7 @@ address {
         max-width: 1054px;
         z-index: 2;
         flex-direction: column;
-        margin-right: -100px;
+        margin-right: -160px;
     }
 
     .title-photo {
@@ -521,10 +521,6 @@ address {
         margin: 0;
         flex-direction: column;
         align-self: flex-end;
-    }
-
-    .title-text {
-        margin-right: -160px;
     }
 
     .header-title .title-text h1 {
