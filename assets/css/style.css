@@ -479,6 +479,7 @@ address {
         gap: 30px;
         transform: none;
         left: -290px;
+        bottom: -60px;
     }
 
     .main-steak {
@@ -487,8 +488,8 @@ address {
     }
 
     .spice-img {
-        width: 200px;
-        height: 200px;
+        width: 180px;
+        height: 180px;
     }
 
     .header-title {
@@ -506,7 +507,7 @@ address {
         max-width: 1054px;
         z-index: 2;
         flex-direction: column;
-        margin-right: -160px;
+        margin-right: 0;
     }
 
     .title-photo {
@@ -526,6 +527,7 @@ address {
     .header-title .title-text h1 {
         font-size: 5.8rem;
         margin-bottom: 30px;
+        margin-right: -160px;
     }
     
     .header-title .title-text p {
@@ -659,10 +661,6 @@ address {
         margin-top: 80px;
     }
 
-    .title-text {
-        margin-right: -200px;
-    }
-
     .header-title .title-photo {
         padding-top: 7%;
     }
@@ -670,6 +668,7 @@ address {
     .header-title .title-text h1 {
         font-size: 9.25rem;
         margin-bottom: 50px;
+        margin-right: -200px;
     }
 
     .header-title .title-text p {
