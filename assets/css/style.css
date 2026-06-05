@@ -377,13 +377,16 @@ address {
     }
 
     .main-steak {
-        max-width: 650px;
+        max-width: 600px;
         height: auto;
         display: block;
     }
 
     .title-photo {
         margin: 30px auto 0;
+        width: auto;
+        height: auto;
+        position: relative;
     }
 
     .header-title .title-text h1 {
@@ -405,12 +408,12 @@ address {
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
-        bottom: -50px;
+        bottom: -60px;
     }
 
 }
 
-@media screen and (min-width: 967px) {
+@media screen and (min-width: 1024px) {
     .content-wrap {
         max-width: 1600px;
     }
@@ -478,12 +481,12 @@ address {
     .spices {
         gap: 30px;
         transform: none;
-        left: -290px;
+        left: -100px;
         bottom: -60px;
     }
 
     .main-steak {
-        width: 750px;
+        max-width: 600px;
         height: auto;
     }
 
@@ -541,10 +544,6 @@ address {
 }
 
 @media screen and (min-width: 1920px) {
-    .content-wrap {
-        max-width: 1680px;
-    }
-
     .navbar {
         margin: 0;
         width: 100%;
@@ -656,9 +655,9 @@ address {
     }
 
     .header-title {
-        max-width: 1680px;
+        max-width: 1450px;
         gap: 80px;
-        margin-top: 80px;
+        margin: 80px auto 0;
     }
 
     .header-title .title-photo {
