@@ -544,10 +544,6 @@ address {
 }
 
 @media screen and (min-width: 1920px) {
-    .content-wrap {
-        max-width: 1680px;
-    }
-
     .navbar {
         margin: 0;
         width: 100%;
