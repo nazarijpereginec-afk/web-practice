@@ -228,7 +228,7 @@ address {
 
 /* ---------- Content wrap ---------- */
 .content-wrap {
-    max-width: 1440px;
+    max-width: 1684px;
     margin: 0 auto;
     padding: 0 20px;
 }
@@ -253,9 +253,10 @@ address {
     flex-direction: column;
     margin: 20px auto 0;
     padding: 0 20px;
+    align-items: center;
 }
 
-.title-text {
+.header-title .title-text {
     max-width: 1057px;
     max-height: 456px;
     flex-direction: column;
@@ -278,8 +279,6 @@ address {
 }
 
 .title-photo {
-    max-width: 792px;
-    max-height: 931px;
     display: inline-block;
 }   
 
@@ -377,7 +376,7 @@ address {
     }
 
     .main-steak {
-        max-width: 600px;
+        width: auto;
         height: auto;
         display: block;
     }
@@ -386,7 +385,6 @@ address {
         margin: 30px auto 0;
         width: auto;
         height: auto;
-        position: relative;
     }
 
     .header-title .title-text h1 {
@@ -400,11 +398,16 @@ address {
     }
 
     .spice-img {
-        width: 130px;
-        height: 130px;
+        width: 150px;
+        height: 150px;
+    }
+
+    .header-title {
+        position: relative;
     }
 
     .spices {
+        gap: 22px;
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
@@ -414,10 +417,6 @@ address {
 }
 
 @media screen and (min-width: 1024px) {
-    .content-wrap {
-        max-width: 1600px;
-    }
-
     .main-header {
         padding-bottom: 150px;
     }
@@ -472,16 +471,40 @@ address {
         left: 15px;
     }
 
-    .title-photo {
-        display: flex;
-        flex-direction: column;
+    .header-title {
+        flex-direction: row;
         align-items: flex-start;
+        position: relative;
+        width: 100%;
+        max-width: 1684px;
+        margin: 60px auto 0;
+        gap: 50px;
+    }
+
+    .header-title .title-text {
+        text-align: left;
+        flex: 1.3;
+        z-index: 2;
+        flex-direction: column;
+        margin-right: 0;
+    }
+
+    .header-title .title-photo {
+        flex: 1;
+        max-width: 650px;
+        height: auto;
+        z-index: 1;
+        margin: 0;
+        flex-direction: column;
+        align-self: flex-end;
+        display: flex;
+        margin-top: 70px;
     }
 
     .spices {
         gap: 30px;
         transform: none;
-        left: -100px;
+        right: 300px;
         bottom: -60px;
     }
 
@@ -495,42 +518,11 @@ address {
         height: 180px;
     }
 
-    .header-title {
-        flex-direction: row;
-        align-items: flex-start;
-        position: relative;
-        max-width: 1200px;
-        margin: 40px auto 0;
-        gap: 50px;
-    }
-
-    .title-text {
-        text-align: left;
-        flex: 1.3;
-        max-width: 1054px;
-        z-index: 2;
-        flex-direction: column;
-        margin-right: 0;
-    }
-
-    .title-photo {
-        max-width: 650px;
-        max-height: 931px;
-        padding-top: 5%;
-        width: auto;
-        height: auto;
-        flex: 1;
-        position: relative;
-        z-index: 1;
-        margin: 0;
-        flex-direction: column;
-        align-self: flex-end;
-    }
-
     .header-title .title-text h1 {
         font-size: 5.8rem;
-        margin-bottom: 30px;
-        margin-right: -160px;
+        text-align: left;
+        margin-right: -150px;
+        line-height: 100px;
     }
     
     .header-title .title-text p {
@@ -540,6 +532,34 @@ address {
 
     .title-text p {
         font-size: 1.35rem;
+    }
+}
+
+@media screen and (min-width: 1120px) {
+    .header-title .title-photo {
+        margin-top: 60px;
+        margin-left: -150px;
+    }
+
+    .header-title .title-text h1 {
+        font-size: 6.4rem;
+    }
+    
+}
+
+@media screen and (min-width: 1500px) {
+    .header-title .title-text {
+        margin-right: -100px;
+    }
+
+    .header-title .title-text h1 {
+        font-size: 6.8rem;
+    }
+}
+
+@media screen and (min-width: 1600px) {
+    .header-title .title-text h1 {
+        font-size: 7rem;
     }
 }
 
@@ -577,7 +597,7 @@ address {
     }
 
     .btn-reservations {
-        width: 285px;
+        width: 293px;
         height: 88px;
         padding: 20px 46px;
         font-size: 2rem;
@@ -635,8 +655,9 @@ address {
     }
 
     .main-steak {
+        width: 100%;
         max-width: 792px;
-        max-height: 931px;
+        height: auto;   
     }
 
     .contact-info ul li a,
@@ -646,28 +667,26 @@ address {
 
     .spices {
         gap: 44px;
-        left: -340px;
+        right: 450px;
     }
 
     .spice-img {
         max-width: 250px;
-        max-height: 240px;
+        height: auto;
     }
 
     .header-title {
-        max-width: 1450px;
         gap: 80px;
-        margin: 80px auto 0;
+        margin: 110px auto 0;
     }
 
     .header-title .title-photo {
-        padding-top: 7%;
+        margin-top: 100px;
     }
 
     .header-title .title-text h1 {
         font-size: 9.25rem;
-        margin-bottom: 50px;
-        margin-right: -200px;
+        line-height: 152px;
     }
 
     .header-title .title-text p {

@@ -12,5 +12,3 @@ iconClose.addEventListener('click', () => {
     mainMenu.classList.remove('menu-open');
     mainHeader.classList.remove('d-none');
 })
-
-
