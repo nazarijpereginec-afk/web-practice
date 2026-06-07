@@ -74,6 +74,7 @@ address {
     width: 100%;
     background-color: var(--main-bg-color);
     padding-bottom: 100px;
+    overflow: hidden;
 }
 
 .navbar {
@@ -88,7 +89,7 @@ address {
 /* ---------- Navigation menu ---------- */
 
 .navigation-full-screen {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
@@ -280,7 +281,7 @@ address {
 
 .title-photo {
     display: inline-block;
-}   
+}
 
 .main-steak {
     display: block;
@@ -298,6 +299,47 @@ address {
     max-height: 240px;
     width: 80px;
     height: 80px;
+}
+
+/* ---------- Main ---------- */
+
+/* ---------- Diet section ---------- */
+.plan-diet-section {
+    background-color: var(--main-bg-color);
+    padding-bottom: 100px;
+    padding-top: 70px;
+}
+
+.plan-diet {
+    flex-direction: column;
+    gap: 60px;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.plan-diet .left-side-plan h2 {
+    font-size: 2.125rem;
+    margin: 27px 0;
+    font-weight: 700;
+}
+
+.plan-diet p {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.plan-diet .right-side-plan {
+    flex-direction: column;
+}
+
+
+.plan-diet .right-side-plan p {
+    order: 1;
+    margin-top: 42px;
+}
+
+.plan-diet .right-side-plan img {
+    order: -1;
 }
 
 /* ---------- Media Query ---------- */
@@ -414,6 +456,32 @@ address {
         bottom: -60px;
     }
 
+    .plan-diet {
+        flex-direction: row;
+        gap: 200px;
+        padding-top: 90px;
+    }
+
+    .plan-diet .left-side-plan h2 {
+        font-size: 2.5rem;
+        margin: 35px 0;
+        font-weight: 700;
+    }
+
+    .plan-diet p {
+        font-family: 'Lato', sans-serif;
+        font-size: 1.125rem;
+    }
+
+    .plan-diet .right-side-plan p {
+        order: -1;
+        margin-top: 0;
+        margin-bottom: 60px;
+    }
+
+    .plan-diet .right-part-navbar img {
+        order: 1;
+    }
 }
 
 @media screen and (min-width: 1024px) {
@@ -524,7 +592,7 @@ address {
         margin-right: -150px;
         line-height: 100px;
     }
-    
+
     .header-title .title-text p {
         font-size: 1.250rem;
         margin: 0;
@@ -532,6 +600,24 @@ address {
 
     .title-text p {
         font-size: 1.35rem;
+    }
+
+    .plan-diet {
+        gap: 250px;
+        padding-top: 100px;
+    }
+
+    .plan-diet .left-side-plan h2 {
+        font-size: 3rem;
+        margin: 45px 0;
+    }
+
+    .plan-diet p {
+        font-size: 1.250rem;
+    }
+
+    .plan-diet .right-side-plan p {
+        margin-bottom: 75px;
     }
 }
 
@@ -544,7 +630,12 @@ address {
     .header-title .title-text h1 {
         font-size: 6.4rem;
     }
-    
+
+    .plan-diet {
+        gap: 280px;
+        padding-top: 110px;
+    }
+
 }
 
 @media screen and (min-width: 1500px) {
@@ -554,6 +645,11 @@ address {
 
     .header-title .title-text h1 {
         font-size: 6.8rem;
+    }
+
+    .plan-diet {
+        gap: 300px;
+        padding-top: 120px;
     }
 }
 
@@ -657,7 +753,7 @@ address {
     .main-steak {
         width: 100%;
         max-width: 792px;
-        height: auto;   
+        height: auto;
     }
 
     .contact-info ul li a,
@@ -692,6 +788,24 @@ address {
     .header-title .title-text p {
         font-size: 1.5rem;
         line-height: 140%;
+    }
+
+    .plan-diet {
+        gap: 344px;
+        padding-top: 120px;
+    }
+
+    .plan-diet .left-side-plan h2 {
+        margin: 54px 0;
+        font-size: 4.25rem;
+    }
+
+    .plan-diet p {
+        font-size: 1.5rem;
+    }
+
+    .plan-diet .right-side-plan p {
+        margin-bottom: 84px;
     }
 
 }
