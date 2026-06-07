@@ -354,16 +354,20 @@ address {
     background-size: 250px auto;
 }
 
-.our-menu h2 {
+h2 {
     font-weight: 700;
     font-size: 3.375rem;
 }
 
-.our-menu p {
+p {
     font-family: 'Lato', sans-serif;
-    color: #4D4D4D;
     font-size: 0.75rem; 
     font-weight: 400;
+}
+
+.our-menu p,
+.excelent-cook p {
+    color: #4D4D4D;
 }
 
 .our-menu .menu-dishes .menu-item {
@@ -396,6 +400,26 @@ address {
 .our-menu .menu-dishes .menu-item h3 {
     font-size: 2.125rem;
     margin: 12px 0;
+}
+
+/* ---------- Excelent cook section ---------- */
+.excelent-cook-section {
+    background-color: #EBF0E4;
+    color: var(--dark-color);
+    background-image: url(../images/leaf_left.png), url(../images/leaf_right.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: top 35px left 10px, bottom 10px right 35px; 
+    background-size: 250px auto, 150px auto;
+    padding: 150px 0;
+}
+
+.excelent-cook {
+    flex-direction: column;
+    gap: 30px;
+}
+
+.excelent-cook p {
+    margin-top: 9px;
 }
 
 /* ---------- Media Query ---------- */
@@ -543,11 +567,11 @@ address {
         order: 1;
     }
 
-    .our-menu h2 {
+    h2 {
         font-size: 4rem;
     }
 
-    .our-menu p {
+    p {
         font-size: 1rem;
     }
 
@@ -574,6 +598,20 @@ address {
     .our-menu .menu-dishes span {
         font-size: 2rem;
         top: -40px;
+    }
+
+    .excelent-cook-section {
+        background-position: top 70px left 15px, bottom 15px right 50px; 
+        background-size: 200px auto, 250px auto;
+    }
+
+    .excelent-cook {
+        flex-direction: row;
+        gap: 40px;
+    }
+
+    .excelent-cook p {
+        margin-top: 12px;
     }
 }
 
@@ -701,7 +739,6 @@ address {
     }
 
     .plan-diet .left-side-plan h2 {
-        font-size: 3rem;
         margin: 45px 0;
     }
 
@@ -713,11 +750,11 @@ address {
         margin-bottom: 75px;
     }
 
-    .our-menu h2 {
+    h2 {
         font-size: 5rem;
     }
 
-    .our-menu p {
+    p {
         font-size: 1.250rem;
     }
 
@@ -747,6 +784,20 @@ address {
         font-size: 2.5rem;
         top: -50px;
     }
+
+    .excelent-cook-section {
+        background-position: top 110px left 20px, bottom 10px right 70px; 
+        background-size: 270px auto, 350px auto;
+        padding: 200px 0;
+    }
+
+    .excelent-cook {
+        gap: 50px;
+    }
+
+    .excelent-cook p {
+        margin-top: 16px;
+    }
 }
 
 @media screen and (min-width: 1120px) {
@@ -764,6 +815,11 @@ address {
         padding-top: 110px;
     }
 
+    .excelent-cook-section {
+        background-position: top 120px left 30px, bottom 45px right 110px; 
+        background-size: 300px auto, 400px auto;
+    }
+
 }
 
 @media screen and (min-width: 1500px) {
@@ -778,6 +834,11 @@ address {
     .plan-diet {
         gap: 300px;
         padding-top: 120px;
+    }
+
+    .excelent-cook-section {
+        background-position: top 130px left 30px, bottom 60px right 130px; 
+        background-size: 330px auto, 430px auto;
     }
 }
 
@@ -928,7 +989,7 @@ address {
         font-size: 4.25rem;
     }
 
-    .plan-diet p {
+    p {
         font-size: 1.5rem;
     }
 
@@ -940,7 +1001,7 @@ address {
         background-size: 700px auto;
     }
 
-    .our-menu h2 {
+    h2 {
         font-size: 6.75rem;
     }
 
@@ -975,4 +1036,15 @@ address {
         margin-bottom: 108px;
     }
 
+    .excelent-cook-section {
+        background-size: 365px auto, 465px auto;
+    }
+
+    .excelent-cook {
+        gap: 60px;
+    }
+
+    .excelent-cook p {
+        margin-top: 18px;
+    }
 }
