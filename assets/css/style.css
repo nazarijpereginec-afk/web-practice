@@ -303,7 +303,7 @@ address {
 
 /* ---------- Main ---------- */
 
-/* ---------- Diet section ---------- */
+/* ---------- Plan Diet section ---------- */
 .plan-diet-section {
     background-color: var(--main-bg-color);
     padding-bottom: 100px;
@@ -342,11 +342,71 @@ address {
     order: -1;
 }
 
+/* ---------- Our menu section ---------- */
+.our-menu-section {
+    background-color: var(--light-color);
+    color: var(--dark-color);
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background-image: url(../images/sprat.png);
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-size: 250px auto;
+}
+
+.our-menu h2 {
+    font-weight: 700;
+    font-size: 3.375rem;
+}
+
+.our-menu p {
+    font-family: 'Lato', sans-serif;
+    color: #4D4D4D;
+    font-size: 0.75rem; 
+    font-weight: 400;
+}
+
+.our-menu .menu-dishes .menu-item {
+    position: relative;
+}
+
+.our-menu span {
+    font-weight: 700;
+    font-size: 1.5rem;
+    position: absolute;
+    right: 0;
+    top: -30px;
+}
+
+.our-menu .menu-dishes {
+    flex-direction: column;
+    margin-top: 79px;
+    gap: 40px;
+}
+
+.our-menu .menu-dishes .menu-item:not(:last-child) {
+    margin-bottom: 54px;
+}
+
+.our-menu .menu-dishes .menu-item hr {
+    border: none;
+    border-top: 2px dashed var(--dark-color);
+}
+
+.our-menu .menu-dishes .menu-item h3 {
+    font-size: 2.125rem;
+    margin: 12px 0;
+}
+
 /* ---------- Media Query ---------- */
 @media screen and (min-width: 600px) {
     .spice-img {
         width: 120px;
         height: 120px;
+    }
+
+    .our-menu-section {
+        background-size: 350px auto;
     }
 
 }
@@ -481,6 +541,39 @@ address {
 
     .plan-diet .right-part-navbar img {
         order: 1;
+    }
+
+    .our-menu h2 {
+        font-size: 4rem;
+    }
+
+    .our-menu p {
+        font-size: 1rem;
+    }
+
+    .our-menu .menu-dishes {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 50px;
+        margin-top: 110px;
+    }
+
+    .our-menu .menu-dishes .menu-item:not(:last-child) {
+        margin-bottom: 75px;
+    }
+
+    .our-menu .menu-dishes .menu-item {
+        flex: 0 0 calc(50% - 30px); 
+    }
+
+    .our-menu .menu-dishes .menu-item h3 {
+        font-size: 3rem;
+        margin: 16px 0;
+    }
+
+    .our-menu .menu-dishes span {
+        font-size: 2rem;
+        top: -40px;
     }
 }
 
@@ -618,6 +711,41 @@ address {
 
     .plan-diet .right-side-plan p {
         margin-bottom: 75px;
+    }
+
+    .our-menu h2 {
+        font-size: 5rem;
+    }
+
+    .our-menu p {
+        font-size: 1.250rem;
+    }
+
+    .our-menu .menu-dishes {
+        gap: 50px;
+        margin-top: 130px;
+    }
+
+    .our-menu .menu-dishes .menu-item:not(:last-child) {
+        margin-bottom: 95px;
+    }
+
+    .our-menu .menu-dishes .menu-item {
+        flex: 0 0 calc(50% - 30px); 
+    }
+
+    .our-menu .menu-dishes .menu-item hr {
+        border-top-width: 3px;
+    }
+
+    .our-menu .menu-dishes .menu-item h3 {
+        font-size: 3.8rem;
+        margin: 20px 0;
+    }
+
+    .our-menu .menu-dishes span {
+        font-size: 2.5rem;
+        top: -50px;
     }
 }
 
@@ -806,6 +934,45 @@ address {
 
     .plan-diet .right-side-plan p {
         margin-bottom: 84px;
+    }
+
+    .our-menu-section {
+        background-size: 700px auto;
+    }
+
+    .our-menu h2 {
+        font-size: 6.75rem;
+    }
+
+    .our-menu p {
+        font-size: 1.5rem;
+    }
+
+    .our-menu .menu-dishes {
+        gap: 60px;
+        margin-top: 158px;
+    }
+
+    .our-menu .menu-dishes .menu-item {
+        flex: 0 0 calc(50% - 40px); 
+    }
+
+    .our-menu .menu-dishes .menu-item hr {
+        border-top-width: 4px;
+    }
+
+    .our-menu .menu-dishes .menu-item h3 {
+        font-size: 4.25rem;
+        margin: 24px 0;
+    }
+
+    .our-menu .menu-dishes span {
+        font-size: 3rem;
+        top: -60px;
+    }
+
+    .our-menu .menu-dishes .menu-item:not(:last-child) {
+        margin-bottom: 108px;
     }
 
 }
