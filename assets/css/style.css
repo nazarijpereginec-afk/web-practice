@@ -365,11 +365,14 @@ p {
 }
 
 .our-menu p,
-.excelent-cook p {
+.excelent-cook p,
+.features-section p {
     color: #4D4D4D;
 }
 
 .our-menu .menu-dishes .menu-item {
+    max-width: 792px;
+    height: auto;
     position: relative;
 }
 
@@ -420,6 +423,53 @@ p {
 .excelent-cook p {
     margin-top: 9px;
 }
+
+/* ---------- features section for mobile version ---------- */
+.features-section {
+    padding: 120px 0;
+}
+
+.features-section .features-list {
+    flex-direction: column;
+    gap: 40px;
+}
+
+.features-list .features-item {
+    max-width: 250px;
+    min-height: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.features-section h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--dark-color);
+    margin: 19.5px 0;
+    flex-grow: 1;
+}
+
+
+.features-item .features-icon {
+    width: 120px;
+    height: 120px;
+    background-color: #EBF0E4;
+    border-radius: 50%;
+    position: relative;
+    margin: 0 auto;
+}
+
+.features-item .features-icon img {
+    width: 82px;
+    height: 82px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 
 /* ---------- media Query ---------- */
 @media screen and (min-width: 600px) {
@@ -591,6 +641,7 @@ p {
     .our-menu .menu-dishes .menu-item h3 {
         font-size: 3rem;
         margin: 16px 0;
+        min-height: 7.5rem; 
     }
 
     .our-menu .menu-dishes span {
@@ -611,6 +662,30 @@ p {
 
     .excelent-cook p {
         margin-top: 12px;
+    }
+
+    /* ---------- features section for tablet version ---------- */
+    .features-section {
+        padding: 130px 0;
+    }
+
+    .features-section h3 {
+        font-size: 2rem;
+        margin: 25px 0;
+    }
+
+    .features-section .features-list {
+        flex-direction: row;
+    }
+
+    .features-item .features-icon {
+        width: 140px;
+        height: 140px;
+    }
+
+    .features-item .features-icon img {
+        width: 100px;
+        height: 100px;
     }
 }
 
@@ -805,6 +880,37 @@ p {
     .excelent-cook p {
         margin-top: 16px;
     }
+
+    /* ---------- features section for laptop version ---------- */
+    .features-section {
+        padding: 150px 0;
+    }
+
+    .features-section h3 {
+        font-size: 2.5rem;
+        margin: 32px 0;
+    }
+
+    .features-section .features-list {
+        flex-direction: row;
+        gap: 50px;
+    }
+
+    .features-list .features-item {
+        max-width: none;
+        width: 280px;
+        height: auto;
+    }
+
+    .features-item .features-icon {
+        width: 180px;
+        height: 180px;
+    }
+
+    .features-item .features-icon img {
+        width: 120px;
+        height: 120px;
+    }
 }
 
 @media screen and (min-width: 1120px) {
@@ -824,11 +930,23 @@ p {
         padding-top: 110px;
     }
 
+    /* ---------- our menu section for desktop version ---------- */
+    .our-menu .menu-dishes .menu-item h3 {
+        min-height: 9.5rem; 
+    }
+
     /* ---------- excelent cook section for desktop version ---------- */
     .excelent-cook-section {
         background-position: top 120px left 30px, bottom 45px right 110px; 
         background-size: 300px auto, 400px auto;
     }
+
+    /* ---------- features section for desktop version ---------- */
+    .features-list .features-item {
+        width: 300px;
+        height: auto;
+    }
+
 }
 
 @media screen and (min-width: 1500px) {
@@ -856,6 +974,12 @@ p {
     .excelent-cook-section {
         background-position: top 130px left 30px, bottom 60px right 130px; 
         background-size: 330px auto, 430px auto;
+    }
+
+    /* ---------- features section for desktop version ---------- */
+    .features-list .features-item {
+        width: 450px;
+        height: auto;
     }
 }
 
@@ -1027,7 +1151,7 @@ p {
         margin-bottom: 84px;
     }
 
-    /* ---------- our section for desktop version ---------- */
+    /* ---------- our menu section for desktop version ---------- */
     .our-menu-section {
         background-size: 700px auto;
     }
@@ -1048,6 +1172,7 @@ p {
     .our-menu .menu-dishes .menu-item h3 {
         font-size: 4.25rem;
         margin: 24px 0;
+        min-height: 10.6rem;
     }
 
     .our-menu .menu-dishes span {
@@ -1070,5 +1195,36 @@ p {
 
     .excelent-cook p {
         margin-top: 18px;
+    }
+
+    /* ---------- features section for laptop version ---------- */
+    .features-section {
+        padding: 150px 0;
+    }
+
+    .features-section h3 {
+        font-size: 3rem;
+        margin: 39px 0;
+    }
+
+    .features-section .features-list {
+        flex-direction: row;
+        gap: 60px;
+    }
+
+    .features-list .features-item {
+        max-width: none;
+        width: 508px;
+        height: auto;
+    }
+
+    .features-item .features-icon {
+        width: 260px;
+        height: 260px;
+    }
+
+    .features-item .features-icon img {
+        width: 184px;
+        height: 184px;
     }
 }
