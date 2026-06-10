@@ -82,7 +82,7 @@
         </div>
     </div>
     <main>
-        <section class="plan-diet-section">
+        <section class="plan-diet-section d-flex item-center">
             <div class="plan-diet content-wrap d-flex">
                 <div class="left-side-plan">
                     <img src="assets/images/vegetable_soup.png" alt="Vegetable soup">
@@ -95,7 +95,7 @@
                 </div>
             </div>
         </section>
-        <section class="our-menu-section">
+        <section class="our-menu-section d-flex item-center">
             <div class="content-wrap our-menu">
                 <h2>Our Menu</h2>
                 <p>This is a section of your menu. Give your section a brief description</p>
@@ -127,7 +127,7 @@
                 </div>
             </div>
         </section>
-        <section class="excelent-cook-section">
+        <section class="excelent-cook-section d-flex item-center">
             <div class="content-wrap excelent-cook d-flex justify-center">
                 <div class="image-side">
                     <img src="assets/images/human-and-food.png" alt=Human and food image"">
@@ -166,7 +166,7 @@
                 </div>
             </div>
         </section>
-        <section class="blog-section">
+        <section class="blog-section d-flex item-center">
             <div class="blog content-wrap d-flex">
                 <div class="left-side-blog">
                     <div class="blog-img-wrap">
@@ -194,7 +194,8 @@
                         <span class="blog-category">Fashion</span>
                     </div>
                     <ul class="post-meta d-flex">
-                        <li class="meta-icon"><img src="assets/images/icons/dianne-avatar.svg" alt="Dianne Russell"></li>
+                        <li class="meta-icon"><img src="assets/images/icons/dianne-avatar.svg" alt="Dianne Russell">
+                        </li>
                         <li class="meta-author">Julie Christie</li>
                         <li class="meta-date">October 17, 2021</li>
                         <li class="meta-time">3:33 pm</li>
@@ -208,6 +209,31 @@
                         <img src="assets/images/icons/Icon_arrow-right.svg" alt="Swipe right">
                     </div>
                 </div>
+            </div>
+        </section>
+        <section class="reservation-section d-flex item-center">
+            <div class="reservation content-wrap">
+                <h2>Make a Reservation</h2>
+                <p>Get in touch with restaurant</p>
+
+                <form action="" class="reservation-form">
+                    <div class="input-wrap d-flex">
+                        <input type="text" placeholder="16/22/2021">
+                        <select name="time" required>
+                            <option value="17:00">5:00 pm</option>
+                            <option value="17:30">5:30 pm</option>
+                            <option value="18:00" selected>6:00 pm</option>
+                            <option value="18:30">6:30 pm</option>
+                        </select>
+                        <select name="guests" required>
+                            <option value="1">1 Person</option>
+                            <option value="2" selected>2 Person</option>
+                            <option value="3">3 Person</option>
+                            <option value="4">4 Person</option>
+                        </select>
+                    </div>
+                    <button type="submit">Book Now</button>
+                </form>
             </div>
         </section>
     </main>

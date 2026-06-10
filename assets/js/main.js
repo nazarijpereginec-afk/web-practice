@@ -12,3 +12,6 @@ iconClose.addEventListener('click', () => {
     mainMenu.classList.remove('menu-open');
     mainHeader.classList.remove('d-none');
 })
+
+let viewportWidth = window.innerWidth;
+console.log("Ширина вікна браузера: " + viewportWidth);
