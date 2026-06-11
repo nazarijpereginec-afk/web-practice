@@ -327,24 +327,27 @@ main {
 h2 {
     font-weight: 700;
     font-size: 3.375rem;
+    line-height: 60px;
 }
 
 h3 {
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--dark-color);
+    line-height: 32px;
 }
 
 p {
     font-family: 'Lato', sans-serif;
     font-size: 0.75rem;
     font-weight: 400;
+    line-height: 100%;
+    letter-spacing: 2%;
 }
 
 main p {
     color: #4D4D4D;
 }
-
 
 hr {
     border: none;
@@ -365,7 +368,7 @@ hr {
     align-items: flex-start;
 }
 
-.plan-diet .left-side-plan h2 {
+.plan-diet .left-side-plan h3 {
     font-size: 2.125rem;
     margin: 27px 0;
     font-weight: 700;
@@ -389,6 +392,12 @@ hr {
 
 .plan-diet .right-side-plan img {
     order: -1;
+}
+
+.right-side-plan,
+.left-side-plan {
+    max-width: 450px;
+    margin: 0 auto;
 }
 
 /* ---------- our menu section for mobile version ---------- */
@@ -502,6 +511,12 @@ hr {
     gap: 30px;
 }
 
+.blog-section .left-side-blog,
+.blog-section .right-side-blog {
+    max-width: 450px;
+    margin: 0 auto;
+}
+
 .blog-section .blog-img-wrap {
     position: relative;
 }
@@ -536,6 +551,10 @@ hr {
 .blog-section .post-meta li img {
     width: 40px;
     height: 40px;
+}
+
+.blog-section p {
+    font-size: 0.688rem;
 }
 
 .blog-section hr {
@@ -608,16 +627,18 @@ hr {
 
 .input-wrap input,
 .input-wrap select {
+    width: auto;
+    height: auto;
     font-family: 'Lato', sans-serif;
-    height: 48px;
-    padding: 0 20px;
+    padding: 15px 20px;
     border: 1px solid var(--dark-color);
     color: var(--dark-color);
 }
 
 button[type="submit"] {
-    width: 172px;
-    height: 44px;
+    width: auto;
+    height: auto;
+    padding: 10px 47.5px;
     background-color: var(--main-bg-color);
     color: var(--light-color);
     font-size: 1rem;
@@ -633,6 +654,56 @@ select {
     background-repeat: no-repeat;
     background-position: right 20px center;
     background-size: 14px 8px;
+    cursor: pointer;
+}
+
+/* ---------- categories section for mobile version ---------- */
+.menu-categories-section {
+    padding: 64px 0;
+}
+
+.menu-categories h2, .menu-categories p {
+    text-align: center;
+}
+
+.menu-categories p {
+    margin-top: 9px;
+    margin-bottom: 63px;
+}
+
+.categories-list {
+    flex-direction: column;
+    gap: 30px;
+}
+
+.menu-categories .categories-item {
+    position: relative;
+    max-width: 450px;
+    margin: 0 auto;
+}
+
+.categories-item .food-img{
+    width: 100%;
+    height: auto;
+}
+
+.categories-item h3,
+.categories-item .vector {
+    position: absolute;
+    color: var(--main-bg-color);
+}
+
+.categories-item h3 {
+    top: 24px;
+    left: 20px;
+    line-height: 32px;
+}
+
+.categories-item .vector {
+    width: 24px;
+    height: 14px;
+    top: 25px;
+    right: 24px;
     cursor: pointer;
 }
 
@@ -761,14 +832,17 @@ select {
     /* ---------- basic teg styles for tablet version ---------- */
     h2 {
         font-size: 4rem;
+        line-height: 80px;
     }
 
     h3 {
         font-size: 2rem;
+        line-height: 48px;
     }
 
     p {
         font-size: 1rem;
+        line-height: 115%;
     }
 
     /* ---------- plan diet section for tablet version ---------- */
@@ -778,7 +852,12 @@ select {
         padding-top: 90px;
     }
 
-    .plan-diet .left-side-plan h2 {
+    .right-side-plan,
+    .left-side-plan {
+        flex: 1;
+    }
+
+    .plan-diet .left-side-plan h3 {
         font-size: 2.5rem;
         margin: 35px 0;
         font-weight: 700;
@@ -909,6 +988,10 @@ select {
         min-height: 3.9em;
     }
 
+    .blog-section p {
+        font-size: 0.9rem;
+    }
+
     .blog-section .post-meta li:not(:first-child, :nth-child(2))::before {
         width: 3px;
         height: 3px;
@@ -956,23 +1039,42 @@ select {
 
     .input-wrap input,
     .input-wrap select {
-        flex: 1;
-        min-width: 0;
-        height: 63px;
-        padding: 0 30px;
+        padding: 20px 30px;
         width: 200px;
     }
 
     button[type="submit"] {
         font-size: 1.350rem;
-        width: 220px;
-        height: 57px;
+        padding: 12.5px 62px;
     }
 
     select {
         background-position: right 25px center;
         background-size: 18px 10px;
     }
+
+    /* ---------- categories section for tablet version ---------- */
+    .menu-categories-section {
+        padding: 85px 0;
+    }
+
+    .menu-categories p {
+        margin-top: 14px;
+        margin-bottom: 85px;
+    }
+
+    .categories-list {
+        flex-direction: row;
+    }
+
+    .categories-item {
+        flex: 1;
+    }
+
+    .categories-item h3 {
+        font-size: 1.5rem;
+    }
+
 }
 
 @media screen and (min-width: 1024px) {
@@ -1101,14 +1203,17 @@ select {
     /* ---------- basic teg styles for laptop version ---------- */
     h2 {
         font-size: 5rem;
+        line-height: 100px;
     }
 
     h3 {
         font-size: 2.5rem;
+        line-height: 55px;
     }
 
     p {
         font-size: 1.250rem;
+        line-height: 125%;
     }
 
     hr {
@@ -1121,7 +1226,7 @@ select {
         padding-top: 100px;
     }
 
-    .plan-diet .left-side-plan h2 {
+    .plan-diet .left-side-plan h3 {
         margin: 45px 0;
     }
 
@@ -1215,6 +1320,10 @@ select {
         margin: 55px 0 40px 0;
     }
 
+    .blog-section p {
+        font-size: 1.125rem;
+    }
+
     .blog-section .post-meta li {
         font-size: 1rem;
     }
@@ -1276,20 +1385,48 @@ select {
 
     .input-wrap input,
     .input-wrap select {
-        height: 78px;
-        padding: 0 35px;
+        padding: 25px 35px;
         width: 280px;
     }
 
     button[type="submit"] {
         font-size: 1.750rem;
-        width: 280px;
-        height: 70px;
+        padding: 15px 75px;
     }
 
     select {
         background-position: right 30px center;
         background-size: 22px 12px;
+    }
+
+    /* ---------- categories section for laptop version ---------- */
+    .menu-categories-section {
+        padding: 105px 0;
+    }
+
+    .menu-categories p {
+        margin-top: 16px;
+        margin-bottom: 110px;
+    }
+
+    .categories-list {
+        flex-direction: row;
+        gap: 40px;
+    }
+    .categories-item h3 {
+        top: 34px;  
+        left: 20px;
+    }
+
+    .categories-item .vector {
+        width: 32px;
+        height: 16px;
+        top: 35px;
+        right: 28px;
+    }
+
+    .categories-item h3 {
+        font-size: 2rem;
     }
 }
 
@@ -1331,6 +1468,28 @@ select {
     .input-wrap input,
     .input-wrap select {
         width: 300px;
+    }
+
+    .categories-item h3 {
+        font-size: 2.3rem;
+    }
+}
+
+@media screen and (min-width: 1300px) {
+    .categories-item h3 {
+        top: 40px;  
+        left: 30px;
+    }
+
+    .categories-item .vector {
+        width: 40px;
+        height: 22px;
+        top: 44px;
+        right: 38px;
+    }
+
+    .categories-item h3 {
+        font-size: 2.5rem;
     }
 }
 
@@ -1525,14 +1684,17 @@ select {
     /* ---------- basic teg styles for desktop version ---------- */
     h2 {
         font-size: 6.75rem;
+        line-height: 120px;
     }
 
     h3 {
         font-size: 3rem;
+        line-height: 64px;
     }
 
     p {
         font-size: 1.5rem;
+        line-height: 140%;
     }
 
     hr {
@@ -1545,7 +1707,7 @@ select {
         padding: 120px 0;
     }
 
-    .plan-diet .left-side-plan h2 {
+    .plan-diet .left-side-plan h3 {
         margin: 54px 0;
         font-size: 4.25rem;
     }
@@ -1648,6 +1810,10 @@ select {
         margin: 18px 0;
     }
 
+    .blog-section p {
+        font-size: 1.375rem;
+    }
+
     .blog-section .post-meta li:not(:first-child, :nth-child(2))::before {
         margin-right: 14px;
         margin-left: 14px;
@@ -1693,19 +1859,47 @@ select {
 
     .input-wrap input,
     .input-wrap select {
-        height: 96px;
-        padding: 0 40px;
+        padding: 30px 40px;
         width: 510px;
     }
 
     button[type="submit"] {
         font-size: 2rem;
-        width: 344px;
-        height: 88px;
+        padding: 20px 94.5px;
     }
 
     select {
         background-position: right 40px center;
         background-size: 28px 16px;
+    }
+
+    /* ---------- categories section for laptop version ---------- */
+    .menu-categories-section {
+        padding: 128px 0;
+    }
+
+    .menu-categories p {
+        margin-top: 18px;
+        margin-bottom: 178px;
+    }
+
+    .categories-list {
+        flex-direction: row;
+        gap: 60px;
+    }
+    .categories-item h3 {
+        top: 48px;  
+        left: 40px;
+    }
+
+    .categories-item .vector {
+        width: 48px;
+        height: 28px;
+        top: 49px;
+        right: 48px;
+    }
+
+    .categories-item h3 {
+        font-size: 3rem;
     }
 }
