@@ -670,12 +670,12 @@ select {
     padding: 64px 0;
 }
 
-.menu-categories h2,
-.menu-categories p {
+.menu-categories-wrap h2,
+.menu-categories-wrap p {
     text-align: center;
 }
 
-.menu-categories p {
+.menu-categories-wrap p {
     margin-top: 9px;
     margin-bottom: 63px;
 }
@@ -685,7 +685,7 @@ select {
     gap: 30px;
 }
 
-.menu-categories .categories-item {
+.menu-categories-wrap .categories-item {
     position: relative;
     max-width: 450px;
     margin: 0 auto;
@@ -2381,7 +2381,7 @@ select {
         padding: 128px 0;
     }
 
-    .menu-categories p {
+    .menu-categories-wrap p {
         margin-top: 18px;
         margin-bottom: 178px;
     }
