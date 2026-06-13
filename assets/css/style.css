@@ -25,6 +25,10 @@ img {
     display: block;
 }
 
+ul {
+    list-style-type: none;
+}
+
 a {
     display: block;
     text-decoration: none;
@@ -50,6 +54,14 @@ select:focus {
 
 address {
     font-style: normal;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
 }
 
 /* ---------- body ---------- */
@@ -206,14 +218,20 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    justify-content: center;
+    display: flex;
     align-items: center;
-    flex-direction: column;
-    gap: 40px;
 }
 
 .navigation-full-screen.menu-open {
     height: 100vh;
+}
+
+.navigation-menu-wrap {
+    width: 100%;
+    padding: 111px 20px;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
 }
 
 .navigation-full-screen .menu ul li:not(ol li) {
@@ -361,36 +379,36 @@ hr {
     padding-top: 70px;
 }
 
-.plan-diet {
+.plan-diet-wrap {
     flex-direction: column;
     gap: 60px;
     justify-content: space-between;
     align-items: flex-start;
 }
 
-.plan-diet .left-side-plan h3 {
+.plan-diet-wrap .left-side-plan h3 {
     font-size: 2.125rem;
     margin: 27px 0;
     font-weight: 700;
     color: var(--light-color)
 }
 
-.plan-diet p {
+.plan-diet-wrap p {
     font-size: 1rem;
     font-weight: 400;
     color: var(--light-color)
 }
 
-.plan-diet .right-side-plan {
+.plan-diet-wrap .right-side-plan {
     flex-direction: column;
 }
 
-.plan-diet .right-side-plan p {
+.plan-diet-wrap .right-side-plan p {
     order: 1;
     margin-top: 42px;
 }
 
-.plan-diet .right-side-plan img {
+.plan-diet-wrap .right-side-plan img {
     order: -1;
 }
 
@@ -406,13 +424,13 @@ hr {
     background-size: 250px auto;
 }
 
-.our-menu .menu-dishes .menu-item {
+.our-menu-wrap .menu-dishes .menu-item {
     max-width: 792px;
     height: auto;
     position: relative;
 }
 
-.our-menu span {
+.our-menu-wrap span {
     font-weight: 700;
     font-size: 1.5rem;
     position: absolute;
@@ -420,17 +438,17 @@ hr {
     top: -30px;
 }
 
-.our-menu .menu-dishes {
+.our-menu-wrap .menu-dishes {
     flex-direction: column;
     margin-top: 79px;
     gap: 40px;
 }
 
-.our-menu .menu-dishes .menu-item:not(:last-child) {
+.our-menu-wrap .menu-dishes .menu-item:not(:last-child) {
     margin-bottom: 54px;
 }
 
-.our-menu .menu-dishes .menu-item h3 {
+.our-menu-wrap .menu-dishes .menu-item h3 {
     font-size: 2.125rem;
     margin: 12px 0;
 }
@@ -446,12 +464,12 @@ hr {
     padding: 150px 0;
 }
 
-.excelent-cook {
+.excelent-cook-wrap {
     flex-direction: column;
     gap: 30px;
 }
 
-.excelent-cook p {
+.excelent-cook-wrap p {
     margin-top: 9px;
 }
 
@@ -500,7 +518,7 @@ hr {
     padding-bottom: 105px;
 }
 
-.blog-section .blog {
+.blog-section .blog-wrap {
     flex-direction: column;
     gap: 30px;
 }
@@ -583,18 +601,18 @@ hr {
     background-color: #EBF0E4;
 }
 
-.reservation {
+.reservation-wrap {
     text-align: center;
 }
 
-.reservation h2 {
+.reservation-wrap h2 {
     line-height: 1.1;
     margin-top: 9px;
     font-size: 2.9rem;
-    
+
 }
 
-.reservation p {
+.reservation-wrap p {
     margin-bottom: 66px;
 }
 
@@ -604,11 +622,13 @@ hr {
     margin-bottom: 66.5px;
 }
 
-.input-wrap input::placeholder {
+.input-wrap input::placeholder,
+.input-wrap input {
     color: var(--dark-color);
 }
 
 .input-wrap input::placeholder,
+.input-wrap input,
 .input-wrap select {
     font-size: 0.75rem;
 }
@@ -650,7 +670,8 @@ select {
     padding: 64px 0;
 }
 
-.menu-categories h2, .menu-categories p {
+.menu-categories h2,
+.menu-categories p {
     text-align: center;
 }
 
@@ -670,7 +691,7 @@ select {
     margin: 0 auto;
 }
 
-.categories-item .food-img{
+.categories-item .food-img {
     width: 100%;
     height: auto;
 }
@@ -761,17 +782,136 @@ select {
     cursor: pointer;
 }
 
-/* ---------- media Query ---------- */
-@media screen and (min-width: 481px) {
-.title-photo,
-.right-side-plan,
-.left-side-plan,
-.excelent-cook-section .image-side,
-.blog-section .left-side-blog,
-.blog-section .right-side-blog {
-    max-width: 450px;
+/* ---------- footer for mobile version ---------- */
+.footer {
+    background-color: var(--main-bg-color);
+    padding-top: 66px;
+    padding-bottom: 37px;
+    color: var(--light-color);
+    flex-direction: column;
+}
+
+.footer-wrap {
+    width: 100%;
+}
+
+.footer-main {
+    flex-direction: column;
+    gap: 70px;
+}
+
+.footer-main .footer-brand h3 {
+    font-size: 2.125rem;
+    font-weight: 700;
+    color: var(--light-color);
+    line-height: 100%;
+}
+
+.footer-main h4 {
+    font-weight: 700;
+    line-height: 24px;
+    font-size: 1rem;
+    margin-bottom: 27.5px;
+}
+
+.footer-main .footer-contact li a,
+.footer-contact address {
+    font-family: 'Lato', sans-serif;
+    font-size: 0.563rem;
+    letter-spacing: 2%;
+    line-height: 12.5px;
+    white-space: nowrap;
+}
+
+.footer-contact li address {
+    margin-top: 14px;
+}
+
+.subscribe-form {
+    flex-direction: column;
+    gap: 17.5px;
+}
+
+.footer-subscribe input[type="email"] {
+    padding: 15px 20px;
+    border-width: 2px;
+    border-color: var(--light-color);
+    outline: none;
+}
+
+.footer-subscribe input[type="email"],
+.footer-subscribe input[type="email"]::placeholder {
+    font-family: 'Lato', sans-serif;
+    color: var(--light-color);
+    font-size: 0.75rem;
+}
+
+.footer-subscribe .btn-wrap {
     margin: 0 auto;
 }
+
+.footer-subscribe button[type="submit"] {
+    background-color: #5E6600;
+    padding: 10px 23px;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 100%;
+    cursor: pointer;
+}
+
+.footer-subscribe p {
+    font-family: 'Lato', sans-serif;
+    font-size: 0.438rem;
+    margin-top: 7.5px;
+    max-width: 389px;
+
+}
+
+.footer hr {
+    width: 100%;
+    border-top-color: var(--light-color);
+    border-width: 2px;
+    margin-top: 68.5px;
+}
+
+.footer-bottom {
+    width: 100%;
+    margin-top: 29px;
+    text-align: center;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.footer-bottom span {
+    font-family: 'Lato', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 400;
+    line-height: 100%;
+    letter-spacing: 2%;
+}
+
+.footer-socials {
+    justify-content: center;
+    gap: 14px;
+}
+
+.footer-socials a {
+    cursor: pointer;
+}
+
+/* ---------- media Query ---------- */
+@media screen and (min-width: 481px) {
+
+    /* ---------- iPads, Tablets ---------- */
+    .title-photo,
+    .right-side-plan,
+    .left-side-plan,
+    .excelent-cook-section .image-side,
+    .blog-section .left-side-blog,
+    .blog-section .right-side-blog {
+        max-width: 450px;
+        margin: 0 auto;
+    }
 }
 
 @media screen and (min-width: 600px) {
@@ -787,6 +927,8 @@ select {
 }
 
 @media screen and (min-width: 769px) {
+    /* ---------- Small screens, laptops ---------- */
+
     /* ---------- content wrap for tablet version ---------- */
     .content-wrap {
         padding: 0 40px;
@@ -829,11 +971,11 @@ select {
     }
 
     /* ---------- navigation menu full screen for tablet version ---------- */
-    .navigation-full-screen {
-        padding-top: 0;
+    .navigation-menu-wrap {
         justify-content: space-between;
+        align-items: flex-end;
         flex-direction: row;
-        padding: 0 80px 0 50px;
+        padding: 150px 40px;
     }
 
     .navigation-full-screen .menu ul li a {
@@ -912,7 +1054,7 @@ select {
     }
 
     /* ---------- plan diet section for tablet version ---------- */
-    .plan-diet {
+    .plan-diet-wrap {
         flex-direction: row;
         gap: 200px;
         padding-top: 90px;
@@ -923,24 +1065,24 @@ select {
         flex: 1;
     }
 
-    .plan-diet .left-side-plan h3 {
+    .plan-diet-wrap .left-side-plan h3 {
         font-size: 2.5rem;
         margin: 35px 0;
         font-weight: 700;
     }
 
-    .plan-diet p {
+    .plan-diet-wrap p {
         font-family: 'Lato', sans-serif;
         font-size: 1.125rem;
     }
 
-    .plan-diet .right-side-plan p {
+    .plan-diet-wrap .right-side-plan p {
         order: -1;
         margin-top: 0;
         margin-bottom: 60px;
     }
 
-    .plan-diet .right-part-navbar img {
+    .plan-diet-wrap .right-part-navbar img {
         order: 1;
     }
 
@@ -949,28 +1091,28 @@ select {
         background-size: 400px auto;
     }
 
-    .our-menu .menu-dishes {
+    .our-menu-wrap .menu-dishes {
         flex-direction: row;
         flex-wrap: wrap;
         gap: 50px;
         margin-top: 110px;
     }
 
-    .our-menu .menu-dishes .menu-item:not(:last-child) {
+    .our-menu-wrap .menu-dishes .menu-item:not(:last-child) {
         margin-bottom: 75px;
     }
 
-    .our-menu .menu-dishes .menu-item {
+    .our-menu-wrap .menu-dishes .menu-item {
         flex: 0 0 calc(50% - 30px);
     }
 
-    .our-menu .menu-dishes .menu-item h3 {
+    .our-menu-wrap .menu-dishes .menu-item h3 {
         font-size: 3rem;
         margin: 16px 0;
         min-height: 7.5rem;
     }
 
-    .our-menu .menu-dishes span {
+    .our-menu-wrap .menu-dishes span {
         font-size: 2rem;
         top: -40px;
     }
@@ -986,12 +1128,12 @@ select {
         margin: 0;
     }
 
-    .excelent-cook {
+    .excelent-cook-wrap {
         flex-direction: row;
         gap: 40px;
     }
 
-    .excelent-cook p {
+    .excelent-cook-wrap p {
         margin-top: 12px;
     }
 
@@ -1019,7 +1161,7 @@ select {
     }
 
     /* ---------- blogs section for tablet version ---------- */
-    .blog-section .blog {
+    .blog-section .blog-wrap {
         flex-direction: row;
         gap: 40px;
         align-items: stretch;
@@ -1088,12 +1230,12 @@ select {
     }
 
     /* ---------- reservation section for tablet version ---------- */
-    .reservation h2 {
+    .reservation-wrap h2 {
         margin-top: 14px;
         font-size: 4rem;
     }
 
-    .reservation p {
+    .reservation-wrap p {
         margin-bottom: 97px;
     }
 
@@ -1104,6 +1246,7 @@ select {
     }
 
     .input-wrap input::placeholder,
+    .input-wrap input,
     .input-wrap select {
         font-size: 1rem;
     }
@@ -1129,7 +1272,7 @@ select {
         padding: 85px 0;
     }
 
-    .menu-categories p {
+    .menu-categories-wrap p {
         margin-top: 14px;
         margin-bottom: 85px;
     }
@@ -1194,9 +1337,104 @@ select {
         width: 30px;
         height: 15px;
     }
+
+    /* ---------- footer for tablet version ---------- */
+    .footer {
+        padding-top: 90px;
+        padding-bottom: 57px;
+    }
+
+    .footer-main {
+        flex-direction: row;
+        gap: 0;
+    }
+
+    .footer-main .footer-contact {
+        margin-left: 119px;
+    }
+
+    .footer-main .footer-brand h3 {
+        font-size: 2.5rem;
+    }
+
+    .footer-main h4 {
+        line-height: 36px;
+        font-size: 1.250rem;
+        margin-bottom: 38px;
+    }
+
+    .footer-main .footer-contact li a,
+    .footer-contact address {
+        font-size: 0.700rem;
+        line-height: 18px;
+    }
+
+    .footer-contact li address {
+        margin-top: 20px;
+    }
+
+    .footer-subscribe {
+        margin-left: 108px;
+        flex: 1;
+    }
+
+    .subscribe-form {
+        flex-direction: column;
+    }
+
+    .input-email-wrap {
+        flex: 1;
+    }
+
+    .footer-subscribe input[type="email"] {
+        width: 100%;
+        padding: 20px 30px;
+    }
+
+    .footer-subscribe input[type="email"],
+    .footer-subscribe input[type="email"]::placeholder {
+        font-size: 1rem;
+    }
+
+    .footer-subscribe button[type="submit"] {
+        padding: 15px 34px;
+        font-size: 1rem;
+        margin-top: 0;
+        margin-left: 0;
+    }
+
+    .footer-subscribe p {
+        margin-top: 10px;
+        font-size: 0.625rem;
+    }
+
+    .footer hr {
+        margin-top: 86px;
+    }
+
+    .footer-bottom {
+        width: 100%;
+        margin-top: 42px;
+        flex-direction: row;
+        gap: 0;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .footer-bottom span {
+        font-size: 1rem;
+        line-height: 120%;
+    }
+
+    .footer-socials {
+        justify-content: center;
+        gap: 20px;
+    }
 }
 
 @media screen and (min-width: 1025px) {
+    /* ---------- Desktops, large screens ---------- */
+
     /* ---------- header for laptop version ---------- */
     .main-header {
         padding-bottom: 150px;
@@ -1223,10 +1461,8 @@ select {
     }
 
     /* ---------- navigation menu full screen for laptop version ---------- */
-    .navigation-full-screen {
-        padding-top: 0;
-        justify-content: space-between;
-        flex-direction: row;
+    .navigation-menu-wrap {
+        padding: 190px 40px;
     }
 
     .navigation-full-screen .menu ul li a {
@@ -1239,14 +1475,6 @@ select {
 
     .contact-info ul li a {
         font-size: 1.250rem;
-    }
-
-    .navigation-full-screen {
-        padding-left: 200px;
-    }
-
-    .navigation-full-screen .contact-info {
-        padding-right: 150px;
     }
 
     .contact-info h2 {
@@ -1339,20 +1567,20 @@ select {
     }
 
     /* ---------- plan diet section for laptop version ---------- */
-    .plan-diet {
+    .plan-diet-wrap {
         gap: 250px;
         padding-top: 100px;
     }
 
-    .plan-diet .left-side-plan h3 {
+    .plan-diet-wrap .left-side-plan h3 {
         margin: 45px 0;
     }
 
-    .plan-diet p {
+    .plan-diet-wrap p {
         font-size: 1.250rem;
     }
 
-    .plan-diet .right-side-plan p {
+    .plan-diet-wrap .right-side-plan p {
         margin-bottom: 75px;
     }
 
@@ -1361,25 +1589,25 @@ select {
         background-size: 450px auto;
     }
 
-    .our-menu .menu-dishes {
+    .our-menu-wrap .menu-dishes {
         gap: 50px;
         margin-top: 130px;
     }
 
-    .our-menu .menu-dishes .menu-item:not(:last-child) {
+    .our-menu-wrap .menu-dishes .menu-item:not(:last-child) {
         margin-bottom: 95px;
     }
 
-    .our-menu .menu-dishes .menu-item {
+    .our-menu-wrap .menu-dishes .menu-item {
         flex: 0 0 calc(50% - 30px);
     }
 
-    .our-menu .menu-dishes .menu-item h3 {
+    .our-menu-wrap .menu-dishes .menu-item h3 {
         font-size: 3.8rem;
         margin: 20px 0;
     }
 
-    .our-menu .menu-dishes span {
+    .our-menu-wrap .menu-dishes span {
         font-size: 2.5rem;
         top: -50px;
     }
@@ -1391,11 +1619,11 @@ select {
         padding: 200px 0;
     }
 
-    .excelent-cook {
+    .excelent-cook-wrap {
         gap: 50px;
     }
 
-    .excelent-cook p {
+    .excelent-cook-wrap p {
         margin-top: 16px;
     }
 
@@ -1424,7 +1652,7 @@ select {
     }
 
     /* ---------- blogs section for laptop version ---------- */
-    .blog-section .blog {
+    .blog-section .blog-img-wrap {
         gap: 50px;
     }
 
@@ -1482,12 +1710,12 @@ select {
         padding: 150px 0;
     }
 
-    .reservation h2 {
+    .reservation-wrap h2 {
         font-size: 5rem;
         margin-top: 16px;
     }
 
-    .reservation p {
+    .reservation-wrap p {
         margin-bottom: 110px;
     }
 
@@ -1497,6 +1725,7 @@ select {
     }
 
     .input-wrap input::placeholder,
+    .input-wrap input,
     .input-wrap select {
         font-size: 1.250rem;
     }
@@ -1522,7 +1751,7 @@ select {
         padding: 105px 0;
     }
 
-    .menu-categories p {
+    .menu-categories-wrap p {
         margin-top: 16px;
         margin-bottom: 110px;
     }
@@ -1531,8 +1760,9 @@ select {
         flex-direction: row;
         gap: 40px;
     }
+
     .categories-item h3 {
-        top: 34px;  
+        top: 34px;
         left: 20px;
     }
 
@@ -1591,6 +1821,80 @@ select {
         width: 40px;
         height: 20px;
     }
+
+    /* ---------- footer for laptop version ---------- */
+    .footer {
+        padding-top: 113px;
+        padding-bottom: 69px;
+    }
+
+    .footer-main .footer-contact {
+        margin-left: 189px;
+    }
+
+    .footer-main .footer-brand h3 {
+        font-size: 3.225rem;
+    }
+
+    .footer-main h4 {
+        font-size: 1.750rem;
+        margin-bottom: 46px;
+    }
+
+    .footer-main .footer-contact li a,
+    .footer-contact address {
+        font-size: 0.9rem;
+        line-height: 22px;
+    }
+
+    .footer-contact li address {
+        margin-top: 24px;
+    }
+
+    .footer-subscribe {
+        margin-left: 166px;
+    }
+
+    .subscribe-form {
+        gap: 26px;
+    }
+
+    .footer-subscribe input[type="email"] {
+        width: 100%;
+        padding: 25px 35px;
+    }
+
+    .footer-subscribe input[type="email"],
+    .footer-subscribe input[type="email"]::placeholder {
+        font-size: 1.250rem;
+    }
+
+    .footer-subscribe button[type="submit"] {
+        padding: 20px 46px;
+        font-size: 1.250rem;
+    }
+
+    .footer-subscribe p {
+        margin-top: 12.5px;
+        font-size: 0.825rem;
+    }
+
+    .footer hr {
+        margin-top: 108px;
+    }
+
+    .footer-bottom {
+        margin-top: 50px;
+    }
+
+    .footer-bottom span {
+        font-size: 1.250rem;
+        line-height: 130%;
+    }
+
+    .footer-socials {
+        gap: 25px;
+    }
 }
 
 @media screen and (min-width: 1120px) {
@@ -1606,13 +1910,13 @@ select {
     }
 
     /* ---------- plan diet section for desktop version ---------- */
-    .plan-diet {
+    .plan-diet-wrap {
         gap: 280px;
         padding-top: 110px;
     }
 
     /* ---------- our menu section for desktop version ---------- */
-    .our-menu .menu-dishes .menu-item h3 {
+    .our-menu-wrap .menu-dishes .menu-item h3 {
         min-height: 9.5rem;
     }
 
@@ -1639,8 +1943,10 @@ select {
 }
 
 @media screen and (min-width: 1300px) {
+    /* ---------- Extra large screens, TV ---------- */
+
     .categories-item h3 {
-        top: 40px;  
+        top: 40px;
         left: 30px;
     }
 
@@ -1660,9 +1966,23 @@ select {
         background-size: 260px 220px;
         background-position: top 85px right 15px;
     }
+
+    .subscribe-form {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .footer-subscribe button[type="submit"] {
+        flex-shrink: 0;
+    }
+
+    .footer-subscribe .btn-wrap {
+        line-height: 78px;
+    }
 }
 
 @media screen and (min-width: 1500px) {
+
     /* ---------- content wrap for desktop version ---------- */
     .content-wrap {
         padding: 0 80px;
@@ -1677,8 +1997,12 @@ select {
         font-size: 6.8rem;
     }
 
+    .navigation-menu-wrap {
+        padding: 190px 80px;
+    }
+
     /* ---------- plan diet section for desktop version ---------- */
-    .plan-diet {
+    .plan-diet-wrap {
         gap: 300px;
         padding-top: 120px;
     }
@@ -1704,7 +2028,6 @@ select {
         background-position: right 35px center;
     }
 
-    
     .reviews-section {
         background-position: top 85px right 90px;
     }
@@ -1717,6 +2040,7 @@ select {
 }
 
 @media screen and (min-width: 1920px) {
+    /* ---------- Screen like figma ---------- */
 
     /* ---------- content wrap for desktop version ---------- */
     .content-wrap {
@@ -1769,6 +2093,10 @@ select {
     }
 
     /* ---------- navigation menu full screen for desktop version ---------- */
+    .navigation-menu-wrap {
+        padding: 222px 138px;
+    }
+
     .navigation-full-screen .menu ul li a {
         font-size: 4.125rem;
     }
@@ -1876,17 +2204,17 @@ select {
     }
 
     /* ---------- plan diet section for desktop version ---------- */
-    .plan-diet {
+    .plan-diet-wrap {
         gap: 344px;
         padding: 120px 0;
     }
 
-    .plan-diet .left-side-plan h3 {
+    .plan-diet-wrap .left-side-plan h3 {
         margin: 54px 0;
         font-size: 4.25rem;
     }
 
-    .plan-diet .right-side-plan p {
+    .plan-diet-wrap .right-side-plan p {
         margin-bottom: 84px;
     }
 
@@ -1895,27 +2223,27 @@ select {
         background-size: 700px auto;
     }
 
-    .our-menu .menu-dishes {
+    .our-menu-wrap .menu-dishes {
         gap: 60px;
         margin-top: 158px;
     }
 
-    .our-menu .menu-dishes .menu-item {
+    .our-menu-wrap .menu-dishes .menu-item {
         flex: 0 0 calc(50% - 40px);
     }
 
-    .our-menu .menu-dishes .menu-item h3 {
+    .our-menu-wrap .menu-dishes .menu-item h3 {
         font-size: 4.25rem;
         margin: 24px 0;
         min-height: 10.6rem;
     }
 
-    .our-menu .menu-dishes span {
+    .our-menu-wrap .menu-dishes span {
         font-size: 3rem;
         top: -60px;
     }
 
-    .our-menu .menu-dishes .menu-item:not(:last-child) {
+    .our-menu-wrap .menu-dishes .menu-item:not(:last-child) {
         margin-bottom: 108px;
     }
 
@@ -1924,11 +2252,11 @@ select {
         background-size: 365px auto, 465px auto;
     }
 
-    .excelent-cook {
+    .excelent-cook-wrap {
         gap: 60px;
     }
 
-    .excelent-cook p {
+    .excelent-cook-wrap p {
         margin-top: 18px;
     }
 
@@ -1957,7 +2285,7 @@ select {
     }
 
     /* ---------- blogs section for laptop version ---------- */
-    .blog-section .blog {
+    .blog-section .blog-wrap {
         gap: 60px;
     }
 
@@ -2012,12 +2340,12 @@ select {
         padding: 237px 0;
     }
 
-    .reservation h2 {
+    .reservation-wrap h2 {
         font-size: 6.75rem;
         margin-top: 18px;
     }
 
-    .reservation p {
+    .reservation-wrap p {
         margin-bottom: 133px;
     }
 
@@ -2027,6 +2355,7 @@ select {
     }
 
     .input-wrap input::placeholder,
+    .input-wrap input,
     .input-wrap select {
         font-size: 1.5rem;
     }
@@ -2061,8 +2390,9 @@ select {
         flex-direction: row;
         gap: 60px;
     }
+
     .categories-item h3 {
-        top: 48px;  
+        top: 48px;
         left: 40px;
     }
 
@@ -2077,7 +2407,7 @@ select {
         font-size: 3rem;
     }
 
-     /* ---------- reviews section for desktop version ---------- */
+    /* ---------- reviews section for desktop version ---------- */
     .reviews-section {
         padding: 118px 0;
         background-size: 282px 234px;
@@ -2120,5 +2450,86 @@ select {
     .reviews-section .bottom-wrap .scroll-wrap>img {
         width: 48px;
         height: 28px;
+    }
+
+    /* ---------- footer for desktop version ---------- */
+    .footer {
+        padding-top: 132px;
+        padding-bottom: 74px;
+    }
+
+    .footer-main .footer-contact {
+        margin-left: 238px;
+    }
+
+    .footer-main .footer-brand h3 {
+        font-size: 4.25rem;
+    }
+
+    .footer-main h4 {
+        font-size: 2rem;
+        margin-bottom: 55px;
+    }
+
+    .footer-main .footer-contact li a,
+    .footer-contact address {
+        font-size: 1.125rem;
+        line-height: 25px;
+    }
+
+    .footer-contact li address {
+        margin-top: 28px;
+    }
+
+    .footer-subscribe {
+        margin-left: 202px;
+    }
+
+    .subscribe-form {
+        gap: 28px;
+    }
+
+    .footer-subscribe input[type="email"] {
+        width: 523px;
+        height: 96px;
+        padding: 30px 40px;
+    }
+
+    .footer-subscribe input[type="email"],
+    .footer-subscribe input[type="email"]::placeholder {
+        font-size: 1.5rem;
+    }
+
+    .footer-subscribe button[type="submit"] {
+        width: 241px;
+        height: 88px;
+        padding: 20px 30px;
+        font-size: 1.5rem;
+    }
+
+    .footer-subscribe p {
+        margin-top: 15px;
+        font-size: 0.875rem;
+    }
+
+    .footer hr {
+        margin-top: 138px;
+    }
+
+    .footer-bottom {
+        margin-top: 58px;
+    }
+
+    .footer-bottom span {
+        font-size: 1.5rem;
+        line-height: 140%;
+    }
+
+    .footer-socials {
+        gap: 28px;
+    }
+
+    .footer-subscribe .btn-wrap {
+        line-height: 100px;
     }
 }
