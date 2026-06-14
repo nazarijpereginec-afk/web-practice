@@ -19,3 +19,15 @@ iconClose.addEventListener('click', () => {
     main.classList.remove('d-none');
     footer.classList.remove('d-none');
 })
+
+const btnReservation = document.getElementById('btnReservation');
+const closeModal = document.getElementById('closeModal');
+const modal = document.getElementById('modal');
+
+btnReservation.addEventListener('click', () => {
+    modal.classList.remove('d-none');
+})
+
+closeModal.addEventListener('click', () => {
+    modal.classList.add('d-none');
+})

@@ -52,6 +52,15 @@ select:focus {
     outline: none;
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 1000px #EBF0E4 inset !important;
+    -webkit-text-fill-color: var(--dark-color) !important;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
 address {
     font-style: normal;
 }
@@ -115,7 +124,7 @@ body {
 
 .navbar {
     width: 100%;
-    height: 100px;
+    height: 104px;
     align-items: center;
     justify-content: space-between;
     gap: 15px;
@@ -134,22 +143,22 @@ body {
 }
 
 .main-logo {
-    width: 140px;
-    height: 60px;
+    width: 154px;
+    height: 57px;
 }
 
 .icon-navi-open {
-    width: 50px;
-    height: 50px;
+    width: 47px;
+    height: 35px;
     cursor: pointer;
 }
 
 .icon-navi-close {
-    width: 50px;
-    height: 50px;
+    width: 42px;
+    height: 31px;
     position: absolute;
-    top: 10px;
-    left: 8px;
+    top: 17px;
+    left: 23px;
     cursor: pointer;
 }
 
@@ -181,6 +190,7 @@ body {
     margin-bottom: 20px;
     letter-spacing: 2%;
     max-width: 565px;
+    margin-bottom: 15px;
 }
 
 .title-photo {
@@ -940,10 +950,27 @@ select {
         padding-bottom: 120px;
     }
 
-    .main-logo {
-        width: 150px;
-        height: 50px;
+    .navbar {
+        width: 100%;
+        height: 150px;
     }
+
+    .main-logo {
+        width: 200px;
+        height: 65px;
+    }
+
+    #iconOpen {
+        width: 71px;
+        height: 53px;
+    }
+
+    #iconClose {
+        width: 65px;
+        height: 49px;
+        top: 24px;
+        left: 32px;
+    } 
 
     .right-part-navbar {
         display: flex;
@@ -1007,7 +1034,9 @@ select {
 
     .header-title .title-text p {
         font-size: 1.125rem;
-        margin: 0 auto;
+        margin-bottom: 25px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .spice-img {
@@ -1431,6 +1460,67 @@ select {
         justify-content: center;
         gap: 20px;
     }
+
+    .modal-wrap {
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        background-color: rgba(0,0,0,.5);
+        z-index: 10000;
+        left: 0;
+        top: 0;
+    }
+
+    .modal {
+        min-width: 60vw;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);  
+        background-color: #EBF0E4;
+        z-index: 1000;
+        font-family: 'Lato', sans-serif;
+        font-size: 1.5rem;
+        color: var(--dark-color);
+        border-radius: 30px;
+        flex-direction: column;
+        gap: 20px;
+        padding: 35px 40px;
+    }
+
+    .modal input {
+        display: block;
+        width: 100%;
+        padding: 15px 20px;
+    }
+
+    .modal button[type="submit"] {
+        width: 100%;
+        padding: 15px 20px;
+        cursor: pointer;
+        border-radius: 6px;
+    }
+
+    .modal input:focus, .modal input:active {
+        background: inherit;
+    }
+
+    .modal input:not(input[type="submit"]) {
+        border: none;
+        outline: none;
+        border-bottom: 2px solid;
+    }
+
+    .modal-input-wrap input:not(:last-child) {
+        margin-bottom: 20px;
+    }
+
+    .modal .close-modal {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        cursor: pointer;
+    }
 }
 
 @media screen and (min-width: 1025px) {
@@ -1439,6 +1529,11 @@ select {
     /* ---------- header for laptop version ---------- */
     .main-header {
         padding-bottom: 150px;
+    }
+
+    .navbar {
+        width: 100%;
+        height: 180px;
     }
 
     .right-part-navbar {
@@ -1450,11 +1545,21 @@ select {
         padding: 10px 30px;
     }
 
-    .icon-navi-close {
-        width: 60px;
-        height: 60px;
-        top: 15px;
-        left: 15px;
+    .main-logo {
+        width: 250px;
+        height: 95px;
+    }
+
+    #iconOpen {
+        width: 85px;
+        height: 66px;
+    }
+
+    #iconClose {
+        width: 75px;
+        height: 57px;
+        top: 30px;
+        left: 38px;
     }
 
     .right-part-navbar .phone-link {
@@ -1539,6 +1644,7 @@ select {
 
     .header-title .title-text p {
         font-size: 1.250rem;
+        margin-bottom: 0;
         margin: 0;
     }
 
@@ -2053,9 +2159,8 @@ select {
     .navbar {
         margin: 0;
         width: 100%;
+        height: 208px;
         max-width: none;
-        padding-top: 80px;
-        padding-bottom: 80px;
         justify-content: space-between;
     }
 

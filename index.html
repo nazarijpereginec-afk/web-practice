@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/svg+xml" href="assets/images/icons/main-logo-black.svg">
     <title>FoodZero restaurant | the best restaurant</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
@@ -20,7 +21,7 @@
                 </div>
                 <div class="right-part-navbar">
                     <a href="tel:+86852346000" class="phone-link">+86 852 346 000</a>
-                    <button class="btn-reservations">Reservations</button>
+                    <button id="btnReservation" class="btn-reservations">Reservations</button>
                 </div>
             </div>
             <div id="headerTitle" class="header-title d-flex item-center">
@@ -332,6 +333,22 @@
             </div>
         </div>
     </footer>
+    <div id="modal" class="modal-wrap d-none">
+        <div class="modal d-flex item-center">
+            <h3>Reservation</h3>
+            <div id="closeModal" class="close-modal">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+            <form action="#">
+                <div class="modal-input-wrap">
+                    <input type="text" placeholder="Your name" required>
+                    <input type="email" placeholder="Email address" required>
+                    <input type="tel" placeholder="Phone number" required>
+                    <button type="submit">Book Now</button>
+                </div>
+            </form>
+        </div>
+    </div>
     <script src="assets/js/main.js"></script>
 </body>
 
