@@ -133,22 +133,28 @@ body {
 
 .left-part-navbar {
     align-items: center;
-    justify-content: space-between;
-    gap: 15px;
-    margin: 0 auto;
 }
 
-.right-part-navbar {
+.btn-reservations {
+    font-family: 'Rufina', sans-serif;
+    border: 2px solid var(--light-color);
+    font-size: 0.8rem;
+    padding: 5px 15px;
+    /* font-size: 1.125rem;
+    padding: 5px 20px; */
+}
+
+.phone-link {
     display: none;
 }
 
 .main-logo {
-    width: 154px;
-    height: 57px;
+    width: 115px;
+    height: 50px;
 }
 
 .icon-navi-open {
-    width: 47px;
+    width: 35px;
     height: 35px;
     cursor: pointer;
 }
@@ -910,7 +916,106 @@ select {
     cursor: pointer;
 }
 
+.modal-wrap {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background-color: rgba(0, 0, 0, .5);
+    z-index: 10000;
+    left: 0;
+    top: 0;
+}
+
+.modal {
+    min-width: 60vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #EBF0E4;
+    z-index: 1000;
+    font-size: 0.85rem;
+    font-family: 'Lato', sans-serif;
+    color: var(--dark-color);
+    border-radius: 30px;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px 30px;
+}
+
+.modal input::placeholder {
+    font-size: 0.85rem;
+}
+
+.modal input {
+    display: block;
+    width: 100%;
+    padding: 15px 20px;
+}
+
+.modal button[type="submit"] {
+    width: 100%;
+    padding: 15px 20px;
+    cursor: pointer;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 400;
+}
+
+.modal input:focus,
+.modal input:active {
+    background: inherit;
+}
+
+.modal input:not(input[type="submit"]) {
+    border: none;
+    outline: none;
+    border-bottom: 2px solid;
+}
+
+.modal-input-wrap input:not(:last-child) {
+    margin-bottom: 15px;
+}
+
+.modal .close-modal {
+    font-size: 1rem;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    cursor: pointer;
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(70px);
+    transition: 0.8s;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 /* ---------- media Query ---------- */
+@media screen and (min-width: 420px) {
+    .main-logo {
+        width: 153px;
+        height: 57.5px;
+    }
+
+    #iconOpen {
+        width: 47px;
+        height: 35.5px;
+    }
+
+    .btn-reservations {
+        font-family: 'Rufina', sans-serif;
+        border: 2px solid var(--light-color);
+        font-size: 1.125rem;
+        padding: 5px 20px;
+    }
+}
+
 @media screen and (min-width: 481px) {
 
     /* ---------- iPads, Tablets ---------- */
@@ -970,7 +1075,7 @@ select {
         height: 49px;
         top: 24px;
         left: 32px;
-    } 
+    }
 
     .right-part-navbar {
         display: flex;
@@ -987,11 +1092,12 @@ select {
         font-family: 'Rufina', sans-serif;
         border: 2px solid var(--light-color);
         font-size: 1.125rem;
-        padding: 5px 20px;
+        padding: 10px 30px;
         font-size: 1.125rem;
     }
 
     .right-part-navbar .phone-link {
+        display: block;
         font-family: 'Inter', sans-serif;
         font-size: 1.125rem;
         font-weight: 400;
@@ -1461,54 +1567,20 @@ select {
         gap: 20px;
     }
 
-    .modal-wrap {
-        width: 100vw;
-        height: 100vh;
-        position: fixed;
-        background-color: rgba(0,0,0,.5);
-        z-index: 10000;
-        left: 0;
-        top: 0;
-    }
-
     .modal {
-        min-width: 60vw;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);  
-        background-color: #EBF0E4;
-        z-index: 1000;
-        font-family: 'Lato', sans-serif;
-        font-size: 1.5rem;
-        color: var(--dark-color);
-        border-radius: 30px;
-        flex-direction: column;
+        font-size: 1.125rem;
         gap: 20px;
-        padding: 35px 40px;
+        padding: 25px 40px;
     }
 
-    .modal input {
-        display: block;
-        width: 100%;
-        padding: 15px 20px;
+    .modal input::placeholder {
+        font-size: 1.125rem;
     }
 
+    .modal input,
     .modal button[type="submit"] {
-        width: 100%;
-        padding: 15px 20px;
-        cursor: pointer;
-        border-radius: 6px;
-    }
-
-    .modal input:focus, .modal input:active {
-        background: inherit;
-    }
-
-    .modal input:not(input[type="submit"]) {
-        border: none;
-        outline: none;
-        border-bottom: 2px solid;
+        font-size: 1.125rem;
+        padding: 15px 30px;
     }
 
     .modal-input-wrap input:not(:last-child) {
@@ -1516,10 +1588,7 @@ select {
     }
 
     .modal .close-modal {
-        position: absolute;
-        right: 20px;
-        top: 20px;
-        cursor: pointer;
+        font-size: 1.250rem;
     }
 }
 
@@ -2003,6 +2072,26 @@ select {
     .footer-socials {
         gap: 25px;
     }
+
+    .modal {
+        font-size: 1.250rem;
+        gap: 30px;
+        padding: 25px 40px;
+    }
+
+    .modal input::placeholder {
+        font-size: 1.250rem;
+    }
+
+    .modal input,
+    .modal button[type="submit"] {
+        font-size: 1.250rem;
+        padding: 20px 40px;
+    }
+
+    .modal .close-modal {
+        font-size: 1.5rem;
+    }
 }
 
 @media screen and (min-width: 1120px) {
@@ -2086,6 +2175,26 @@ select {
 
     .footer-subscribe .btn-wrap {
         line-height: 78px;
+    }
+
+    .modal {
+        font-size: 1.5rem;
+        gap: 30px;
+        padding: 30px 50px;
+    }
+
+    .modal input::placeholder {
+        font-size: 1.5rem;
+    }
+
+    .modal input,
+    .modal button[type="submit"] {
+        font-size: 1.5rem;
+        padding: 20px 50px;
+    }
+
+    .modal .close-modal {
+        font-size: 1.750rem;
     }
 }
 
@@ -2638,5 +2747,26 @@ select {
 
     .footer-subscribe .btn-wrap {
         line-height: 100px;
+    }
+
+    .modal {
+        font-size: 1.750rem;
+        gap: 30px;
+        padding: 45px 60px;
+    }
+
+    .modal input::placeholder {
+        font-size: 1.750rem;
+    }
+
+    .modal input,
+    .modal button[type="submit"] {
+        padding: 30px 65px;
+    }
+
+    .modal .close-modal {
+        font-size: 2rem;
+        top: 35px;
+        right: 35px;
     }
 }
