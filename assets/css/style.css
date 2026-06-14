@@ -210,7 +210,7 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
+    width: 100dvw;
     height: 0;
     overflow: hidden;
     background-image: linear-gradient(90deg, rgba(35, 48, 0, 0.8) 0%, rgba(35, 48, 0, 0.8) 100%),
@@ -1662,7 +1662,7 @@ select {
         top: 10px;
         right: 10px;
     }
-    
+
     .blog-section .post-meta {
         margin: 55px 0 40px 0;
         justify-content: flex-start;
