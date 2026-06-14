@@ -133,6 +133,7 @@ body {
 
 .left-part-navbar {
     align-items: center;
+    gap: 10px;
 }
 
 .btn-reservations {
