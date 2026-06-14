@@ -224,6 +224,7 @@ body {
 
 .navigation-full-screen.menu-open {
     height: 100vh;
+    overflow: auto;
 }
 
 .navigation-menu-wrap {
@@ -1661,9 +1662,10 @@ select {
         top: 10px;
         right: 10px;
     }
-
+    
     .blog-section .post-meta {
         margin: 55px 0 40px 0;
+        justify-content: flex-start;
     }
 
     .blog-section p {
