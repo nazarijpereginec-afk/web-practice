@@ -207,11 +207,11 @@ body {
 
 /* ---------- navigation menu full screen for mobile version ---------- */
 .navigation-full-screen {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
-    width: 100dvw;
     height: 0;
+    width: 100dvw;
     overflow: hidden;
     background-image: linear-gradient(90deg, rgba(35, 48, 0, 0.8) 0%, rgba(35, 48, 0, 0.8) 100%),
         url(../images/bg-img-navigation.png);
@@ -223,7 +223,7 @@ body {
 }
 
 .navigation-full-screen.menu-open {
-    height: 100vh;
+    height: 100dvh;
     overflow: auto;
 }
 
