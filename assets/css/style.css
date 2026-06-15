@@ -1395,6 +1395,7 @@ select {
         flex-direction: row;
         gap: 32px;
         margin-bottom: 97px;
+        justify-content: center;
     }
 
     .input-wrap input::placeholder,
@@ -1405,8 +1406,10 @@ select {
 
     .input-wrap input,
     .input-wrap select {
+        flex: 1;
+        min-width: 120px;
+        max-width: 200px; 
         padding: 20px 30px;
-        width: 200px;
     }
 
     button[type="submit"] {
@@ -1932,7 +1935,7 @@ select {
     .input-wrap input,
     .input-wrap select {
         padding: 25px 35px;
-        width: 280px;
+        max-width: 280px;
     }
 
     button[type="submit"] {
@@ -2163,7 +2166,7 @@ select {
     /* ---------- reservation section for desktop version ---------- */
     .input-wrap input,
     .input-wrap select {
-        width: 300px;
+        max-width: 300px;
     }
 
     .categories-item h3 {
@@ -2270,7 +2273,7 @@ select {
     /* ---------- reservation section for desktop version ---------- */
     .input-wrap input,
     .input-wrap select {
-        width: 350px;
+        max-width: 350px;
     }
 
     select {
@@ -2610,7 +2613,7 @@ select {
     .input-wrap input,
     .input-wrap select {
         padding: 30px 40px;
-        width: 510px;
+        max-width: 510px;
     }
 
     button[type="submit"] {
