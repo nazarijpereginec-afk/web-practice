@@ -109,7 +109,8 @@ body {
 
 /* ---------- content wrap for mobile version ---------- */
 .content-wrap {
-    max-width: 1644px;
+    width: 100%;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 0 20px;
 }
@@ -1048,6 +1049,7 @@ select {
 
     /* ---------- content wrap for tablet version ---------- */
     .content-wrap {
+        max-width: 1200px;
         padding: 0 40px;
     }
 
@@ -2096,6 +2098,9 @@ select {
 }
 
 @media screen and (min-width: 1120px) {
+    .content-wrap {
+        max-width: 1400px;
+    }
 
     /* ---------- header for desktop version ---------- */
     .header-title .title-photo {
@@ -2258,10 +2263,9 @@ select {
 }
 
 @media screen and (min-width: 1920px) {
-    /* ---------- Screen like figma ---------- */
-
     /* ---------- content wrap for desktop version ---------- */
     .content-wrap {
+        max-width: 1680px;
         padding: 0 138px;
     }
 
