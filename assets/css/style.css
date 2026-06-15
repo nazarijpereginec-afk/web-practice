@@ -817,7 +817,7 @@ select {
 
 .footer-main {
     flex-direction: column;
-    gap: 70px;
+    gap: 45px;
 }
 
 .footer-main .footer-brand h3 {
@@ -917,6 +917,11 @@ select {
 
 .footer-socials a {
     cursor: pointer;
+}
+
+.footer-socials a img {
+    width: 16px;
+    height: 16px;
 }
 
 /* ---------- modal window for mobile version ---------- */
@@ -1578,6 +1583,11 @@ select {
         gap: 20px;
     }
 
+    .footer-socials a img {
+        width: 20px;
+        height: 20px;
+    }
+
     /* ---------- modal window for tablet version ---------- */
     .modal {
         font-size: 1.125rem;
@@ -2084,6 +2094,12 @@ select {
     .footer-socials {
         gap: 25px;
     }
+
+    .footer-socials a img {
+        width: 24px;
+        height: 24px;
+    }
+
 
     /* ---------- modal window for laptop version ---------- */
     .modal {
@@ -2758,6 +2774,11 @@ select {
 
     .footer-socials {
         gap: 28px;
+    }
+
+    .footer-socials a img {
+        width: 28px;
+        height: 28px;
     }
 
     .footer-subscribe .btn-wrap {
