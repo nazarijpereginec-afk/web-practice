@@ -236,7 +236,7 @@ body {
     background-size: cover;
     background-position: center;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .navigation-full-screen.menu-open {
