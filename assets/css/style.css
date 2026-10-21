@@ -1,77 +1,8 @@
 @import url('_variables.css');
+@import url('reset.css');
 @import url('https://fonts.googleapis.com/css2?family=Rufina:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Rufina:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Rufina:wght@400;700&display=swap');
-
-/* ---------- reset styles ---------- */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-button {
-    background: transparent;
-    border: none;
-    padding: 0;
-    margin: 0;
-    font: inherit;
-    color: inherit;
-    cursor: pointer;
-}
-
-img {
-    max-width: 100%;
-    display: block;
-}
-
-ul {
-    list-style-type: none;
-}
-
-a {
-    display: block;
-    text-decoration: none;
-    color: #FFFFFF;
-}
-
-input,
-textarea,
-button,
-select {
-    font-family: inherit;
-    font-size: inherit;
-    font-weight: inherit;
-    color: inherit;
-    background-color: transparent;
-}
-
-input:focus,
-textarea:focus,
-select:focus {
-    outline: none;
-}
-
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-input:-webkit-autofill:active {
-    -webkit-box-shadow: 0 0 0 1000px #EBF0E4 inset !important;
-    -webkit-text-fill-color: var(--dark-color) !important;
-    transition: background-color 5000s ease-in-out 0s;
-}
-
-address {
-    font-style: normal;
-}
-
-.visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    clip: rect(0 0 0 0);
-}
 
 /* ---------- body ---------- */
 body {
@@ -185,13 +116,13 @@ body {
     text-align: center;
 }
 
-.header-title .title-text h1 {
+h1 {
     font-weight: 700;
     font-size: 3rem;
     margin-bottom: 15px;
 }
 
-.header-title .title-text p {
+.header-title p {
     font-family: 'Lato', sans-serif;
     font-size: 1rem;
     font-weight: 400;
@@ -1004,6 +935,36 @@ select {
     transform: translateY(0);
 }
 
+/* ---------- MENU page ---------- */
+.menu-header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+     url('../images/menu-header-image.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.hero-section {
+    justify-content: left;
+    margin-top: 71px;
+    padding-bottom: 164px;
+}
+
+.hero-content {
+    font-weight: 700;
+}
+
+.hero-content h1 {
+    font-size: 4.3rem;
+    line-height: 76px;
+}
+
+.hero-content p {
+    margin-top: 25px;
+    font-size: 1rem;
+    line-height: 24px;
+}
+
+
 /* ---------- media Query ---------- */
 @media screen and (min-width: 420px) {
     .main-logo {
@@ -1021,6 +982,11 @@ select {
         border: 2px solid var(--light-color);
         font-size: 1.125rem;
         padding: 5px 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 4.625rem;
+        line-height: 76px;
     }
 }
 
@@ -1047,6 +1013,10 @@ select {
     /* ---------- blogs section for mobile version ---------- */
     .blog-section .post-meta li {
         font-size: 0.7rem;
+    }
+
+    .hero-section {
+        justify-content: left;
     }
 }
 
@@ -1618,6 +1588,23 @@ select {
     .modal .close-modal {
         font-size: 1.250rem;
     }
+
+    /* ---------- MENU page ---------- */
+    .hero-section {
+        margin-top: 100px;
+        padding-bottom: 240px;
+    }
+
+    .hero-content h1 {
+        font-size: 6rem;
+        line-height: 97px;
+    }
+
+    .hero-content p {
+        margin-top: 37px;
+        font-size: 1.5rem;
+        line-height: 32px;
+    }
 }
 
 @media screen and (min-width: 1025px) {
@@ -2126,6 +2113,23 @@ select {
 
     .modal .close-modal {
         font-size: 1.5rem;
+    }
+
+    /* ---------- MENU page ---------- */
+    .hero-section {
+        margin-top: 120px;
+        padding-bottom: 290px;
+    }
+
+    .hero-content h1 {
+        font-size: 7rem;
+        line-height: 115px;
+    }
+
+    .hero-content p {
+        margin-top: 42px;
+        font-size: 1.750rem;
+        line-height: 36px;
     }
 }
 
@@ -2811,5 +2815,22 @@ select {
         font-size: 2rem;
         top: 35px;
         right: 35px;
+    }
+
+    /* ---------- MENU page ---------- */
+    .hero-section {
+        margin-top: 142px;
+        padding-bottom: 200px;
+    }
+
+    .hero-content h1 {
+        font-size: 9.25rem;
+        line-height: 152px;
+    }
+
+    .hero-content p {
+        margin-top: 50px;
+        font-size: 2rem;
+        line-height: 48px;
     }
 }
