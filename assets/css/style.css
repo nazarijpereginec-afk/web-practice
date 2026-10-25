@@ -295,6 +295,7 @@ h2 {
     font-weight: 700;
     font-size: 3.375rem;
     line-height: 60px;
+    font-weight: 700;
 }
 
 h3 {
@@ -964,6 +965,93 @@ select {
     line-height: 24px;
 }
 
+/* Starters, mains and drinks section */
+.starters-section {
+    background-image: url(../images/blueberry.png);
+    background-repeat: no-repeat;
+    background-size: 120px 100px;
+    background-position: top 0 right 9px;
+    padding-top: 61px;
+    padding-bottom: 70px;
+}
+
+.mains-section {
+    padding-top: 41px;
+    padding-bottom: 65px;
+}
+
+.drinks-section {
+    padding-bottom: 104px;
+}
+
+.starters-title,
+.mains-title,
+.drinks-title {
+    text-align: center;
+    margin-top: 0;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.drinks-title {
+    background-image: url(../images/avocado.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 174px 207px;
+}
+
+.starters-title {
+    margin-bottom: 18px;
+}
+
+.mains-title {
+    margin-bottom: 65px;
+}
+
+.drinks-title {
+    padding-top: 32px;
+    padding-bottom: 80px;
+}
+
+.starters-title p,
+.drinks-title p {
+    margin-top: 9px;
+}
+
+.starters-content-wrap,
+.mains-content-wrap,
+.drinks-content-wrap {
+    flex-direction: column;
+    gap: 50px;
+}
+
+.starters-item:not(:last-child),
+.mains-item:not(:last-child),
+.drinks-item:not(:last-child) {
+    margin-bottom: 29px;
+}
+
+.starters-item h3,
+.mains-item h3,
+.drinks-item h3 {
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+.starters-item span,
+.mains-item span,
+.drinks-item span {
+    display: block;
+    text-align: right;
+    font-size: 1.5rem;
+    line-height: 1.2;
+}
+
+.starters-item hr,
+.mains-item hr,
+.drinks-item hr { 
+    margin-top: 6px; 
+}
 
 /* ---------- media Query ---------- */
 @media screen and (min-width: 420px) {
@@ -998,7 +1086,10 @@ select {
     .left-side-plan,
     .excelent-cook-section .image-side,
     .blog-section .left-side-blog,
-    .blog-section .right-side-blog {
+    .blog-section .right-side-blog,
+    .starters-image-side,
+    .mains-image-side,
+    .drinks-image-side {
         max-width: 450px;
         margin: 0 auto;
     }
@@ -1605,6 +1696,102 @@ select {
         font-size: 1.5rem;
         line-height: 32px;
     }
+
+
+    /* Starters, mains and drinks section*/
+    .starters-section {
+        background-size: 200px 200px;
+        background-position: top 0 right 14px;
+        padding-top: 89px;
+        padding-bottom: 91px;
+    }
+
+    .mains-section {
+        padding-top: 57px;
+        padding-bottom: 86px;
+    }
+
+    .drinks-section {
+        padding-bottom: 150px;
+    }
+
+    .starters-title {
+        margin-bottom: 60px;
+    }
+
+    .mains-title {
+        margin-bottom: 86px;
+    }
+
+    .drinks-title {
+        background-size: 280px 300px;
+        padding-top: 115px;
+        padding-bottom: 130px;
+    }
+
+    .starters-title p,
+    .mains-title p,
+    .drinks-title p {
+        margin-top: 14px;
+    }
+
+    .starters-content-wrap,
+    .mains-content-wrap,
+    .drinks-content-wrap {
+        flex-direction: row;
+        gap: 60px;
+    }
+
+    .starters-item:not(:last-child),
+    .mains-item:not(:last-child),
+    .drinks-item:not(:last-child) {
+        margin-bottom: 46px;
+    }
+
+    .starters-item h3,
+    .mains-item h3,
+    .drinks-item h3 {
+        margin-top: 16px;
+        margin-bottom: 16px;
+    }
+
+    .starters-item span,
+    .mains-item span,
+    .drinks-item span {
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+
+    .starters-item hr,
+    .mains-item hr,
+    .drinks-item hr { 
+        margin-top: 8px; 
+    }
+
+    .starters-image-side,
+    .starters-list,
+    .mains-image-side,
+    .mains-list,
+    .drinks-list,
+    .drinks-image-side {
+        flex: 1;
+    }
+
+    .starters-image-side,
+    .mains-image-side,
+    .drinks-image-side {
+        min-width: none;
+        margin: 0;
+    }
+
+    .starters-image-side img,
+    .mains-image-side img,
+    .drinks-image-side img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover
+    }
+
 }
 
 @media screen and (min-width: 1025px) {
@@ -2131,6 +2318,71 @@ select {
         font-size: 1.750rem;
         line-height: 36px;
     }
+
+    /* Starter, mains and drinks section */
+    .starters-section {
+        background-size: 260px 210px;
+        background-position: top 0 right 16px;
+        padding-top: 110px;
+        padding-bottom: 120px;
+    }
+
+    .mains-section {
+        padding-top: 74px;
+        padding-bottom: 105px;
+    }
+
+    .starters-title {
+        margin-bottom: 70px;
+    }
+
+    .mains-title {
+        margin-bottom: 115px;
+    }
+
+    .drinks-title {
+        background-size: 310px 370px;
+        padding-top: 160px;
+        padding-bottom: 140px;
+    }
+
+    .starters-title p,
+    .mains-title p,
+    .drinks-title p {
+        margin-top: 16px;
+    }
+
+    .starters-content-wrap,
+    .mains-content-wrap,
+    .drinks-content-wrap {
+        flex-direction: row;
+        gap: 80px;
+    }
+
+    .starters-item:not(:last-child),
+    .mains-item:not(:last-child),
+    .drinks-item:not(:last-child) {
+        margin-bottom: 52px;
+    }
+
+    .starters-item h3,
+    .mains-item h3,
+    .drinks-item h3 {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .starters-item span,
+    .mains-item span,
+    .drinks-item span {
+        font-size: 2.5rem;
+    }
+
+    .starters-item hr,
+    .mains-item hr,
+    .drinks-item hr { 
+        margin-top: 8px; 
+    }
 }
 
 @media screen and (min-width: 1120px) {
@@ -2290,6 +2542,75 @@ select {
     .reviews-section {
         background-position: top 85px right 90px;
     }
+
+    /* Starter, mains and drinks section */
+    .starters-section {
+        background-size: 310px 290px;
+        background-position: top 0 right 18px;
+    }
+
+    .starters-section {
+        padding-top: 122px;
+        padding-bottom: 140px;
+    }
+
+    .mains-section {
+        padding-top: 82px;
+        padding-bottom: 130px;
+    }
+
+    .starters-title {
+        margin-bottom: 81px;
+    }
+
+    .mains-title {
+        margin-bottom: 129px;
+    }
+
+    .drinks-title {
+        background-size: 348px 415px;
+        padding-top: 187px;
+        padding-bottom: 159px;
+    }
+
+    .starters-title p,
+    .mains-title p,
+    .drinks-title p {
+        margin-top: 18px;
+    }
+
+    .starters-content-wrap,
+    .mains-content-wrap,
+    .drinks-content-wrap {
+        gap: 102px;
+    }
+
+    .starters-item:not(:last-child),
+    .mains-item:not(:last-child),
+    .drinks-item:not(:last-child) {
+        margin-bottom: 58px;
+    }
+
+    .starters-item h3,
+    .mains-item h3,
+    .drinks-item h3 {
+        margin-top: 24px;
+        margin-bottom: 24px;
+    }
+
+    .starters-item span,
+    .mains-item span,
+    .drinks-item span {
+        font-size: 3rem;
+    }
+
+    .starters-item hr,
+    .mains-item hr,
+    .drinks-item hr { 
+        margin-top: 12px; 
+    }
+
+
 }
 
 @media screen and (min-width: 1600px) {
