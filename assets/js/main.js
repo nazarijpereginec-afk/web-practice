@@ -6,6 +6,7 @@ const mainHeader = document.getElementById('mainHeader');
 const main = document.getElementById('main');
 const footer = document.getElementById('footer');
 
+
 iconOpen.addEventListener('click', () => {
     mainMenu.classList.toggle('menu-open');
     mainHeader.classList.toggle('d-none');
