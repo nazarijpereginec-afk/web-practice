@@ -1033,6 +1033,12 @@ select {
     padding-bottom: 65px;
 }
 
+.mains-image-side img,
+.starters-image-side img {
+    object-fit: cover;
+    aspect-ratio: 792 / 988;
+}
+
 .drinks-section {
     padding-bottom: 104px;
 }
@@ -1051,6 +1057,11 @@ select {
     background-repeat: no-repeat;
     background-position: center;
     background-size: 174px 207px;
+}
+
+.drinks-image-side img {
+    object-fit: cover;
+    aspect-ratio: 792 / 988;
 }
 
 .starters-title {
@@ -1177,6 +1188,11 @@ select {
     gap: 101px;
 }
 
+.contact-image-side img {
+    object-fit: cover;
+    aspect-ratio: 792 / 593;
+}
+
 .contact-email-wrap::before {
     content: '';
     background-image: url(../images/orange.png);
@@ -1213,6 +1229,11 @@ select {
     align-items: center;
     flex-direction: column;
     gap: 60px;
+}
+
+.location-image img {
+    object-fit: cover;
+    aspect-ratio: 792 / 990;
 }
 
 .location-info button {
@@ -1256,6 +1277,54 @@ select {
     font-size: 1rem;
 }
 
+/* ABOUT pages */
+.about-header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url('../images/black_wooden_table.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.hero-section-about {
+    justify-content: center;
+}
+
+.our-story-section {
+    padding-top: 109px;
+    padding-bottom: 58px;
+}
+
+.our-story-wrap {
+    flex-direction: column;
+    justify-content: center;
+    gap: 53px;
+    position: relative;
+}
+
+.our-story-image img {
+    object-fit: cover;
+    width: 100%;
+    aspect-ratio: 792 / 567;
+}
+
+.our-story-wrap::before {
+    content: '';
+    display: block;
+    width: 163px;
+    height: 135px;
+    background-image: url(../images/Tomato.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+}
+
+.our-story-title p {
+    margin-top: 9px;
+}
+
 
 /* ---------- media Query ---------- */
 @media screen and (min-width: 420px) {
@@ -1295,7 +1364,8 @@ select {
     .mains-image-side,
     .drinks-image-side,
     .contact-image-side,
-    .location-image {
+    .location-image,
+    .our-story-image {
         max-width: 450px;
         margin: 0 auto;
     }
@@ -1675,11 +1745,18 @@ select {
         font-size: 1rem;
     }
 
+    .reservation-section .input-wrap {
+        flex-direction: row;
+        gap: 32px;
+        margin-bottom: 97px;
+        justify-content: center;
+    }
+
     .reservation-section .input-wrap input,
     .reservation-section .input-wrap select {
         flex: 1;
-        min-width: 120px;
-        max-width: 200px; 
+        min-width: 0;   
+        width: 100%;
         padding: 20px 30px;
     }
 
@@ -2144,6 +2221,51 @@ select {
         font-size: 1.250rem;
     }
 
+    /* ABOUT pages */
+
+    .hero-section-about {
+        justify-content: flex-end;
+        margin-left: auto;
+        text-align: right;
+    }
+
+    .hero-section-about p {
+        text-align: left;
+    }
+
+    .our-story-section {
+        padding-top: 179px;
+        padding-bottom: 78px;
+    }
+
+    .our-story-wrap {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+        gap: 74px;
+    }
+
+    .our-story-wrap::before {
+        width: 220px;
+        height: 170px;
+        left: 40%;
+        transform: translateX(-40%);
+        top: -60px;
+    }
+
+    .our-story-title {
+        flex: 0 1 40%;
+        padding-bottom: 47px;
+    }
+
+    .our-story-image {
+        max-width: none;
+        flex: 0 0 50%;
+    }
+
+    .our-story-title p {
+        margin-top: 12px;
+    }
 
 }
 
@@ -2461,12 +2583,6 @@ select {
     .input-wrap input,
     .input-wrap select {
         font-size: 1.250rem;
-    }
-
-    .reservation-section .input-wrap input,
-    .reservation-section .input-wrap select {
-        padding: 25px 35px;
-        max-width: 280px;
     }
 
     button[type="submit"] {
@@ -2848,6 +2964,29 @@ select {
     .error-wrap .content-wrap p {
         font-size: 1.5rem;
     }
+
+    .our-story-section {
+        padding-top: 207px;
+        padding-bottom: 101px;
+    }
+
+    .our-story-wrap {
+        gap: 88px;
+    }
+
+    .our-story-wrap::before {
+        width: 290px;
+        height: 230px;
+        top: -90px;
+    }
+
+    .our-story-title {
+        padding-bottom: 68px;
+    }
+
+    .our-story-title p {
+        margin-top: 16px;
+    }
 }
 
 @media screen and (min-width: 1120px) {
@@ -2885,12 +3024,6 @@ select {
     /* ---------- blogs section for desktop version ---------- */
     .blog-section h3 {
         min-height: 3em;
-    }
-
-    /* ---------- reservation section for desktop version ---------- */
-    .reservation-section .input-wrap input,
-    .reservation-section .input-wrap select {
-        max-width: 300px;
     }
 
     .categories-item h3 {
@@ -3108,6 +3241,7 @@ select {
     .error-wrap .content-wrap p {
         font-size: 2rem;
     }
+    
 }
 
 @media screen and (min-width: 1600px) {
@@ -3436,12 +3570,6 @@ select {
         font-size: 1.5rem;
     }
 
-    .reservation-section .input-wrap input,
-    .reservation-section .input-wrap select {
-        padding: 30px 40px;
-        max-width: 510px;
-    }
-
     button[type="submit"] {
         font-size: 2rem;
         padding: 20px 94.5px;
@@ -3731,5 +3859,28 @@ select {
         margin-top: 53px;
         padding: 20px 46px;
         font-size: 2rem;
+    }
+
+    .our-story-section {
+        padding-top: 218px;
+        padding-bottom: 117px;
+    }
+
+    .our-story-wrap {
+        gap: 107px;
+    }
+
+    .our-story-wrap::before {
+        width: 326px;
+        height: 271px;
+        top: -90px;
+    }
+
+    .our-story-title {
+        padding-bottom: 94px;
+    }
+
+    .our-story-title p {
+        margin-top: 18px;
     }
 }
