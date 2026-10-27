@@ -588,6 +588,10 @@ hr {
     color: var(--dark-color);
 }
 
+.reservation-section .input-wrap {
+    margin-bottom: 66.5px;
+}
+
 button[type="submit"] {
     width: auto;
     height: auto;
@@ -709,7 +713,8 @@ select {
 .categories-item h3 {
     top: 24px;
     left: 20px;
-    line-height: 32px;
+    max-width: calc(100% - 90px);
+    line-height: 1.15;
 }
 
 .categories-item .vector {
@@ -2659,7 +2664,7 @@ select {
     }
 
     .categories-item h3 {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
     /* ---------- reviews section for laptop version ---------- */
@@ -3027,7 +3032,7 @@ select {
     }
 
     .categories-item h3 {
-        font-size: 2.3rem;
+        font-size: 2rem;
     }
 }
 
@@ -3044,10 +3049,6 @@ select {
         height: 22px;
         top: 44px;
         right: 38px;
-    }
-
-    .categories-item h3 {
-        font-size: 2.5rem;
     }
 
     .reviews-section {
