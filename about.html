@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="uk">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <title>FoodZero - ресторан авторської здорової кухні</title>
 </head>
+
 <body>
     <header id="mainHeader" class="about-header">
         <div class="content-wrap">
@@ -36,8 +38,8 @@
             <div class="our-story-wrap content-wrap d-flex">
                 <div class="our-story-title">
                     <h2>Our Story</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                        Purus lorem id penatibus imperdiet. 
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Purus lorem id penatibus imperdiet.
                         Turpis egestas ultricies purus auctor tincidunt lacus nunc. </p>
                 </div>
                 <div class="our-story-image">
@@ -45,11 +47,168 @@
                 </div>
             </div>
         </section>
+
+        <section class="team-section reveal">
+            <div class="team-wrap content-wrap d-flex">
+                <div class="team-col team-col-left">
+                    <div class="team-card">
+                        <h3>Керуючий рестораном</h3>
+                        <p class="team-name">Карсон Хьюґ</p>
+                        <img src="assets/images/manager.jpg" alt="Карсон Хьюґ, керуючий рестораном">
+                    </div>
+                    <p class="team-text team-text-right">
+                        Понад десять років досвіду в ресторанному бізнесі. Відповідає за атмосферу залу
+                        та якість сервісу для кожного гостя.
+                    </p>
+                </div>
+
+                <div class="team-col team-col-right">
+                    <p class="team-text">
+                        Він налагодив роботу команди так, щоб кожен візит у ресторан був приємним.
+                    </p>
+                    <div class="team-card">
+                        <h3>Шеф-кухар</h3>
+                        <p class="team-name">Джейн Купер</p>
+                        <img src="assets/images/chef.jpg" alt="Джейн Купер, шеф-кухар">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="promo-section reveal">
+            <div class="promo-wrap content-wrap d-flex item-center">
+                <div class="promo-title">
+                    <h2>It looks delicious</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+                </div>
+                <button class="play-btn">
+                    <svg class="icon">
+                        <use href="assets/images/sprites.svg#icon-play"></use>
+                    </svg>
+                </button>
+            </div>
+        </section>
+
+        <section class="process-section reveal">
+            <div class="process-wrap content-wrap d-flex">
+                <div class="process-first-part-wrap">
+                    <div class="process-title">
+                        <h2>Sophisticated Process</h2>
+                    </div>
+                    <div class="process-main-content-wrap .first-process d-flex">
+                        <div class="process-image-side">
+                            <img src="assets/images/person_holding.jpg" alt="Person holding">
+                        </div>
+                        <div class="process-text-side">
+                            <h3>01.Slice</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Purus lorem id penatibus imperdiet. Turpis egestas ultricies purus auctor tincidunt
+                                lacus nunc.
+                                Convallis pellentesque quis fringilla sagittis. Egestas in risus sit nunc nunc, arcu
+                                donec nam etiam. </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="process-main-content-wrap second-process d-flex">
+                    <div class="process-side process-left-side d-flex">
+                        <div class="process-title-side">
+                            <h3>03.Bake</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Purus lorem id penatibus imperdiet. </p>
+                        </div>
+                        <div class="process-image-side"><img src="assets/images/barbeque.jpg" alt=""></div>
+                    </div>
+                    <div class="process-side process-right-side d-flex">
+                        <div class="process-title-side">
+                            <h3>02.Pickled</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Purus lorem id penatibus imperdiet. </p>
+                        </div>
+                        <div class="process-image-side"><img src="assets/images/raw_meat.jpg" alt=""></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="reservation-section d-flex item-center reveal">
+            <div class="reservation-wrap content-wrap">
+                <h2>Забронювати столик</h2>
+                <p>Зв'яжіться з нашим рестораном</p>
+                <form class="reservation-form">
+                    <div class="input-wrap d-flex">
+                        <input id="reservationDate" type="text" placeholder="ДД/ММ/РРРР">
+                        <select id="reservationTime" name="time" required>
+                            <option value="">Оберіть час</option>
+                            <option value="17:00">17:00</option>
+                            <option value="17:30">17:30</option>
+                            <option value="18:00" selected>18:00</option>
+                            <option value="18:30">18:30</option>
+                        </select>
+                        <select id="reservationGuests" name="guests" required>
+                            <option value="">Кількість гостей</option>
+                            <option value="1">1 особа</option>
+                            <option value="2" selected>2 особи</option>
+                            <option value="3">3 особи</option>
+                            <option value="4">4 особи</option>
+                        </select>
+                    </div>
+                    <button type="submit">Забронювати</button>
+                </form>
+            </div>
+        </section>
+
     </main>
 
+    <footer id="footer" class="footer d-flex item-center reveal">
+        <div class="footer-wrap content-wrap">
+            <div class="footer-main d-flex item-center">
+                <div class="footer-brand">
+                    <h3>Food<br>Zero.</h3>
+                </div>
+                <div class="footer-contact">
+                    <h4>Контакти</h4>
+                    <ul>
+                        <li><a href="tel:+380441234567">+380 44 123 45 67</a></li>
+                        <li><a href="mailto:info@foodzero.com.ua">info@foodzero.com.ua</a></li>
+                        <li>
+                            <address>вул. Хрещатик, 22,<br> Київ, 01001</address>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-subscribe">
+                    <h4>Не пропускайте рецепти</h4>
+                    <form class="subscribe-form d-flex justify-center">
+                        <div id="inputEmail" class="input-email-wrap">
+                            <label for="subscribeEmail" class="visually-hidden">Email адреса для підписки</label>
+                            <input id="subscribeEmail" type="email" placeholder="Ваш email">
+                            <p>Підпишіться та отримуйте найкращі рецепти щотижня</p>
+                        </div>
+                        <div class="btn-wrap">
+                            <button type="submit">Підписатися</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="footer-wrap content-wrap">
+            <div class="footer-bottom d-flex">
+                <span>© 2024 FoodZero. Всі права захищені</span>
+                <div class="footer-socials d-flex">
+                    <a href="#" aria-label="Instagram"><img src="assets/images/icons/icon_instagram.svg"
+                            alt="Instagram"></a>
+                    <a href="#" aria-label="Twitter"><img src="assets/images/icons/icon_twitter.svg" alt="Twitter"></a>
+                    <a href="#" aria-label="Facebook"><img src="assets/images/icons/icon_facebook.svg"
+                            alt="Facebook"></a>
+                    <a href="#" aria-label="YouTube"><img src="assets/images/icons/icon_youtube.svg" alt="YouTube"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
 
-     <div id="mainMenu" class="navigation-full-screen">
+    <div id="mainMenu" class="navigation-full-screen">
         <div class="navigation-menu-wrap d-flex">
             <img id="iconClose" class="icon-navi-close" src="assets/images/icons/icon-navi-close.svg"
                 alt="Закрити меню навігації">
@@ -111,4 +270,5 @@
     </div>
     <script src="assets/js/main.js"></script>
 </body>
+
 </html>

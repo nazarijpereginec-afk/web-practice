@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="icon-play" viewBox="0 0 142 142">
+    <path d="M140 71C140 109.108 109.108 140 71 140C32.8924 140 2 109.108 2 71C2 32.8924 32.8924 2 71 2C109.108 2 140 32.8924 140 71Z" stroke-width="4" stroke="white" fill="none"/>
+    <path opacity="0.32" d="M140 71C140 109.108 109.108 140 71 140C32.8924 140 2 109.108 2 71C2 32.8924 32.8924 2 71 2C109.108 2 140 32.8924 140 71Z" fill="black" stroke-width="4" stroke="white"/>
+    <mask id="stroke0_5703_1103" fill="white">
+      <path d="M94 71L61 95.2487L61 46.7513L94 71Z"/>
+    </mask>
+    <path d="M94 71L61 95.2487L61 46.7513L94 71Z" stroke-width="8" stroke="white" mask="url(#stroke0_5703_1103)" fill="white"/>
+  </symbol>
+</svg>

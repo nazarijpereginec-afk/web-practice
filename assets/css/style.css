@@ -997,7 +997,7 @@ select {
 /* ---------- MENU page ---------- */
 .menu-header {
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-     url('../images/menu-header-image.jpg');
+        url('../images/menu-header-image.jpg');
     background-position: center;
     background-size: cover;
 }
@@ -1118,14 +1118,14 @@ select {
 
 .starters-item hr,
 .mains-item hr,
-.drinks-item hr { 
-    margin-top: 6px; 
+.drinks-item hr {
+    margin-top: 6px;
 }
 
 /* ---------- CONTACT page ---------- */
 .contact-header {
     background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-     url('../images/black_berry.png');
+        url('../images/black_berry.png');
     background-position: center;
     background-size: cover;
     padding-bottom: 65px;
@@ -1246,7 +1246,7 @@ select {
     border: 2px solid #000;
     color: #000;
     padding: 10px 23px;
-    cursor: pointer; 
+    cursor: pointer;
 }
 
 /* 404 PAGE */
@@ -1254,8 +1254,8 @@ select {
     padding: 80px 0;
     display: flex;
     justify-content: center;
-    align-items: center;   
-    height: 100vh;           
+    align-items: center;
+    height: 100vh;
 }
 
 .error-wrap .content-wrap {
@@ -1285,7 +1285,7 @@ select {
 /* ABOUT pages */
 .about-header {
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url('../images/black_wooden_table.jpg');
+        url('../images/black_wooden_table.jpg');
     background-position: center;
     background-size: cover;
 }
@@ -1330,6 +1330,154 @@ select {
     margin-top: 9px;
 }
 
+.team-section {
+    padding: 80px 0;
+}
+
+.team-wrap {
+    flex-direction: column;
+    gap: 60px;
+}
+
+.team-section img {
+    width: 100%;
+    aspect-ratio: 726 / 861;
+    object-fit: cover;
+}
+
+.team-card p {
+    margin: 12px 0;
+}
+
+.team-col {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.team-col-right .team-card {
+    order: 1;
+}
+
+.team-col-right .team-text {
+    order: 2;
+}
+
+.team-col>p {
+    text-align: right;
+}
+
+.promo-section {
+    padding: 80px 0;
+    background-image: linear-gradient(90deg, rgba(35, 48, 0, 0.8) 0%, rgba(35, 48, 0, 0.8) 100%),
+        url(../images/white_ceramic.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    text-align: center;
+}
+
+.promo-section p {
+    color: #fff;
+}
+
+.promo-wrap {
+    flex-direction: column;
+    gap: 41px;
+}
+
+.play-btn {
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.promo-title p {
+    margin-top: 9px;
+}
+
+.process-section {
+    padding-top: 100px;
+    padding-bottom: 120px;
+    overflow: hidden;
+    position: relative;
+    background-image: url('../images/rosemary.png'), url('../images/rosemary2.png');
+    background-repeat: no-repeat, no-repeat;
+    background-position: top 0 right 0, bottom 15px left 0;
+    background-size: 160px 120px, 160px 120px;
+    
+}
+
+.process-title {
+    margin-bottom: 90px;
+    text-align: center;
+}
+
+.process-title h2 {
+    font-size: 2.9rem;
+}
+
+.process-title {
+    margin-bottom: 45px;
+    text-align: center;
+}
+
+.process-main-content-wrap {
+    flex-direction: column;
+    /* justify-content: space-between; */
+    align-items: center; 
+    gap: 80px;
+}
+
+.process-wrap {
+    flex-direction: column;
+    gap: 80px;
+}
+
+.process-first-part-wrap .process-main-content-wrap { 
+    gap: 24px; 
+}
+
+.process-image-side img {
+    width: 100%;
+    aspect-ratio: 792 / 638;
+    object-fit: cover;
+}
+
+.process-section h3 {
+    font-size: 2.75rem;
+    font-weight: 700;
+    line-height: 120%;
+    letter-spacing: 0;
+    margin-bottom: 14px;
+    margin-top: 0;
+}
+
+.process-side {
+    flex-direction: column;
+    gap: 51px;
+}
+
+
+.process-left-side .process-image-side,
+.process-right-side .process-image-side {
+    order: 1;
+}
+
+.process-left-side .process-title-side,
+.process-right-side .process-title-side {
+    order: 2;
+}
+
+
+
 
 /* ---------- media Query ---------- */
 @media screen and (min-width: 420px) {
@@ -1370,9 +1518,15 @@ select {
     .drinks-image-side,
     .contact-image-side,
     .location-image,
-    .our-story-image {
+    .our-story-image,
+    .team-col,
+    .process-main-content-wrap {
         max-width: 450px;
         margin: 0 auto;
+    }
+
+    .process-title h2 {
+        font-size: 3.375rem;
     }
 }
 
@@ -1530,7 +1684,7 @@ select {
     /* ---------- main ---------- */
     /* ---------- basic teg styles for tablet version ---------- */
     h2 {
-        font-size: 4rem;
+        font-size: 4rem !important;
         line-height: 80px;
     }
 
@@ -1760,7 +1914,7 @@ select {
     .reservation-section .input-wrap input,
     .reservation-section .input-wrap select {
         flex: 1;
-        min-width: 0;   
+        min-width: 0;
         width: 100%;
         padding: 20px 30px;
     }
@@ -2101,8 +2255,8 @@ select {
 
     .starters-item hr,
     .mains-item hr,
-    .drinks-item hr { 
-        margin-top: 8px; 
+    .drinks-item hr {
+        margin-top: 8px;
     }
 
     .starters-image-side,
@@ -2144,11 +2298,13 @@ select {
         margin-bottom: 115px;
     }
 
-    .hero-hours-title { 
-        font-size: 1.25rem; 
+    .hero-hours-title {
+        font-size: 1.25rem;
     }
-    .hero-hours-head span, .hero-hours-list { 
-        font-size: 1rem; 
+
+    .hero-hours-head span,
+    .hero-hours-list {
+        font-size: 1rem;
     }
 
     .contact-email-section {
@@ -2209,7 +2365,7 @@ select {
 
     /* 404 PAGE */
     .error-wrap {
-        padding: 120px 0;         
+        padding: 120px 0;
     }
 
     .error-wrap .content-wrap h1 {
@@ -2272,6 +2428,172 @@ select {
         margin-top: 12px;
     }
 
+    .team-section {
+        padding: 100px 0;
+    }
+
+    .team-wrap {
+        flex-direction: row;
+        gap: 80px;
+        justify-content: space-between;
+    }
+
+    .team-section img {
+        width: 100%;
+        aspect-ratio: 726 / 861;
+        object-fit: cover;
+    }
+
+    .team-card p {
+        margin: 12px 0;
+    }
+
+    .team-card {
+        text-align: center;
+    }
+
+    .team-col {
+        flex: 1;
+        justify-content: space-between;
+        max-width: none;
+    }
+
+    .team-col-right .team-card {
+        order: 2;
+    }
+
+    .team-col-right .team-text {
+        order: 1;
+    }
+
+    .team-col-left {
+        gap: 200px;
+    }
+
+    .team-col-right .team-text {
+        margin-top: 130px;
+    }
+
+    .promo-section {
+        padding: 120px 0;
+    }
+
+    .promo-wrap {
+        gap: 60px;
+    }
+
+    .play-btn {
+        width: 100px;
+        height: 100px;
+    }
+
+    .promo-title p {
+        margin-top: 14px;
+    }
+
+    .process-section {
+        padding: 120px 0;
+    }
+
+    .process-title {
+        margin-bottom: 120px;
+    }
+
+    .process-main-content-wrap {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 74px;
+    }
+
+    .process-main-content-wrap {
+        max-width: none;
+    }
+
+    .process-image-side,
+    .process-text-side {
+        flex: 1;
+    }
+
+    .process-main-content-wrap h3 {
+        font-size: 3.4rem;
+        margin-bottom: 20px;
+    }
+
+    .process-section {
+        padding-top: 120px;
+        padding-bottom: 140px;
+        background-size: 200px 160px, 200px 160px;
+        
+    }
+
+    .process-title h2 {
+        font-size: 4rem;
+    }
+
+    .process-title {
+        margin-bottom: 65px;
+        text-align: center;
+    }
+
+    .first-process {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center; 
+        gap: 80px;
+    }
+
+    .process-main-content-wrap {
+        max-width: none;
+    }
+
+    .process-wrap {
+        flex-direction: column;
+        gap: 118px;
+    }
+
+    .process-first-part-wrap .process-main-content-wrap { 
+        gap: 36px; 
+    }
+
+    .process-image-side img {
+        width: 100%;
+        aspect-ratio: 792 / 638;
+        object-fit: cover;  
+    }
+
+    .process-section h3 {
+        font-size: 3.5rem;
+    }
+
+    .process-left-side .process-title-side {
+        order: 1;
+    }
+
+    .process-left-side .process-image-side {
+        order: 2;
+    }
+
+    .process-left-side,
+    .process-right-side,
+    .first-process .process-image-side,
+    .process-text-side {
+        flex: 1;
+    }
+
+    .second-process {
+        justify-content: space-between;
+        flex-direction: row;
+        gap: 80px;
+        align-items: flex-start;
+    }
+
+    .process-left-side {
+        margin-top: 120px; 
+    }
+
+    .process-right-side {
+        margin-top: -60px; 
+    }
 }
 
 @media screen and (min-width: 1025px) {
@@ -2891,27 +3213,29 @@ select {
 
     .starters-item hr,
     .mains-item hr,
-    .drinks-item hr { 
-        margin-top: 8px; 
+    .drinks-item hr {
+        margin-top: 8px;
     }
 
     .contact-header {
         padding-bottom: 110px;
     }
 
-    .hero-section-contact { 
-        padding-bottom: 0; 
+    .hero-section-contact {
+        padding-bottom: 0;
     }
 
-    .hero-section-contact .hero-title { 
-        margin-bottom: 155px; 
+    .hero-section-contact .hero-title {
+        margin-bottom: 155px;
     }
 
-    .hero-hours-title { 
-        font-size: 1.5rem; 
+    .hero-hours-title {
+        font-size: 1.5rem;
     }
-    .hero-hours-head span, .hero-hours-list { 
-        font-size: 1.250rem; 
+
+    .hero-hours-head span,
+    .hero-hours-list {
+        font-size: 1.250rem;
     }
 
     .contact-email-section {
@@ -2953,7 +3277,7 @@ select {
 
     /* 404 PAGE */
     .error-wrap {
-        padding: 160px 0;         
+        padding: 160px 0;
     }
 
     .error-wrap .content-wrap h1 {
@@ -2992,6 +3316,107 @@ select {
     .our-story-title p {
         margin-top: 16px;
     }
+
+    .team-section {
+        padding: 120px 0;
+    }
+
+    .team-wrap {
+        gap: 100px;
+    }
+
+    .team-card p {
+        margin: 16px 0;
+    }
+
+    .team-col-left {
+        gap: 300px;
+    }
+
+    .team-col-right .team-text {
+        margin-top: 100px;
+    }
+
+    .promo-section {
+        padding: 160px 0;
+    }
+
+    .promo-wrap {
+        gap: 70px;
+    }
+
+    .play-btn {
+        width: 120px;
+        height: 120px;
+    }
+
+    .promo-title p {
+        margin-top: 16px;
+    }
+
+    .process-section {
+        padding: 160px 0;
+    }
+
+    .process-section::after {
+        right: 0;
+        top: 0;
+        width: 320px;
+        height: 370px;
+    }
+
+    .process-main-content-wrap {
+        gap: 89px;
+    }
+
+    .process-main-content-wrap h3 {
+        font-size: 4.3rem;
+        margin-bottom: 24px;
+    }
+
+
+    .process-section {
+        padding-top: 160px;
+        padding-bottom: 180px;
+        background-size: 260px 220px, 260px 220px;
+        
+    }
+
+    .process-title h2 {
+        font-size: 5rem;
+    }
+
+    .process-title {
+        margin-bottom: 130px;
+        text-align: center;
+    }
+
+    .process-main-content-wrap {
+        gap: 94px;
+    }
+
+    .process-wrap {
+        flex-direction: column;
+        gap: 150px;
+    }
+
+    .process-first-part-wrap .process-main-content-wrap { 
+        gap: 42px; 
+    }
+
+    .process-section h3 {
+        font-size: 4.4rem;
+        margin-bottom: 20px;
+    }
+
+    .process-left-side {
+        margin-top: 160px; 
+    }
+
+    .process-right-side {
+        margin-top: -80px; 
+    }
+
 }
 
 @media screen and (min-width: 1120px) {
@@ -3205,28 +3630,30 @@ select {
 
     .starters-item hr,
     .mains-item hr,
-    .drinks-item hr { 
-        margin-top: 12px; 
+    .drinks-item hr {
+        margin-top: 12px;
     }
 
     .contact-header {
         padding-bottom: 130px;
     }
 
-    .hero-section--contact .hero-title { 
-        margin-bottom: 215px; 
+    .hero-section--contact .hero-title {
+        margin-bottom: 215px;
     }
 
-    .hero-hours-title { 
-        font-size: 2rem; 
+    .hero-hours-title {
+        font-size: 2rem;
     }
-    .hero-hours-head span, .hero-hours-list { 
-        font-size: 1.5rem; 
+
+    .hero-hours-head span,
+    .hero-hours-list {
+        font-size: 1.5rem;
     }
 
     /* 404 PAGE */
     .error-wrap {
-        padding: 200px 0;         
+        padding: 200px 0;
     }
 
     .error-wrap .content-wrap h1 {
@@ -3242,7 +3669,7 @@ select {
     .error-wrap .content-wrap p {
         font-size: 2rem;
     }
-    
+
 }
 
 @media screen and (min-width: 1600px) {
@@ -3252,6 +3679,7 @@ select {
 }
 
 @media screen and (min-width: 1920px) {
+
     /* ---------- content wrap for desktop version ---------- */
     .content-wrap {
         max-width: 1680px;
@@ -3818,15 +4246,15 @@ select {
         line-height: 48px;
     }
 
-    .hero-section--contact { 
-        padding-bottom: 0; 
+    .hero-section--contact {
+        padding-bottom: 0;
     }
 
-    .hero-section--contact .hero-title { 
-        margin-bottom: 290px; 
+    .hero-section--contact .hero-title {
+        margin-bottom: 290px;
     }
 
-     .contact-email-section {
+    .contact-email-section {
         padding-top: 270px;
         padding-bottom: 145px;
     }
@@ -3884,4 +4312,82 @@ select {
     .our-story-title p {
         margin-top: 18px;
     }
+
+
+    .team-section {
+        padding: 140px 0;
+    }
+
+    .team-wrap {
+        gap: 120px;
+    }
+
+    .team-card p {
+        margin: 24px 0;
+    }
+
+    .team-col-left {
+        gap: 400px;
+    }
+
+    .team-col-right .team-text {
+        margin-top: 135px;
+    }
+
+    .promo-section {
+        padding: 200px 0;
+    }
+
+    .promo-wrap {
+        gap: 82px;
+    }
+
+    .play-btn {
+        width: 142px;
+        height: 142px;
+    }
+
+    .promo-title p {
+        margin-top: 18px;
+    }
+
+
+    .process-section {
+        padding-top: 180px;
+        padding-bottom: 200px;
+        background-size: 400px 350px, 300px 260px;
+        
+    }
+
+    .process-section h2 {
+        font-size: 6.75rem;
+    }
+
+    .process-title {
+        margin-bottom: 150px;
+        text-align: center;
+    }
+
+    .process-main-content-wrap {
+        gap: 102px;
+    }
+
+    .process-wrap {
+        flex-direction: column;
+        gap: 180px;
+    }
+
+    .process-section h3 {
+        font-size: 5.5rem;
+        margin-bottom: 24px;
+    }
+
+    .process-left-side {
+        margin-top: 200px; 
+    }
+
+    .process-right-side {
+        margin-top: -100px; 
+    }
+
 }
