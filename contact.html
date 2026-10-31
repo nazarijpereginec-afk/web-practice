@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Контакти ресторану FoodZero у Києві: адреса, телефон, електронна пошта, години роботи та форма бронювання столика.">
+    <meta name="description"
+        content="Контакти ресторану FoodZero у Києві: адреса, телефон, електронна пошта, години роботи та форма бронювання столика.">
     <link rel="icon" type="image/svg+xml" href="assets/images/icons/main-logo-black.svg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
@@ -48,11 +49,13 @@
     <main id="main">
         <section class="contact-email-section reveal">
             <div class="contact-email-wrap content-wrap d-flex">
-                <div class="contact-image-side"><img src="assets/images/yellow_fruit.jpg" alt="Святково накритий стіл із келихами, тарілками та лимонами"></div>
+                <div class="contact-image-side"><img src="assets/images/yellow_fruit.jpg"
+                        alt="Святково накритий стіл із келихами, тарілками та лимонами"></div>
                 <div class="contact-info-side">
-                <p>Зв'язатися з нами можна електронною поштою <a href="mailto:info@foodzero.com.ua">info@foodzero.com.ua</a> або 
-                    за телефоном <a href="tel:+380441234567">+380 44 123 45 67</a></p>
-            </div>
+                    <p>Зв'язатися з нами можна електронною поштою <a
+                            href="mailto:info@foodzero.com.ua">info@foodzero.com.ua</a> або
+                        за телефоном <a href="tel:+380441234567">+380 44 123 45 67</a></p>
+                </div>
             </div>
         </section>
         <section class="location-street-section reveal">
@@ -62,7 +65,8 @@
                     <button>Показати на карті</button>
                 </div>
                 <div class="location-image">
-                    <img src="assets/images/people_siting_on_chairs.jpg" alt="Гості, що сидять на стільцях біля ресторану">
+                    <img src="assets/images/people_siting_on_chairs.jpg"
+                        alt="Гості, що сидять на стільцях біля ресторану">
                 </div>
             </div>
         </section>
@@ -80,15 +84,15 @@
                             <input type="text" placeholder="Прізвище">
                         </div>
                         <input type="email" placeholder="Email">
-                        <input type="phone" placeholder="Телефон">
+                        <input type="tel" placeholder="Телефон">
                         <div class="date-time-info d-flex">
                             <input id="reservationDate" type="text" placeholder="ДД/ММ/РРРР">
                             <select id="reservationTime" name="time" required>
-                            <option value="">Оберіть час</option>
-                            <option value="17:00">17:00</option>
-                            <option value="17:30">17:30</option>
-                            <option value="18:00" selected>18:00</option>
-                            <option value="18:30">18:30</option>
+                                <option value="">Оберіть час</option>
+                                <option value="17:00">17:00</option>
+                                <option value="17:30">17:30</option>
+                                <option value="18:00" selected>18:00</option>
+                                <option value="18:30">18:30</option>
                             </select>
                         </div>
                         <select id="reservationGuests" name="guests" required>
@@ -106,7 +110,7 @@
         </section>
     </main>
 
-     <footer id="footer" class="footer d-flex item-center reveal">
+    <footer id="footer" class="footer d-flex item-center reveal">
         <div class="footer-wrap content-wrap">
             <div class="footer-main d-flex item-center">
                 <div class="footer-brand">
@@ -141,14 +145,20 @@
         <div class="footer-wrap content-wrap">
             <div class="footer-bottom d-flex">
                 <span>© 2024 FoodZero. Всі права захищені</span>
-                <div class="footer-socials d-flex">
-                    <a href="#" aria-label="Instagram"><img src="assets/images/icons/icon_instagram.svg"
-                            alt="Instagram"></a>
-                    <a href="#" aria-label="Twitter"><img src="assets/images/icons/icon_twitter.svg" alt="Twitter"></a>
-                    <a href="#" aria-label="Facebook"><img src="assets/images/icons/icon_facebook.svg"
-                            alt="Facebook"></a>
-                    <a href="#" aria-label="YouTube"><img src="assets/images/icons/icon_youtube.svg" alt="YouTube"></a>
-                </div>
+                <ul class="footer-socials d-flex">
+                    <li><a href="https://www.instagram.com/?hl=uk" target="_blank"><svg class="social-icon">
+                                <use href="assets/images/sprites.svg#icon-instagram"></use>
+                            </svg></a></li>
+                    <li><a href="https://x.com/?lang=uk" target="_blank"><svg class="social-icon">
+                                <use href="assets/images/sprites.svg#icon-twitter"></use>
+                            </svg></a></li>
+                    <li><a href="https://www.facebook.com/?locale=uk_UA" target="_blank"><svg class="social-icon">
+                                <use href="assets/images/sprites.svg#icon-facebook"></use>
+                            </svg></a></li>
+                    <li><a href="https://www.youtube.com/?app=desktop&hl=ru" target="_blank"><svg class="social-icon">
+                                <use href="assets/images/sprites.svg#icon-youtube"></use>
+                            </svg></a></li>
+                </ul>
             </div>
         </div>
     </footer>
@@ -160,7 +170,7 @@
             <div class="menu">
                 <nav aria-label="Головна навігація">
                     <ul>
-                        <li><a href="index.html" class="uppercase">Головна</a></li>
+                        <li><a href="#index.html" class="uppercase">Головна</a></li>
                         <li><a href="menu.html" class="uppercase">Меню</a></li>
                         <li class="blogs-marker"><a href="error.html" class="uppercase blogs-link">Блог</a>
                             <ol>
@@ -170,7 +180,7 @@
                             </ol>
                         </li>
                         <li><a href="about.html" class="uppercase">Про нас</a></li>
-                        <li><a href="#" class="uppercase">Контакти</a></li>
+                        <li><a href="contact.html" class="uppercase">Контакти</a></li>
                     </ul>
                 </nav>
             </div>
@@ -183,16 +193,20 @@
                 </ul>
                 <a href="#">вул. Хрещатик, 22,
                     Київ, 01001</a>
-                <div class="icons d-flex">
-                    <a href="#" aria-label="Instagram"><img class="icon-instagram"
-                            src="assets/images/icons/icon_instagram.svg" alt="Instagram"></a>
-                    <a href="#" aria-label="Twitter"><img class="icon-twitter"
-                            src="assets/images/icons/icon_twitter.svg" alt="Twitter"></a>
-                    <a href="#" aria-label="Facebook"><img class="icon-facebook"
-                            src="assets/images/icons/icon_facebook.svg" alt="Facebook"></a>
-                    <a href="#" aria-label="YouTube"><img class="icon-youtube"
-                            src="assets/images/icons/icon_youtube.svg" alt="YouTube"></a>
-                </div>
+                <ul class="icons d-flex">
+                    <li><a href="https://www.instagram.com/?hl=uk" target="_blank"><svg class="social-icon">
+                                <use href="assets/images/sprites.svg#icon-instagram"></use>
+                            </svg></a></li>
+                    <li><a href="https://x.com/?lang=uk" target="_blank"><svg class="social-icon">
+                                <use href="assets/images/sprites.svg#icon-twitter"></use>
+                            </svg></a></li>
+                    <li><a href="https://www.facebook.com/?locale=uk_UA" target="_blank"><svg class="social-icon">
+                                <use href="assets/images/sprites.svg#icon-facebook"></use>
+                            </svg></a></li>
+                    <li><a href="https://www.youtube.com/?app=desktop&hl=ru" target="_blank"><svg class="social-icon">
+                                <use href="assets/images/sprites.svg#icon-youtube"></use>
+                            </svg></a></li>
+                </ul>
             </div>
         </div>
     </div>
@@ -200,7 +214,7 @@
     <div id="modal" class="modal-wrap d-none">
         <div class="modal d-flex item-center">
             <h3>Бронювання столика</h3>
-            <div id="closeModal" class="close-modal" aria-label="Закрити вікно бронювання">
+            <div id="closeModal" class="close-modal">
                 <i class="fa-solid fa-xmark"></i>
             </div>
             <form action="#">

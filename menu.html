@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Меню ресторану FoodZero: авторські закуски, основні страви, випічка та напої зі свіжих сезонних інгредієнтів.">
+    <meta name="description"
+        content="Меню ресторану FoodZero: авторські закуски, основні страви, випічка та напої зі свіжих сезонних інгредієнтів.">
     <link rel="icon" type="image/svg+xml" href="assets/images/icons/main-logo-black.svg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
@@ -33,7 +34,7 @@
             </div>
         </div>
     </header>
-   
+
     <main id="main">
         <section class="starters-section reveal">
             <div class="starters-wrap content-wrap">
@@ -42,7 +43,8 @@
                     <p>Легкі авторські закуски, які розкривають смак сезонних продуктів</p>
                 </div>
                 <div class="starters-content-wrap d-flex">
-                    <div class="starters-image-side"><img src="assets/images/cheese.jpg" alt="Салат з томатами, моцарелою та листям базиліку на тарілці з візерунком"></div>
+                    <div class="starters-image-side"><img src="assets/images/cheese.jpg"
+                            alt="Салат з томатами, моцарелою та листям базиліку на тарілці з візерунком"></div>
                     <div class="starters-list">
                         <div class="starters-item">
                             <span>₴220</span>
@@ -201,28 +203,34 @@
         <div class="footer-wrap content-wrap">
             <div class="footer-bottom d-flex">
                 <span>© 2024 FoodZero. Всі права захищені</span>
-                <div class="footer-socials d-flex">
-                    <a href="#" aria-label="Instagram"><img src="assets/images/icons/icon_instagram.svg"
-                            alt="Instagram"></a>
-                    <a href="#" aria-label="Twitter"><img src="assets/images/icons/icon_twitter.svg" alt="Twitter"></a>
-                    <a href="#" aria-label="Facebook"><img src="assets/images/icons/icon_facebook.svg"
-                            alt="Facebook"></a>
-                    <a href="#" aria-label="YouTube"><img src="assets/images/icons/icon_youtube.svg" alt="YouTube"></a>
-                </div>
+                <ul class="footer-socials d-flex">
+                    <li><a href="https://www.instagram.com/?hl=uk" target="_blank"><svg class="social-icon">
+                                <use href="assets/images/sprites.svg#icon-instagram"></use>
+                            </svg></a></li>
+                    <li><a href="https://x.com/?lang=uk" target="_blank"><svg class="social-icon">
+                                <use href="assets/images/sprites.svg#icon-twitter"></use>
+                            </svg></a></li>
+                    <li><a href="https://www.facebook.com/?locale=uk_UA" target="_blank"><svg class="social-icon">
+                                <use href="assets/images/sprites.svg#icon-facebook"></use>
+                            </svg></a></li>
+                    <li><a href="https://www.youtube.com/?app=desktop&hl=ru" target="_blank"><svg class="social-icon">
+                                <use href="assets/images/sprites.svg#icon-youtube"></use>
+                            </svg></a></li>
+                </ul>
             </div>
         </div>
     </footer>
 
 
-     <div id="mainMenu" class="navigation-full-screen">
+    <div id="mainMenu" class="navigation-full-screen">
         <div class="navigation-menu-wrap d-flex">
             <img id="iconClose" class="icon-navi-close" src="assets/images/icons/icon-navi-close.svg"
                 alt="Закрити меню навігації">
             <div class="menu">
                 <nav aria-label="Головна навігація">
                     <ul>
-                        <li><a href="index.html" class="uppercase">Головна</a></li>
-                        <li><a href="#" class="uppercase">Меню</a></li>
+                        <li><a href="#" class="uppercase">Головна</a></li>
+                        <li><a href="menu.html" class="uppercase">Меню</a></li>
                         <li class="blogs-marker"><a href="error.html" class="uppercase blogs-link">Блог</a>
                             <ol>
                                 <li><a href="error.html">Здорове харчування</a></li>
@@ -244,16 +252,20 @@
                 </ul>
                 <a href="#">вул. Хрещатик, 22,
                     Київ, 01001</a>
-                <div class="icons d-flex">
-                    <a href="#" aria-label="Instagram"><img class="icon-instagram"
-                            src="assets/images/icons/icon_instagram.svg" alt="Instagram"></a>
-                    <a href="#" aria-label="Twitter"><img class="icon-twitter"
-                            src="assets/images/icons/icon_twitter.svg" alt="Twitter"></a>
-                    <a href="#" aria-label="Facebook"><img class="icon-facebook"
-                            src="assets/images/icons/icon_facebook.svg" alt="Facebook"></a>
-                    <a href="#" aria-label="YouTube"><img class="icon-youtube"
-                            src="assets/images/icons/icon_youtube.svg" alt="YouTube"></a>
-                </div>
+                <ul class="icons d-flex">
+                    <li><a href="https://www.instagram.com/?hl=uk" target="_blank"><svg class="social-icon">
+                                <use href="assets/images/sprites.svg#icon-instagram"></use>
+                            </svg></a></li>
+                    <li><a href="https://x.com/?lang=uk" target="_blank"><svg class="social-icon">
+                                <use href="assets/images/sprites.svg#icon-twitter"></use>
+                            </svg></a></li>
+                    <li><a href="https://www.facebook.com/?locale=uk_UA" target="_blank"><svg class="social-icon">
+                                <use href="assets/images/sprites.svg#icon-facebook"></use>
+                            </svg></a></li>
+                    <li><a href="https://www.youtube.com/?app=desktop&hl=ru" target="_blank"><svg class="social-icon">
+                                <use href="assets/images/sprites.svg#icon-youtube"></use>
+                            </svg></a></li>
+                </ul>
             </div>
         </div>
     </div>
@@ -261,7 +273,7 @@
     <div id="modal" class="modal-wrap d-none">
         <div class="modal d-flex item-center">
             <h3>Бронювання столика</h3>
-            <div id="closeModal" class="close-modal" aria-label="Закрити вікно бронювання">
+            <div id="closeModal" class="close-modal">
                 <i class="fa-solid fa-xmark"></i>
             </div>
             <form action="#">

@@ -49,6 +49,7 @@
     <main id="main">
         <section class="plan-diet-section d-flex item-center reveal">
             <div class="plan-diet-wrap content-wrap d-flex">
+                <h2 class="d-none">План дієти</h2>
                 <div class="left-side-plan">
                     <img src="assets/images/vegetable_soup.png" alt="Овочевий суп від шеф-кухаря">
                     <h3>Почніть планувати своє харчування вже сьогодні</h3>
@@ -238,7 +239,6 @@
 
         <section class="reviews-section d-flex item-center reveal">
             <div class="reviews-wrap content-wrap">
-                <h2 class="visually-hidden">Відгуки</h2>
                 <p>"Це місце повністю змінило моє ставлення до здорового харчування. Страви неймовірно смачні, а
                     атмосфера дуже затишна. Тепер приходжу сюди щотижня!</p>
                 <div class="bottom-wrap d-flex">
@@ -295,17 +295,24 @@
         <div class="footer-wrap content-wrap">
             <div class="footer-bottom d-flex">
                 <span>© 2024 FoodZero. Всі права захищені</span>
-                <div class="footer-socials d-flex">
-                    <a href="#" aria-label="Instagram"><img src="assets/images/icons/icon_instagram.svg"
-                            alt="Instagram"></a>
-                    <a href="#" aria-label="Twitter"><img src="assets/images/icons/icon_twitter.svg" alt="Twitter"></a>
-                    <a href="#" aria-label="Facebook"><img src="assets/images/icons/icon_facebook.svg"
-                            alt="Facebook"></a>
-                    <a href="#" aria-label="YouTube"><img src="assets/images/icons/icon_youtube.svg" alt="YouTube"></a>
-                </div>
+                <ul class="footer-socials d-flex">
+                    <li><a href="https://www.instagram.com/?hl=uk" target="_blank"><svg class="social-icon">
+                                <use href="assets/images/sprites.svg#icon-instagram"></use>
+                            </svg></a></li>
+                    <li><a href="https://x.com/?lang=uk" target="_blank"><svg class="social-icon">
+                                <use href="assets/images/sprites.svg#icon-twitter"></use>
+                            </svg></a></li>
+                    <li><a href="https://www.facebook.com/?locale=uk_UA" target="_blank"><svg class="social-icon">
+                                <use href="assets/images/sprites.svg#icon-facebook"></use>
+                            </svg></a></li>
+                    <li><a href="https://www.youtube.com/?app=desktop&hl=ru" target="_blank"><svg class="social-icon">
+                                <use href="assets/images/sprites.svg#icon-youtube"></use>
+                            </svg></a></li>
+                </ul>
             </div>
         </div>
     </footer>
+
 
     <div id="mainMenu" class="navigation-full-screen">
         <div class="navigation-menu-wrap d-flex">
@@ -337,16 +344,20 @@
                 </ul>
                 <a href="#">вул. Хрещатик, 22,
                     Київ, 01001</a>
-                <div class="icons d-flex">
-                    <a href="#" aria-label="Instagram"><img class="icon-instagram"
-                            src="assets/images/icons/icon_instagram.svg" alt="Instagram"></a>
-                    <a href="#" aria-label="Twitter"><img class="icon-twitter"
-                            src="assets/images/icons/icon_twitter.svg" alt="Twitter"></a>
-                    <a href="#" aria-label="Facebook"><img class="icon-facebook"
-                            src="assets/images/icons/icon_facebook.svg" alt="Facebook"></a>
-                    <a href="#" aria-label="YouTube"><img class="icon-youtube"
-                            src="assets/images/icons/icon_youtube.svg" alt="YouTube"></a>
-                </div>
+                <ul class="icons d-flex">
+                    <li><a href="https://www.instagram.com/?hl=uk" target="_blank"><svg class="social-icon">
+                                <use href="assets/images/sprites.svg#icon-instagram"></use>
+                            </svg></a></li>
+                    <li><a href="https://x.com/?lang=uk" target="_blank"><svg class="social-icon">
+                                <use href="assets/images/sprites.svg#icon-twitter"></use>
+                            </svg></a></li>
+                    <li><a href="https://www.facebook.com/?locale=uk_UA" target="_blank"><svg class="social-icon">
+                                <use href="assets/images/sprites.svg#icon-facebook"></use>
+                            </svg></a></li>
+                    <li><a href="https://www.youtube.com/?app=desktop&hl=ru" target="_blank"><svg class="social-icon">
+                                <use href="assets/images/sprites.svg#icon-youtube"></use>
+                            </svg></a></li>
+                </ul>
             </div>
         </div>
     </div>
@@ -354,7 +365,7 @@
     <div id="modal" class="modal-wrap d-none">
         <div class="modal d-flex item-center">
             <h3>Бронювання столика</h3>
-            <div id="closeModal" class="close-modal" aria-label="Закрити вікно бронювання">
+            <div id="closeModal" class="close-modal">
                 <i class="fa-solid fa-xmark"></i>
             </div>
             <form action="#">

@@ -126,7 +126,6 @@ h1 {
     font-family: 'Lato', sans-serif;
     font-size: 1rem;
     font-weight: 400;
-    letter-spacing: 2%;
     max-width: 565px;
     margin-bottom: 15px;
 }
@@ -310,7 +309,6 @@ p {
     font-size: 0.75rem;
     font-weight: 400;
     line-height: 100%;
-    letter-spacing: 2%;
 }
 
 main p {
@@ -768,7 +766,6 @@ select {
 .reviews-section .bottom-wrap .author-name .proffesion {
     display: block;
     font-family: 'Lato', sans-serif;
-    letter-spacing: 2%;
     color: #4D4D4D;
     font-size: 0.563rem;
 }
@@ -827,7 +824,6 @@ select {
 .footer-contact address {
     font-family: 'Lato', sans-serif;
     font-size: 0.563rem;
-    letter-spacing: 2%;
     line-height: 12.5px;
     white-space: nowrap;
 }
@@ -896,7 +892,6 @@ select {
     font-size: 0.75rem;
     font-weight: 400;
     line-height: 100%;
-    letter-spacing: 2%;
 }
 
 .footer-socials {
@@ -908,7 +903,7 @@ select {
     cursor: pointer;
 }
 
-.footer-socials a img {
+.social-icon {
     width: 16px;
     height: 16px;
 }
@@ -1261,6 +1256,8 @@ select {
 .error-wrap .content-wrap {
     font-family: 'Arial', sans-serif;
     text-align: center;
+    flex-direction: column;
+    gap: 15px;
 }
 
 .error-wrap .content-wrap h1 {
@@ -1273,13 +1270,17 @@ select {
     color: #222222;
     font-size: 1.5rem;
     font-weight: 600;
-    margin-top: 10px;
-    margin-bottom: 15px;
 }
 
 .error-wrap .content-wrap p {
     color: #666666;
     font-size: 1rem;
+}
+
+.error-wrap a {
+    display: block;
+    font-size: 1rem;
+    color: #666666;
 }
 
 /* ABOUT pages */
@@ -1412,7 +1413,7 @@ select {
     background-repeat: no-repeat, no-repeat;
     background-position: top 0 right 0, bottom 15px left 0;
     background-size: 160px 120px, 160px 120px;
-    
+
 }
 
 .process-title {
@@ -1432,7 +1433,7 @@ select {
 .process-main-content-wrap {
     flex-direction: column;
     /* justify-content: space-between; */
-    align-items: center; 
+    align-items: center;
     gap: 80px;
 }
 
@@ -1441,8 +1442,8 @@ select {
     gap: 80px;
 }
 
-.process-first-part-wrap .process-main-content-wrap { 
-    gap: 24px; 
+.process-first-part-wrap .process-main-content-wrap {
+    gap: 24px;
 }
 
 .process-image-side img {
@@ -2141,7 +2142,7 @@ select {
         gap: 20px;
     }
 
-    .footer-socials a img {
+    .social-icon {
         width: 20px;
         height: 20px;
     }
@@ -2271,7 +2272,7 @@ select {
     .starters-image-side,
     .mains-image-side,
     .drinks-image-side {
-        min-width: none;
+        max-width: none;
         margin: 0;
     }
 
@@ -2368,18 +2369,24 @@ select {
         padding: 120px 0;
     }
 
+    .error-wrap .content-wrap {
+        gap: 20px;
+    }
+
     .error-wrap .content-wrap h1 {
         font-size: 7.5rem;
     }
 
     .error-wrap .content-wrap h2 {
         font-size: 2rem;
-        margin-top: 10px;
-        margin-bottom: 15px;
     }
 
     .error-wrap .content-wrap p {
         font-size: 1.250rem;
+    }
+
+    .error-wrap a {
+        font-size: 1.25rem;
     }
 
     /* ABOUT pages */
@@ -2523,7 +2530,7 @@ select {
         padding-top: 120px;
         padding-bottom: 140px;
         background-size: 200px 160px, 200px 160px;
-        
+
     }
 
     .process-title h2 {
@@ -2538,7 +2545,7 @@ select {
     .first-process {
         flex-direction: row;
         justify-content: space-between;
-        align-items: center; 
+        align-items: center;
         gap: 80px;
     }
 
@@ -2551,14 +2558,14 @@ select {
         gap: 118px;
     }
 
-    .process-first-part-wrap .process-main-content-wrap { 
-        gap: 36px; 
+    .process-first-part-wrap .process-main-content-wrap {
+        gap: 36px;
     }
 
     .process-image-side img {
         width: 100%;
         aspect-ratio: 792 / 638;
-        object-fit: cover;  
+        object-fit: cover;
     }
 
     .process-section h3 {
@@ -2588,11 +2595,11 @@ select {
     }
 
     .process-left-side {
-        margin-top: 120px; 
+        margin-top: 120px;
     }
 
     .process-right-side {
-        margin-top: -60px; 
+        margin-top: -60px;
     }
 }
 
@@ -3108,7 +3115,7 @@ select {
         gap: 25px;
     }
 
-    .footer-socials a img {
+    .social-icon {
         width: 24px;
         height: 24px;
     }
@@ -3280,17 +3287,23 @@ select {
         padding: 160px 0;
     }
 
+    .error-wrap .content-wrap {
+        gap: 20px;
+    }
+
     .error-wrap .content-wrap h1 {
         font-size: 9rem;
     }
 
     .error-wrap .content-wrap h2 {
         font-size: 2.5rem;
-        margin-top: 10px;
-        margin-bottom: 15px;
     }
 
     .error-wrap .content-wrap p {
+        font-size: 1.5rem;
+    }
+
+    .error-wrap a {
         font-size: 1.5rem;
     }
 
@@ -3379,7 +3392,7 @@ select {
         padding-top: 160px;
         padding-bottom: 180px;
         background-size: 260px 220px, 260px 220px;
-        
+
     }
 
     .process-title h2 {
@@ -3400,8 +3413,8 @@ select {
         gap: 150px;
     }
 
-    .process-first-part-wrap .process-main-content-wrap { 
-        gap: 42px; 
+    .process-first-part-wrap .process-main-content-wrap {
+        gap: 42px;
     }
 
     .process-section h3 {
@@ -3410,11 +3423,11 @@ select {
     }
 
     .process-left-side {
-        margin-top: 160px; 
+        margin-top: 160px;
     }
 
     .process-right-side {
-        margin-top: -80px; 
+        margin-top: -80px;
     }
 
 }
@@ -3662,12 +3675,15 @@ select {
 
     .error-wrap .content-wrap h2 {
         font-size: 3rem;
-        margin-top: 10px;
-        margin-bottom: 15px;
     }
 
     .error-wrap .content-wrap p {
         font-size: 2rem;
+    }
+
+    .error-wrap a {
+        font-size: 2rem;
+        margin-top: 20px;
     }
 
 }
@@ -4198,7 +4214,7 @@ select {
         gap: 28px;
     }
 
-    .footer-socials a img {
+    .social-icon {
         width: 28px;
         height: 28px;
     }
@@ -4356,7 +4372,7 @@ select {
         padding-top: 180px;
         padding-bottom: 200px;
         background-size: 400px 350px, 300px 260px;
-        
+
     }
 
     .process-section h2 {
@@ -4383,11 +4399,11 @@ select {
     }
 
     .process-left-side {
-        margin-top: 200px; 
+        margin-top: 200px;
     }
 
     .process-right-side {
-        margin-top: -100px; 
+        margin-top: -100px;
     }
 
 }
