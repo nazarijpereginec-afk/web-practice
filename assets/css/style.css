@@ -644,12 +644,6 @@ select {
     gap: 24px;
 }
 
-/* .full-name-info input,
-.date-time-info input,
-.date-time-info select {
-    flex: 1;
-} */
-
 .make-reservation-wrap {
     position: relative;
 }
@@ -668,8 +662,6 @@ select {
     z-index: 1;
 }
 
-
-/* ---------- categories section for mobile version ---------- */
 .menu-categories-section {
     padding: 64px 0;
 }
@@ -721,7 +713,6 @@ select {
     cursor: pointer;
 }
 
-/* ---------- reviews section for mobile version ---------- */
 .reviews-section {
     padding: 59px 0;
     background-image: url(../images/quotation-marks.png);
@@ -771,7 +762,6 @@ select {
 }
 
 .reviews-section .bottom-wrap .scroll-wrap {
-    display: inline-block;
     gap: 20px;
     align-items: center;
 }
@@ -787,6 +777,18 @@ select {
     width: 24px;
     height: 14px;
     cursor: pointer;
+}
+
+.rewiew-wrap {
+    overflow: hidden;
+}
+
+.rewiew-item {
+    display: none;
+}
+
+.rewiew-item.active {
+    display: block;
 }
 
 /* ---------- footer for mobile version ---------- */
@@ -1243,8 +1245,6 @@ select {
 }
 
 .location-info a {
-    width: auto;
-    height: auto;
     display: block;
     text-align: center;
     margin-top: 26px;

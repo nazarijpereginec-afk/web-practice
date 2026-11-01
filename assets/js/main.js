@@ -48,3 +48,91 @@ function reveal() {
     });
 }
 reveal();
+
+
+// Slider
+const rewiews = document.querySelectorAll('.rewiew-item');
+const rewiewsWrap = document.querySelector('.reviews-wrap');
+
+let rewiewIndex = 0;
+
+function show(index) {
+    rewiews.forEach((rewiew) => {
+        rewiew.classList.remove('active');
+    });
+
+    rewiews[index].classList.add('active');
+
+    const counter = rewiews[index].querySelector('.scroll-wrap span');
+    counter.textContent = `${index + 1} / ${rewiews.length}`;
+
+    rewiewIndex = index;
+}
+
+rewiewsWrap.addEventListener('click', (event) => {
+    const button = event.target.closest('.prev, .next');
+    if (!button) {
+        return;
+    }
+
+    if (button.classList.contains('prev')) {
+        let index = rewiewIndex - 1;
+        if (index < 0) {
+            index = rewiews.length - 1;
+        }
+        show(index);
+    }
+
+    if (button.classList.contains('next')) {
+        let index = rewiewIndex + 1;
+        if (index >= rewiews.length) {
+            index = 0;
+        }
+        show(index);
+    }
+});
+
+show(rewiewIndex);
+
+const dishes = [
+    {
+        name: "Філе тріски з овочами на пару",
+        price: 320,
+        description: "Ніжне філе тріски, приготоване на пару з сезонними овочами та лимонним соусом"
+    },
+    {
+        name: "Стейк з травами та вершковим маслом",
+        price: 480,
+        description: "Соковитий стейк з розмарином та чебрецем, поданий з запеченими овочами"
+    },
+    {
+        name: "Салат з огірків та авокадо",
+        price: 210,
+        description: "Свіжий салат з огірків, авокадо та м'яти з легкою заправкою на основі оливкової олії"
+    },
+    {
+        name: "Добірка натуральних вин",
+        price: 890,
+        description: "Ексклюзивна підбірка органічних вин від найкращих виноробень України та Європи"
+    }
+];
+
+const menuDishes = document.querySelector("#menuDishes");
+
+dishes.forEach((dish) => {
+    const menuItem = document.createElement("div");
+    menuItem.classList.add("menu-item");
+
+    const price = document.createElement("span");
+    price.textContent = `₴${dish.price}`;
+
+    const line = document.createElement("hr");
+    const name = document.createElement("h3");
+    name.textContent = dish.name;
+    const description = document.createElement("p");
+    description.textContent = dish.description;
+    menuItem.append(price, line, name, description);
+    menuDishes.append(menuItem);
+});
+
+
