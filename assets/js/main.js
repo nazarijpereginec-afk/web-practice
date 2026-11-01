@@ -24,13 +24,14 @@ iconClose.addEventListener('click', () => {
 const btnReservation = document.getElementById('btnReservation');
 const closeModal = document.getElementById('closeModal');
 const modal = document.getElementById('modal');
-btnReservation.addEventListener('click', () => {
-    modal.classList.remove('d-none');
-})
 
-closeModal.addEventListener('click', () => {
-    modal.classList.add('d-none');
-})
+if (modal && btnReservation && closeModal) {
+    btnReservation.addEventListener('click', () => modal.classList.remove('d-none'));
+    closeModal.addEventListener('click', () => modal.classList.add('d-none'));
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) modal.classList.add('d-none');
+    });
+}
 
 /* block animation */
 const reveals = document.querySelectorAll('.reveal');
@@ -46,3 +47,4 @@ function reveal() {
         }
     });
 }
+reveal();

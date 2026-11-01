@@ -8,6 +8,10 @@
         content="Контакти ресторану FoodZero у Києві: адреса, телефон, електронна пошта, години роботи та форма бронювання столика.">
     <link rel="icon" type="image/svg+xml" href="assets/images/icons/main-logo-black.svg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Контакти ресторану FoodZero — адреса та бронювання</title>
 </head>
@@ -62,7 +66,7 @@
             <div class="location-street-wrap content-wrap d-flex">
                 <div class="location-info">
                     <p>Ми знаходимося за адресою: вул. Хрещатик, 22, Київ, 01001</p>
-                    <button>Показати на карті</button>
+                    <a href="#">Показати на карті</a>
                 </div>
                 <div class="location-image">
                     <img src="assets/images/people_siting_on_chairs.jpg"
@@ -163,20 +167,20 @@
         </div>
     </footer>
 
-    <div id="mainMenu" class="navigation-full-screen">
+   <div id="mainMenu" class="navigation-full-screen">
         <div class="navigation-menu-wrap d-flex">
             <img id="iconClose" class="icon-navi-close" src="assets/images/icons/icon-navi-close.svg"
                 alt="Закрити меню навігації">
             <div class="menu">
                 <nav aria-label="Головна навігація">
                     <ul>
-                        <li><a href="#index.html" class="uppercase">Головна</a></li>
+                        <li><a href="index.html" class="uppercase">Головна</a></li>
                         <li><a href="menu.html" class="uppercase">Меню</a></li>
-                        <li class="blogs-marker"><a href="error.html" class="uppercase blogs-link">Блог</a>
+                        <li class="blogs-marker"><a href="#" class="uppercase blogs-link">Блог</a>
                             <ol>
-                                <li><a href="error.html">Здорове харчування</a></li>
-                                <li><a href="error.html">Рецепти</a></li>
-                                <li><a href="error.html">Поради дієтолога</a></li>
+                                <li><a href="#">Здорове харчування</a></li>
+                                <li><a href="#">Рецепти</a></li>
+                                <li><a href="#">Поради дієтолога</a></li>
                             </ol>
                         </li>
                         <li><a href="about.html" class="uppercase">Про нас</a></li>
@@ -227,7 +231,7 @@
             </form>
         </div>
     </div>
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/main.js" defer></script>
 </body>
 
 </html>

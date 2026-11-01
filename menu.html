@@ -8,6 +8,10 @@
         content="Меню ресторану FoodZero: авторські закуски, основні страви, випічка та напої зі свіжих сезонних інгредієнтів.">
     <link rel="icon" type="image/svg+xml" href="assets/images/icons/main-logo-black.svg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Меню ресторану FoodZero — авторська здорова кухня</title>
 </head>
@@ -229,13 +233,13 @@
             <div class="menu">
                 <nav aria-label="Головна навігація">
                     <ul>
-                        <li><a href="#" class="uppercase">Головна</a></li>
+                        <li><a href="index.html" class="uppercase">Головна</a></li>
                         <li><a href="menu.html" class="uppercase">Меню</a></li>
-                        <li class="blogs-marker"><a href="error.html" class="uppercase blogs-link">Блог</a>
+                        <li class="blogs-marker"><a href="#" class="uppercase blogs-link">Блог</a>
                             <ol>
-                                <li><a href="error.html">Здорове харчування</a></li>
-                                <li><a href="error.html">Рецепти</a></li>
-                                <li><a href="error.html">Поради дієтолога</a></li>
+                                <li><a href="#">Здорове харчування</a></li>
+                                <li><a href="#">Рецепти</a></li>
+                                <li><a href="#">Поради дієтолога</a></li>
                             </ol>
                         </li>
                         <li><a href="about.html" class="uppercase">Про нас</a></li>
@@ -269,7 +273,6 @@
             </div>
         </div>
     </div>
-
     <div id="modal" class="modal-wrap d-none">
         <div class="modal d-flex item-center">
             <h3>Бронювання столика</h3>
@@ -286,7 +289,7 @@
             </form>
         </div>
     </div>
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/main.js" defer></script>
 </body>
 
 </html>
