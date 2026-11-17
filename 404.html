@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
     <title>404</title>
 </head>
 
@@ -14,9 +17,9 @@
         <div class="content-wrap">
             <div class="navbar d-flex">
                 <div class="left-part-navbar d-flex">
-                    <img class="main-logo" src="assets/images/icons/main_logo.svg" alt="Логотип FoodZero">
-                    <img id="iconOpen" class="icon-navi-open" src="assets/images/icons/icon-navi-open.svg"
-                        alt="Відкрити меню навігації">
+                    <a href="index.html"><img class="main-logo" src="assets/images/icons/main_logo.svg" alt="Логотип FoodZero"></a>
+                    <button id="iconOpen" class="icon-navi-open"><img src="assets/images/icons/icon-navi-open.svg"
+                        alt="Відкрити меню навігації"></button>
                 </div>
                 <div class="right-part-navbar">
                     <a href="tel:+380441234567" class="phone-link">+380 44 123 45 67</a>
@@ -30,7 +33,7 @@
         <div class="content-wrap d-flex">
             <h1>404</h1>
             <h2>Не знайдено</h2>
-            <p>Запитані ресурси не вдалося знайти на цьому сервері!</p>
+            <p>Запитані ресурси не вдалося знайти на цьому сервері! Або сторінки не існує</p>
             <a href="index.html">← Повернутися на головну сторінку </a>
         </div>
     </main>
@@ -90,18 +93,18 @@
 
     <div id="mainMenu" class="navigation-full-screen">
         <div class="navigation-menu-wrap d-flex">
-            <img id="iconClose" class="icon-navi-close" src="assets/images/icons/icon-navi-close.svg"
-                alt="Закрити меню навігації">
+            <button id="iconClose" class="icon-navi-close"><img src="assets/images/icons/icon-navi-close.svg"
+                alt="Закрити меню навігації"></button>
             <div class="menu">
                 <nav aria-label="Головна навігація">
                     <ul>
                         <li><a href="#index.html" class="uppercase">Головна</a></li>
                         <li><a href="menu.html" class="uppercase">Меню</a></li>
-                        <li class="blogs-marker"><a href="error.html" class="uppercase blogs-link">Блог</a>
+                        <li class="blogs-marker"><a href="404.html" class="uppercase blogs-link">Блог</a>
                             <ol>
-                                <li><a href="error.html">Здорове харчування</a></li>
-                                <li><a href="error.html">Рецепти</a></li>
-                                <li><a href="error.html">Поради дієтолога</a></li>
+                                <li><a href="404.html">Здорове харчування</a></li>
+                                <li><a href="404.html">Рецепти</a></li>
+                                <li><a href="404.html">Поради дієтолога</a></li>
                             </ol>
                         </li>
                         <li><a href="about.html" class="uppercase">Про нас</a></li>
@@ -139,14 +142,15 @@
     <div id="modal" class="modal-wrap d-none">
         <div class="modal d-flex item-center">
             <h3>Бронювання столика</h3>
-            <div id="closeModal" class="close-modal">
+            <button id="closeModal" class="close-modal">
                 <i class="fa-solid fa-xmark"></i>
-            </div>
-            <form action="#">
+            </button>
+            <form id="modalForm">
                 <div class="modal-input-wrap">
-                    <input id="modalName" type="text" placeholder="Ваше ім'я" required>
-                    <input id="modalEmail" type="email" placeholder="Email адреса" required>
-                    <input id="modalPhone" type="tel" placeholder="Номер телефону" required>
+                    <input id="modalName" name="name" type="text" placeholder="Ваше ім'я" required minlength="2">
+                    <input id="modalEmail" name="email" type="email" placeholder="Email адреса" required>
+                    <input id="modalPhone" name="phone" type="tel" placeholder="Номер телефону" required
+                        pattern="[0-9+\s\(\)\-]{10,20}" title="Введіть коректний номер телефону">
                     <button type="submit">Забронювати</button>
                 </div>
             </form>

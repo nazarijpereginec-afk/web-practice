@@ -67,3 +67,21 @@ address {
     overflow: hidden;
     clip: rect(0 0 0 0);
 }
+
+.icon-navi-open,
+.icon-navi-close,
+.close-modal,
+.controlls {
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+}
+
+.icon-navi-open img,
+.icon-navi-close img,
+.controlls img {
+  display: block;
+}
