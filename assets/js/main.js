@@ -24,12 +24,38 @@ iconClose.addEventListener('click', () => {
 const btnReservation = document.getElementById('btnReservation');
 const closeModal = document.getElementById('closeModal');
 const modal = document.getElementById('modal');
+const modalForm = document.getElementById('modalForm');
 
-if (modal && btnReservation && closeModal) {
-    btnReservation.addEventListener('click', () => modal.classList.remove('d-none'));
-    closeModal.addEventListener('click', () => modal.classList.add('d-none'));
+if (modal && btnReservation && closeModal && modalForm) {
+    btnReservation.addEventListener('click', () => {
+        modal.classList.remove('d-none');
+    });
+
+    closeModal.addEventListener('click', () => {
+        modal.classList.add('d-none');
+    });
+
     modal.addEventListener('click', (e) => {
-        if (e.target === modal) modal.classList.add('d-none');
+        if (e.target === modal) {
+            modal.classList.add('d-none');
+        }
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            modal.classList.add('d-none');
+        }
+    });
+
+    modalForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        if (modalForm.checkValidity()) {
+            alert('Дякуємо! Ваші дані успішно перевірено.');
+            modalForm.reset();
+            modal.classList.add('d-none');
+        } else {
+            modalForm.reportValidity();
+        }
     });
 }
 
@@ -94,45 +120,51 @@ rewiewsWrap.addEventListener('click', (event) => {
 
 show(rewiewIndex);
 
-const dishes = [
-    {
-        name: "Філе тріски з овочами на пару",
-        price: 320,
-        description: "Ніжне філе тріски, приготоване на пару з сезонними овочами та лимонним соусом"
-    },
-    {
-        name: "Стейк з травами та вершковим маслом",
-        price: 480,
-        description: "Соковитий стейк з розмарином та чебрецем, поданий з запеченими овочами"
-    },
-    {
-        name: "Салат з огірків та авокадо",
-        price: 210,
-        description: "Свіжий салат з огірків, авокадо та м'яти з легкою заправкою на основі оливкової олії"
-    },
-    {
-        name: "Добірка натуральних вин",
-        price: 890,
-        description: "Ексклюзивна підбірка органічних вин від найкращих виноробень України та Європи"
+async function loadDishes() {
+    const menuDishes = document.querySelector("#menuDishes");
+    const menuStatus = document.querySelector("#menuStatus");
+    if (!menuDishes) {
+        return;
     }
-];
+    try {
+        menuStatus.textContent = "Завантаження страв...";
+        const response = await fetch("../assets/data/dishes.json");
+        if (!response.ok) {
+            throw new Error("Не вдалося завантажити дані");
+        }
 
-const menuDishes = document.querySelector("#menuDishes");
+        const dishes = await response.json();
+        if (!Array.isArray(dishes)) {
+            throw new Error("Неправильний формат даних");
+        }
 
-dishes.forEach((dish) => {
-    const menuItem = document.createElement("div");
-    menuItem.classList.add("menu-item");
+        if (dishes.length === 0) {
+            menuStatus.textContent = "Наразі страв немає.";
+            return;
+        }
+        menuDishes.innerHTML = "";
 
-    const price = document.createElement("span");
-    price.textContent = `₴${dish.price}`;
+        dishes.forEach((dish) => {
+            const menuItem = document.createElement("div");
+            menuItem.classList.add("menu-item");
+            const price = document.createElement("span");
+            price.textContent = `₴${dish.price}`;
+            const line = document.createElement("hr");
+            const name = document.createElement("h3");
+            name.textContent = dish.name;
+            const description = document.createElement("p");
+            description.textContent = dish.description;
+            menuItem.append(price, line, name, description);
+            menuDishes.append(menuItem);
+        });
+        menuStatus.textContent = "";
+    } catch (error) {
+        console.error("Помилка завантаження страв:", error);
+        menuStatus.textContent =
+            "Не вдалося завантажити меню. Спробуйте оновити сторінку.";
+    }
+}
 
-    const line = document.createElement("hr");
-    const name = document.createElement("h3");
-    name.textContent = dish.name;
-    const description = document.createElement("p");
-    description.textContent = dish.description;
-    menuItem.append(price, line, name, description);
-    menuDishes.append(menuItem);
-});
+loadDishes();
 
 

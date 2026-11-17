@@ -74,8 +74,9 @@
                 <h2>Наше меню</h2>
                 <p>Авторські страви з натуральних сезонних інгредієнтів від нашого шеф-кухаря</p>
                 <div class="menu-dishes d-flex" id="menuDishes">
-                    
+
                 </div>
+                <p id="menuStatus" aria-live="polite"></p>
             </div>
         </section>
 
@@ -235,9 +236,11 @@
                         </div>
 
                         <div class="scroll-wrap d-flex">
-                            <img src="assets/images/icons/icon_arrow-left.svg" class="prev controlls" alt="Попередній відгук">
+                            <img src="assets/images/icons/icon_arrow-left.svg" class="prev controlls"
+                                alt="Попередній відгук">
                             <span>3 / 3</span>
-                            <img src="assets/images/icons/Icon_arrow-right.svg" class="next controlls" alt="Наступний відгук">
+                            <img src="assets/images/icons/Icon_arrow-right.svg" class="next controlls"
+                                alt="Наступний відгук">
                         </div>
                     </div>
                 </div>
@@ -255,9 +258,11 @@
                         </div>
 
                         <div class="scroll-wrap d-flex">
-                            <img src="assets/images/icons/icon_arrow-left.svg" class="prev contolls" alt="Попередній відгук">
+                            <img src="assets/images/icons/icon_arrow-left.svg" class="prev contolls"
+                                alt="Попередній відгук">
                             <span>3 / 3</span>
-                            <img src="assets/images/icons/Icon_arrow-right.svg" class="next controlls" alt="Наступний відгук">
+                            <img src="assets/images/icons/Icon_arrow-right.svg" class="next controlls"
+                                alt="Наступний відгук">
                         </div>
                     </div>
                 </div>
@@ -277,9 +282,11 @@
                         </div>
 
                         <div class="scroll-wrap d-flex">
-                            <img src="assets/images/icons/icon_arrow-left.svg" class="prev controlls" alt="Попередній відгук">
+                            <img src="assets/images/icons/icon_arrow-left.svg" class="prev controlls"
+                                alt="Попередній відгук">
                             <span>3 / 3</span>
-                            <img src="assets/images/icons/Icon_arrow-right.svg" class="next controlls" alt="Наступний відгук">
+                            <img src="assets/images/icons/Icon_arrow-right.svg" class="next controlls"
+                                alt="Наступний відгук">
                         </div>
                     </div>
                 </div>
@@ -395,11 +402,12 @@
             <div id="closeModal" class="close-modal">
                 <i class="fa-solid fa-xmark"></i>
             </div>
-            <form action="#">
+            <form id="modalForm">
                 <div class="modal-input-wrap">
-                    <input id="modalName" type="text" placeholder="Ваше ім'я" required>
-                    <input id="modalEmail" type="email" placeholder="Email адреса" required>
-                    <input id="modalPhone" type="tel" placeholder="Номер телефону" required>
+                    <input id="modalName" name="name" type="text" placeholder="Ваше ім'я" required minlength="2">
+                    <input id="modalEmail" name="email" type="email" placeholder="Email адреса" required>
+                    <input id="modalPhone" name="phone" type="tel" placeholder="Номер телефону" required
+                        pattern="[0-9+\s()\-]{10,20}" title="Введіть коректний номер телефону">
                     <button type="submit">Забронювати</button>
                 </div>
             </form>
