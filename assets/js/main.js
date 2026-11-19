@@ -128,7 +128,7 @@ async function loadDishes() {
     }
     try {
         menuStatus.textContent = "Завантаження страв...";
-        const response = await fetch("../assets/data/dishes.json");
+        const response = await fetch("assets/data/dishes.json");
         if (!response.ok) {
             throw new Error("Не вдалося завантажити дані");
         }
