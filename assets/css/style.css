@@ -127,6 +127,7 @@ h1 {
 
 .title-photo {
     display: inline-block;
+    margin-top: 40px;
 }
 
 .main-steak {
@@ -1625,6 +1626,10 @@ select {
         font-size: 1.125rem;
         font-weight: 400;
         font-style: normal;
+    }
+
+    .title-photo {
+        margin-top: 0;
     }
 
     /* ---------- navigation menu full screen for tablet version ---------- */
