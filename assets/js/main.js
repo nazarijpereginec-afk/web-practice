@@ -6,87 +6,116 @@ const mainHeader = document.getElementById('mainHeader');
 const main = document.getElementById('main');
 const footer = document.getElementById('footer');
 
+function toggleMenu(isOpen) {
+    mainMenu.classList.toggle('menu-open', isOpen);
+    [mainHeader, main, footer].forEach((element) => {
+        element?.classList.toggle('d-none', isOpen);
+    });
+}
 
-iconOpen.addEventListener('click', () => {
-    mainMenu.classList.toggle('menu-open');
-    mainHeader.classList.toggle('d-none');
-    main.classList.toggle('d-none');
-    footer.classList.toggle('d-none');
-})
-iconClose.addEventListener('click', () => {
-    mainMenu.classList.remove('menu-open');
-    mainHeader.classList.remove('d-none');
-    main.classList.remove('d-none');
-    footer.classList.remove('d-none');
-})
+if (iconOpen && iconClose && mainMenu) {
+    iconOpen.addEventListener('click', () => toggleMenu(true));
+    iconClose.addEventListener('click', () => toggleMenu(false));
+}
+
+/* supabase */
+const SUPABASE_URL = 'https://qxamjnougwnwjankqdoy.supabase.co';
+const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InF4YW1qbm91Z3dud2phbmtxZG95Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTUyNjcxMzIsImV4cCI6MjExMDg0MzEzMn0.T_WTViX7STARqaK2cu7cxmvkqrfNOgskjlgQ7F0O5go';
+const db = window.supabase
+    ? window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY)
+    : null;
+
+async function createReservation(payload) {
+    if (!db) {
+        throw new Error('Supabase не підключено');
+    }
+    const { error } = await db.from('reservations').insert(payload);
+    if (error) {
+        throw error;
+    }
+}
 
 /* modal window */
 const btnReservation = document.getElementById('btnReservation');
 const closeModal = document.getElementById('closeModal');
 const modal = document.getElementById('modal');
 const modalForm = document.getElementById('modalForm');
+const modalStatus = document.getElementById('modalStatus');
 
 if (modal && btnReservation && closeModal && modalForm) {
+    const hideModal = () => {
+        modal.classList.add('d-none');
+        modalStatus.textContent = '';
+    };
+
     btnReservation.addEventListener('click', () => {
         modal.classList.remove('d-none');
     });
 
-    closeModal.addEventListener('click', () => {
-        modal.classList.add('d-none');
-    });
+    closeModal.addEventListener('click', hideModal);
 
     modal.addEventListener('click', (e) => {
         if (e.target === modal) {
-            modal.classList.add('d-none');
+            hideModal();
         }
     });
 
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') {
-            modal.classList.add('d-none');
+            hideModal();
         }
     });
 
-    modalForm.addEventListener('submit', (e) => {
+    modalForm.addEventListener('submit', async (e) => {
         e.preventDefault();
-        if (modalForm.checkValidity()) {
-            alert('Дякуємо! Ваші дані успішно перевірено.');
+        const submitButton = modalForm.querySelector('button[type="submit"]');
+        const formData = Object.fromEntries(new FormData(modalForm));
+
+        submitButton.disabled = true;
+        modalStatus.textContent = 'Надсилання...';
+
+        try {
+            await createReservation({
+                name: formData.name.trim(),
+                email: formData.email.trim(),
+                phone: formData.phone.trim(),
+            });
+            modalStatus.textContent = 'Дякуємо! Ваше бронювання прийнято.';
             modalForm.reset();
-            modal.classList.add('d-none');
-        } else {
-            modalForm.reportValidity();
+            setTimeout(hideModal, 2000);
+        } catch (error) {
+            console.error('Помилка бронювання:', error);
+            modalStatus.textContent = 'Не вдалося надіслати заявку. Спробуйте пізніше.';
+        } finally {
+            submitButton.disabled = false;
         }
     });
 }
 
 /* block animation */
 const reveals = document.querySelectorAll('.reveal');
-window.addEventListener('scroll', reveal);
-function reveal() {
-    reveals.forEach(element => {
-        const windowHeight = window.innerHeight;
-        const elementTop = element.getBoundingClientRect().top;
-        const visible = 150;
 
-        if (elementTop < windowHeight - visible) {
+function reveal() {
+    const windowHeight = window.innerHeight;
+    const visible = 150;
+
+    reveals.forEach((element) => {
+        if (element.getBoundingClientRect().top < windowHeight - visible) {
             element.classList.add('active');
         }
     });
 }
+
+window.addEventListener('scroll', reveal);
 reveal();
 
-
-// Slider
+/* slider */
 const rewiews = document.querySelectorAll('.rewiew-item');
 const rewiewsWrap = document.querySelector('.reviews-wrap');
-
 let rewiewIndex = 0;
 
 function show(index) {
-    rewiews.forEach((rewiew) => {
-        rewiew.classList.remove('active');
-    });
-
+    rewiews.forEach((rewiew) => rewiew.classList.remove('active'));
     rewiews[index].classList.add('active');
 
     const counter = rewiews[index].querySelector('.scroll-wrap span');
@@ -95,76 +124,70 @@ function show(index) {
     rewiewIndex = index;
 }
 
-rewiewsWrap.addEventListener('click', (event) => {
-    const button = event.target.closest('.prev, .next');
-    if (!button) {
-        return;
-    }
-
-    if (button.classList.contains('prev')) {
-        let index = rewiewIndex - 1;
-        if (index < 0) {
-            index = rewiews.length - 1;
-        }
-        show(index);
-    }
-
-    if (button.classList.contains('next')) {
-        let index = rewiewIndex + 1;
-        if (index >= rewiews.length) {
-            index = 0;
-        }
-        show(index);
-    }
-});
-
-show(rewiewIndex);
-
-async function loadDishes() {
-    const menuDishes = document.querySelector("#menuDishes");
-    const menuStatus = document.querySelector("#menuStatus");
-    if (!menuDishes) {
-        return;
-    }
-    try {
-        menuStatus.textContent = "Завантаження страв...";
-        const response = await fetch("assets/data/dishes.json");
-        if (!response.ok) {
-            throw new Error("Не вдалося завантажити дані");
-        }
-
-        const dishes = await response.json();
-        if (!Array.isArray(dishes)) {
-            throw new Error("Неправильний формат даних");
-        }
-
-        if (dishes.length === 0) {
-            menuStatus.textContent = "Наразі страв немає.";
+if (rewiewsWrap && rewiews.length > 0) {
+    rewiewsWrap.addEventListener('click', (event) => {
+        const button = event.target.closest('.prev, .next');
+        if (!button) {
             return;
         }
-        menuDishes.innerHTML = "";
 
+        const step = button.classList.contains('next') ? 1 : -1;
+        show((rewiewIndex + step + rewiews.length) % rewiews.length);
+    });
+
+    show(rewiewIndex);
+}
+
+/* dishes from database */
+async function loadDishes() {
+    const menuDishes = document.querySelector('#menuDishes');
+    const menuStatus = document.querySelector('#menuStatus');
+    if (!menuDishes || !menuStatus) {
+        return;
+    }
+
+    try {
+        if (!db) {
+            throw new Error('Supabase не підключено');
+        }
+        menuStatus.textContent = 'Завантаження страв...';
+
+        const { data: dishes, error } = await db
+            .from('menu_items')
+            .select('id, name, description, price')
+            .order('id');
+
+        if (error) {
+            throw error;
+        }
+
+        if (!dishes || dishes.length === 0) {
+            menuStatus.textContent = 'Наразі страв немає.';
+            return;
+        }
+
+        menuDishes.innerHTML = '';
         dishes.forEach((dish) => {
-            const menuItem = document.createElement("div");
-            menuItem.classList.add("menu-item");
-            const price = document.createElement("span");
+            const menuItem = document.createElement('div');
+            menuItem.classList.add('menu-item');
+
+            const price = document.createElement('span');
             price.textContent = `₴${dish.price}`;
-            const line = document.createElement("hr");
-            const name = document.createElement("h3");
+
+            const name = document.createElement('h3');
             name.textContent = dish.name;
-            const description = document.createElement("p");
+
+            const description = document.createElement('p');
             description.textContent = dish.description;
-            menuItem.append(price, line, name, description);
+
+            menuItem.append(price, document.createElement('hr'), name, description);
             menuDishes.append(menuItem);
         });
-        menuStatus.textContent = "";
+        menuStatus.textContent = '';
     } catch (error) {
-        console.error("Помилка завантаження страв:", error);
-        menuStatus.textContent =
-            "Не вдалося завантажити меню. Спробуйте оновити сторінку.";
+        console.error('Помилка завантаження страв:', error);
+        menuStatus.textContent = 'Не вдалося завантажити меню. Спробуйте оновити сторінку.';
     }
 }
 
 loadDishes();
-
-

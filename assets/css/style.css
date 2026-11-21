@@ -993,6 +993,13 @@ select {
     cursor: pointer;
 }
 
+.modal-status {
+    min-height: 1.2em;
+    margin-top: 10px;
+    text-align: center;
+    color: var(--dark-color);
+}
+
 .reveal {
     opacity: 0;
     transform: translateY(70px);
