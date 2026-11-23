@@ -10,7 +10,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Контакти ресторану FoodZero — адреса та бронювання</title>
 </head>
@@ -20,10 +22,10 @@
         <div class="content-wrap">
             <div class="navbar d-flex">
                 <div class="left-part-navbar d-flex">
-                    <a href="index.html"><img class="main-logo" src="assets/images/icons/main_logo.svg" alt="Логотип FoodZero"></a>              
+                    <a href="index.html"><img class="main-logo" src="assets/images/icons/main_logo.svg"
+                            alt="Логотип FoodZero"></a>
                     <button id="iconOpen" class="icon-navi-open">
-                        <img src="assets/images/icons/icon-navi-open.svg"
-                        alt="Відкрити меню навігації">
+                        <img src="assets/images/icons/icon-navi-open.svg" alt="Відкрити меню навігації">
                     </button>
                 </div>
                 <div class="right-part-navbar">
@@ -82,16 +84,17 @@
                     <h2>Забронювати столик</h2>
                     <p>Зв'яжіться з нашим рестораном</p>
                 </div>
-                <form class="reservation-form">
+                <form class="reservation-form" id="contactForm">
                     <div class="input-wrap d-flex">
                         <div class="full-name-info d-flex">
-                            <input type="text" placeholder="Ім'я">
-                            <input type="text" placeholder="Прізвище">
+                            <input name="firstName" type="text" placeholder="Ім'я" required minlength="2">
+                            <input name="lastName" type="text" placeholder="Прізвище" required minlength="2">
                         </div>
-                        <input type="email" placeholder="Email">
-                        <input type="tel" placeholder="Телефон">
+                        <input name="email" type="email" placeholder="Email" required>
+                        <input name="phone" type="tel" placeholder="Телефон" required pattern="[0-9+\s\(\)\-]{10,20}"
+                            title="Введіть коректний номер телефону">
                         <div class="date-time-info d-flex">
-                            <input id="reservationDate" type="date" placeholder="ДД/ММ/РРРР">
+                            <input id="reservationDate" name="date" type="date" required>
                             <select id="reservationTime" name="time" required>
                                 <option value="">Оберіть час</option>
                                 <option value="17:00">17:00</option>
@@ -109,6 +112,7 @@
                         </select>
                     </div>
                     <button type="submit">Забронювати</button>
+                    <p id="contactStatus" class="modal-status" role="status"></p>
                 </form>
 
             </div>
@@ -136,8 +140,9 @@
                     <form class="subscribe-form d-flex justify-center">
                         <div id="inputEmail" class="input-email-wrap">
                             <label for="subscribeEmail" class="visually-hidden">Email адреса для підписки</label>
-                            <input id="subscribeEmail" type="email" placeholder="Ваш email">
+                            <input id="subscribeEmail" type="email" placeholder="Ваш email" name="email" required>
                             <p>Підпишіться та отримуйте найкращі рецепти щотижня</p>
+                            <p id="subscribeStatus" role="status"></p>
                         </div>
                         <div class="btn-wrap">
                             <button type="submit">Підписатися</button>
@@ -168,10 +173,10 @@
         </div>
     </footer>
 
-   <div id="mainMenu" class="navigation-full-screen">
+    <div id="mainMenu" class="navigation-full-screen">
         <div class="navigation-menu-wrap d-flex">
             <button id="iconClose" class="icon-navi-close"><img src="assets/images/icons/icon-navi-close.svg"
-                alt="Закрити меню навігації"></button>
+                    alt="Закрити меню навігації"></button>
             <div class="menu">
                 <nav aria-label="Головна навігація">
                     <ul>

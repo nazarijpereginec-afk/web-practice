@@ -143,7 +143,7 @@
             <div class="reservation-wrap content-wrap">
                 <h2>Забронювати столик</h2>
                 <p>Зв'яжіться з нашим рестораном</p>
-                <form class="reservation-form">
+                <form class="reservation-form" id="reservationForm">
                     <div class="input-wrap d-flex">
                         <input id="reservationDate" type="date" placeholder="ДД/ММ/РРРР">
                         <select id="reservationTime" name="time" required>
@@ -189,8 +189,9 @@
                     <form class="subscribe-form d-flex justify-center">
                         <div id="inputEmail" class="input-email-wrap">
                             <label for="subscribeEmail" class="visually-hidden">Email адреса для підписки</label>
-                            <input id="subscribeEmail" type="email" placeholder="Ваш email">
+                            <input id="subscribeEmail" type="email" placeholder="Ваш email" name="email" required>
                             <p>Підпишіться та отримуйте найкращі рецепти щотижня</p>
+                            <p id="subscribeStatus" role="status"></p>
                         </div>
                         <div class="btn-wrap">
                             <button type="submit">Підписатися</button>

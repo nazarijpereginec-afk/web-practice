@@ -18,7 +18,6 @@ if (iconOpen && iconClose && mainMenu) {
     iconClose.addEventListener('click', () => toggleMenu(false));
 }
 
-/* supabase */
 const SUPABASE_URL = 'https://qxamjnougwnwjankqdoy.supabase.co';
 const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InF4YW1qbm91Z3dud2phbmtxZG95Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTUyNjcxMzIsImV4cCI6MjExMDg0MzEzMn0.T_WTViX7STARqaK2cu7cxmvkqrfNOgskjlgQ7F0O5go';
 const db = window.supabase
@@ -41,17 +40,21 @@ const closeModal = document.getElementById('closeModal');
 const modal = document.getElementById('modal');
 const modalForm = document.getElementById('modalForm');
 const modalStatus = document.getElementById('modalStatus');
+const quickForm = document.getElementById('reservationForm');
+let pendingReservation = {};
 
 if (modal && btnReservation && closeModal && modalForm) {
+    const openModal = (details = {}) => {
+        pendingReservation = details;
+        modal.classList.remove('d-none');
+    };
+
     const hideModal = () => {
         modal.classList.add('d-none');
         modalStatus.textContent = '';
     };
 
-    btnReservation.addEventListener('click', () => {
-        modal.classList.remove('d-none');
-    });
-
+    btnReservation.addEventListener('click', () => openModal());
     closeModal.addEventListener('click', hideModal);
 
     modal.addEventListener('click', (e) => {
@@ -66,6 +69,19 @@ if (modal && btnReservation && closeModal && modalForm) {
         }
     });
 
+    // Швидка форма в секції бронювання: перевіряє дату й відкриває модальне вікно
+    if (quickForm) {
+        quickForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            if (!quickForm.checkValidity()) {
+                quickForm.reportValidity();
+                return;
+            }
+            const { date, time, guests } = Object.fromEntries(new FormData(quickForm));
+            openModal({ date, time, guests });
+        });
+    }
+
     modalForm.addEventListener('submit', async (e) => {
         e.preventDefault();
         const submitButton = modalForm.querySelector('button[type="submit"]');
@@ -79,9 +95,14 @@ if (modal && btnReservation && closeModal && modalForm) {
                 name: formData.name.trim(),
                 email: formData.email.trim(),
                 phone: formData.phone.trim(),
+                reservation_date: pendingReservation.date || null,
+                reservation_time: pendingReservation.time || null,
+                guests: pendingReservation.guests ? Number(pendingReservation.guests) : null,
             });
+            pendingReservation = {};
             modalStatus.textContent = 'Дякуємо! Ваше бронювання прийнято.';
             modalForm.reset();
+            quickForm?.reset();
             setTimeout(hideModal, 2000);
         } catch (error) {
             console.error('Помилка бронювання:', error);
@@ -92,7 +113,74 @@ if (modal && btnReservation && closeModal && modalForm) {
     });
 }
 
-/* block animation */
+/* reservation form on contact page */
+const contactForm = document.getElementById('contactForm');
+const contactStatus = document.getElementById('contactStatus');
+
+if (contactForm && contactStatus) {
+    contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        if (!contactForm.checkValidity()) {
+            contactForm.reportValidity();
+            return;
+        }
+        const data = Object.fromEntries(new FormData(contactForm));
+        const submitButton = contactForm.querySelector('button[type="submit"]');
+
+        submitButton.disabled = true;
+        contactStatus.textContent = 'Надсилання...';
+
+        try {
+            await createReservation({
+                name: `${data.firstName} ${data.lastName}`.trim(),
+                email: data.email.trim(),
+                phone: data.phone.trim(),
+                reservation_date: data.date || null,
+                reservation_time: data.time || null,
+                guests: data.guests ? Number(data.guests) : null,
+            });
+            contactStatus.textContent = 'Дякуємо! Ваше бронювання прийнято.';
+            contactForm.reset();
+        } catch (error) {
+            console.error('Помилка бронювання:', error);
+            contactStatus.textContent = 'Не вдалося надіслати заявку. Спробуйте пізніше.';
+        } finally {
+            submitButton.disabled = false;
+        }
+    });
+}
+
+/* не дозволяти обирати дату в минулому */
+const pad = (n) => String(n).padStart(2, '0');
+const now = new Date();
+const today = `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())}`;
+document.querySelectorAll('input[type="date"]').forEach((input) => {
+    input.min = today;
+});
+
+
+/* підписка */
+const subscribeForm = document.querySelector('.subscribe-form');
+const subscribeStatus = document.getElementById('subscribeStatus');
+
+if (subscribeForm && subscribeStatus && db) {
+    subscribeForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const email = new FormData(subscribeForm).get('email').trim();
+        const { error } = await db.from('subscribers').insert({ email });
+
+        if (!error) {
+            subscribeStatus.textContent = 'Дякуємо за підписку!';
+            subscribeForm.reset();
+        } else if (error.code === '23505') {
+            subscribeStatus.textContent = 'Цей email уже підписаний.';
+        } else {
+            console.error('Помилка підписки:', error);
+            subscribeStatus.textContent = 'Не вдалося оформити підписку.';
+        }
+    });
+}
+
 const reveals = document.querySelectorAll('.reveal');
 
 function reveal() {
@@ -109,7 +197,6 @@ function reveal() {
 window.addEventListener('scroll', reveal);
 reveal();
 
-/* slider */
 const rewiews = document.querySelectorAll('.rewiew-item');
 const rewiewsWrap = document.querySelector('.reviews-wrap');
 let rewiewIndex = 0;
@@ -138,7 +225,6 @@ if (rewiewsWrap && rewiews.length > 0) {
     show(rewiewIndex);
 }
 
-/* dishes from database */
 async function loadDishes() {
     const menuDishes = document.querySelector('#menuDishes');
     const menuStatus = document.querySelector('#menuStatus');
