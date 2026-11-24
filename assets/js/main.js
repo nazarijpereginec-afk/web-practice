@@ -1,4 +1,3 @@
-/* burger menu */
 const iconClose = document.getElementById('iconClose');
 const iconOpen = document.getElementById('iconOpen');
 const mainMenu = document.getElementById('mainMenu');
@@ -34,7 +33,6 @@ async function createReservation(payload) {
     }
 }
 
-/* modal window */
 const btnReservation = document.getElementById('btnReservation');
 const closeModal = document.getElementById('closeModal');
 const modal = document.getElementById('modal');
@@ -69,7 +67,6 @@ if (modal && btnReservation && closeModal && modalForm) {
         }
     });
 
-    // Швидка форма в секції бронювання: перевіряє дату й відкриває модальне вікно
     if (quickForm) {
         quickForm.addEventListener('submit', (e) => {
             e.preventDefault();
@@ -113,7 +110,6 @@ if (modal && btnReservation && closeModal && modalForm) {
     });
 }
 
-/* reservation form on contact page */
 const contactForm = document.getElementById('contactForm');
 const contactStatus = document.getElementById('contactStatus');
 
@@ -150,7 +146,6 @@ if (contactForm && contactStatus) {
     });
 }
 
-/* не дозволяти обирати дату в минулому */
 const pad = (n) => String(n).padStart(2, '0');
 const now = new Date();
 const today = `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())}`;
@@ -159,7 +154,6 @@ document.querySelectorAll('input[type="date"]').forEach((input) => {
 });
 
 
-/* підписка */
 const subscribeForm = document.querySelector('.subscribe-form');
 const subscribeStatus = document.getElementById('subscribeStatus');
 
