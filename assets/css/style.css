@@ -3713,6 +3713,11 @@ select {
 
     .main-logo,
     #iconOpen {
+        width: auto;
+        height: auto;
+    }
+
+    .main-logo {
         width: 280px;
         height: auto;
     }
