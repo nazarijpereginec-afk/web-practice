@@ -861,7 +861,7 @@ select {
 
 .footer-subscribe input[type="email"],
 .footer-subscribe input[type="email"]::placeholder {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Source Sans 3', sans-serif;
     color: var(--light-color);
     font-size: 0.75rem;
 }
@@ -943,7 +943,7 @@ select {
     background-color: #EBF0E4;
     z-index: 1000;
     font-size: 0.85rem;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Source Sans 3', sans-serif;
     color: var(--dark-color);
     border-radius: 30px;
     flex-direction: column;
@@ -1183,7 +1183,7 @@ select {
 
 .hero-hours-head span,
 .hero-hours-list {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Source Sans 3', sans-serif;
     font-size: 0.75rem;
     line-height: 140%;
 }
@@ -1629,7 +1629,7 @@ select {
 
     .right-part-navbar .phone-link {
         display: block;
-        font-family: 'Inter', sans-serif;
+        font-family: 'Source Sans 3', sans-serif;
         font-size: 1.125rem;
         font-weight: 400;
         font-style: normal;
@@ -2704,6 +2704,9 @@ select {
     /* ---------- Desktops, large screens ---------- */
 
     /* ---------- header for laptop version ---------- */
+    .content-wrap {
+        max-width: 1400px;
+    }
     .main-header {
         padding-bottom: 150px;
     }
@@ -3680,7 +3683,7 @@ select {
 }
 
 
-@media screen and (min-width: 2025px) {
+@media screen and (min-width: 1920px) {
 
     /* ---------- content wrap for desktop version ---------- */
     .content-wrap {
@@ -3710,7 +3713,7 @@ select {
 
     .main-logo,
     #iconOpen {
-        width: auto;
+        width: 280px;
         height: auto;
     }
 
